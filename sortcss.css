@@ -877,6 +877,62 @@
   .footer-links a { color: #555; text-decoration: none; font-size: 11px; transition: color 0.2s; }
   .footer-links a:hover { color: var(--gold); }
 
+  /* ===== VISIT BADGE ===== */
+  .visit-badge {
+    position: absolute;
+    bottom: 8px;
+    left: 8px;
+    background: rgba(0,0,0,0.72);
+    color: var(--gold);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    padding: 3px 8px;
+    border-radius: 20px;
+    z-index: 4;
+    font-family: 'DM Sans', sans-serif;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(245,166,35,0.2);
+    pointer-events: none;
+  }
+
+  /* ===== FILTER ACTIVE STATE ===== */
+  .filter-select:focus,
+  .filter-select.filter-active {
+    border-color: var(--gold);
+    color: #fff;
+    outline: none;
+  }
+
+  /* ===== EMPTY STATE (no results) ===== */
+  .no-results-msg {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 40px 20px;
+    color: var(--text-muted);
+    font-size: 13px;
+  }
+  .no-results-msg .no-results-icon {
+    font-size: 32px;
+    margin-bottom: 10px;
+  }
+  .no-results-msg strong {
+    display: block;
+    color: #ccc;
+    font-size: 15px;
+    margin-bottom: 6px;
+  }
+
+  /* ===== DISTRICT FILTER HIGHLIGHT ===== */
+  .district-block[data-filtered="true"],
+  .district-banner[data-filtered="true"] {
+    border-color: rgba(245,166,35,0.35);
+    box-shadow: 0 0 0 1px rgba(245,166,35,0.15);
+  }
+
   /* ===== ANIMATIONS ===== */
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(24px); }

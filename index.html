@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Explore Ella — Sri Lanka Premium Travel</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="stylesheet" href="bootstrap-icons.css" type="text/css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">    
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+    <div>
+      <div style="display: flex;"><div class="h1" style="color: white;">Ceylon</div>Tales</div>
+      <div style="font-size:9px;letter-spacing:2px;color:var(--text-muted);margin-top:1px">PREMIUM TRAVEL</div>
+    </div>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#">Destinations</a></li>
+    <li><a href="#">Hotels</a></li>
+    <li><a href="#">Packages</a></li>
+    <li><a href="#">Experiences</a></li>
+  </ul>
+  <div class="nav-actions">
+    <button class="btn-outline"><i class="bi bi-heart"></i> Saved</button>
+    <button class="btn-gold">Plan Trip</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div style="position:relative;z-index:2;max-width:780px; padding: 10px;">
+    <div class="hero-breadcrumb">
+      <a href="#">Home</a><span class="sep">›</span>
+      <a href="#">Destinations</a><span class="sep">›</span>
+      <span>Ella</span>
+    </div>
+    <div style="background:rgba(255, 183, 16, 0.226);color:#ffffff;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:5px 14px;border-radius:20px;display:inline-block;margin-bottom:16px"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 18"><path fill="currentColor" d="M13.413 11.413Q14 10.825 14 10t-.587-1.412T12 8t-1.412.588T10 10t.588 1.413T12 12t1.413-.587M12 19.35q3.05-2.8 4.525-5.087T18 10.2q0-2.725-1.737-4.462T12 4T7.738 5.738T6 10.2q0 1.775 1.475 4.063T12 19.35M12 22q-4.025-3.425-6.012-6.362T4 10.2q0-3.75 2.413-5.975T12 2t5.588 2.225T20 10.2q0 2.5-1.987 5.438T12 22m0-12"/></svg> ELLA, SRI LANKA</div>
+    <h1 class="hero-title">
+      Explore <em>Ella</em>
+    </h1>
+    <p class="hero-desc" style="font-size: 20px;">Misty mountains, scenic railways, and unforgettable adventures await in Sri Lanka's most enchanting highland escape.</p>
+    <div class="hero-tags">
+      <div class="hero-tag">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 28"><path fill="currentColor" d="M7.625 6.4L12 .725L16.375 6.4l6.85 2.3l-4.325 6.125l.175 6.825L12 19.675L4.925 21.65L5.1 14.8L.8 8.7zM8.85 8.125L4 9.725L7.1 14.2L7 18.975l5-1.375l5 1.4l-.1-4.8L20 9.775l-4.85-1.65L12 4zM12 11.5"/></svg> 4.8 Rating
+      </div>
+      <div class="hero-tag"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M13.413 11.413Q14 10.825 14 10t-.587-1.412T12 8t-1.412.588T10 10t.588 1.413T12 12t1.413-.587M12 19.35q3.05-2.8 4.525-5.087T18 10.2q0-2.725-1.737-4.462T12 4T7.738 5.738T6 10.2q0 1.775 1.475 4.063T12 19.35M12 22q-4.025-3.425-6.012-6.362T4 10.2q0-3.75 2.413-5.975T12 2t5.588 2.225T20 10.2q0 2.5-1.987 5.438T12 22m0-12"/></svg> Central province</div>
+      <div class="hero-tag"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 26"><path fill="currentColor" d="M11.288 4.713Q11 4.425 11 4V2q0-.425.288-.712T12 1t.713.288T13 2v2q0 .425-.288.713T12 5t-.712-.288M16.95 7.05q-.275-.275-.275-.687t.275-.713l1.4-1.425q.3-.3.712-.3t.713.3q.275.275.275.7t-.275.7L18.35 7.05q-.275.275-.7.275t-.7-.275M20 13q-.425 0-.713-.288T19 12t.288-.712T20 11h2q.425 0 .713.288T23 12t-.288.713T22 13zm-8.712 9.713Q11 22.425 11 22v-2q0-.425.288-.712T12 19t.713.288T13 20v2q0 .425-.288.713T12 23t-.712-.288M5.65 7.05l-1.425-1.4q-.3-.3-.3-.725t.3-.7q.275-.275.7-.275t.7.275L7.05 5.65q.275.275.275.7t-.275.7q-.3.275-.7.275t-.7-.275m12.7 12.725l-1.4-1.425q-.275-.3-.275-.712t.275-.688t.688-.275t.712.275l1.425 1.4q.3.275.288.7t-.288.725q-.3.3-.725.3t-.7-.3M2 13q-.425 0-.712-.288T1 12t.288-.712T2 11h2q.425 0 .713.288T5 12t-.288.713T4 13zm2.225 6.775q-.275-.275-.275-.7t.275-.7L5.65 16.95q.275-.275.687-.275t.713.275q.3.3.3.713t-.3.712l-1.4 1.4q-.3.3-.725.3t-.7-.3M7.75 16.25Q6 14.5 6 12t1.75-4.25T12 6t4.25 1.75T18 12t-1.75 4.25T12 18t-4.25-1.75m7.075-1.425Q16 13.65 16 12t-1.175-2.825T12 8T9.175 9.175T8 12t1.175 2.825T12 16t2.825-1.175M12 12"/></svg> Best: Dec-Jan</div>
+      <div class="hero-tag"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-clock" viewBox="0 0 16 16"><path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71z"/><path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0"/></svg> Avg Stay: 3–5 Days</div>
+    </div>
+    <div class="hero-btns">
+      <button class="btn-primary"><i class="bi bi-lightning-charge"></i> View Activities</button>
+      <button class="btn-secondary"><i class="bi bi-buildings"></i> Book Accomodation</button>
+      <button class="btn-secondary"><i class="bi bi-box-seam"></i> View Packages</button>
+    </div>
+  </div>
+  <div style="position:absolute;bottom:30px;left:50%;transform:translateX(-50%);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--text-muted);display:flex;flex-direction:column;align-items:center;gap:8px">
+    <div style="width:1px;height:40px;background:linear-gradient(to bottom,var(--gold),transparent);animation:scrollPulse 2s infinite"></div>
+    Scroll to explore
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section about-section">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div class="about-image reveal">
+        <img src="images/ella.jpg" alt="Ella Landscape">
+        <div class="about-stats">
+          <div class="about-stat">
+            <div class="about-stat-val">1,041m</div>
+            <div class="about-stat-label">Elevation</div>
+          </div>
+          <div class="about-stat">
+            <div class="about-stat-val">24°C</div>
+            <div class="about-stat-label">Avg Temp</div>
+          </div>
+          <div class="about-stat">
+            <div class="about-stat-val">4.8★</div>
+            <div class="about-stat-label">Rating</div>
+          </div>
+        </div>
+      </div>
+      <div class="about-content reveal reveal-delay-1">
+        <div class="section-label">ABOUT THE DESTINATION</div>
+        <h2 class="about-title">Where the Mist Meets the <em>Mountains</em></h2>
+        <p class="about-text">Nestled in the misty highlands of Sri Lanka's Uva Province, Ella is a small town bursting with natural beauty, adventure, and tranquility. From dramatic views atop Ella Rock to the iconic Nine Arch Bridge framed by lush tea plantations, every moment here feels like a postcard.</p>
+        <p class="about-text">Whether you're trekking through verdant trails, sipping freshly-brewed Ceylon tea, or catching a sunrise above the clouds, Ella promises an experience that lingers long after you've left.</p>
+        <div class="about-features">
+          <div class="about-feature">
+            <div class="feature-icon"><i class="fa-solid fa-mountain"></i></div>
+            <div class="about-feature-text">
+              <div class="about-feature-title">Ella's Nature</div>
+              <div class="about-feature-sub">Peaks & waterfalls</div>
+            </div>
+          </div>
+          <div class="about-feature">
+            <div class="feature-icon"><i class="bi bi-train-front"></i></div>
+            <div class="about-feature-text">
+              <div class="about-feature-title">Scenic Railway</div>
+              <div class="about-feature-sub">World's most scenic</div>
+            </div>
+          </div>
+          <div class="about-feature">
+            <div class="feature-icon"><i class="bi bi-cup-hot"></i></div>
+            <div class="about-feature-text">
+              <div class="about-feature-title">Tea Estates</div>
+              <div class="about-feature-sub">Ceylon finest</div>
+            </div>
+          </div>
+          <div class="about-feature">
+            <div class="feature-icon"><i class="bi bi-droplet"></i></div>
+            <div class="about-feature-text">
+              <div class="about-feature-title">Experiences</div>
+              <div class="about-feature-sub">Wildlife & culture</div>
+            </div>
+          </div>
+        </div>
+        <a href="#" class="read-more">Read more about Ella →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THINGS TO DO -->
+<section class="section todo-section">
+  <div class="section-inner">
+    <div class="section-label">EXPERIENCES</div>
+    <h2 class="section-title">Things to Do in <em>Ella</em></h2>
+    <p class="section-sub">From sunrise hikes to scenic train rides, every moment in Ella is a memory in the making.</p>
+    <div class="filters">
+      <button class="filter-btn active">All Activities</button>
+      <button class="filter-btn">Hiking</button>
+      <button class="filter-btn">Nature</button>
+      <button class="filter-btn">Cultural</button>
+      <button class="filter-btn">Train Rides</button>
+      <button class="filter-btn">Wellness</button>
+    </div>
+    <div class="todo-grid">
+      <div class="todo-card reveal">
+        <div class="todo-card-image">
+          <img src="images/littlr adam's peak.jpg" alt="Hiking Little Adam's Peak">
+          <div class="todo-badge badge-featured">Featured</div>
+          <div class="todo-price">From $12</div>
+        </div>
+        <div class="todo-card-body">
+          <div class="todo-card-title">Hiking Little Adam's Peak</div>
+          <div class="todo-card-desc">A breathtaking sunrise hike offering panoramic views of Ella Gap and surrounding valleys, perfect for all fitness levels.</div>
+          <div class="todo-card-footer">
+            <div class="todo-meta">🕐 3–4 hrs · ⚡ Moderate</div>
+            <button class="btn-add">+ Add to Trip</button>
+          </div>
+        </div>
+      </div>
+      <div class="todo-card reveal reveal-delay-1">
+        <div class="todo-card-image">
+          <img src="images/nine arch.jpg" alt="Nine Arch Bridge Visit">
+          <div class="todo-badge badge-popular">Popular</div>
+          <div class="todo-price">Free</div>
+        </div>
+        <div class="todo-card-body">
+          <div class="todo-card-title">Nine Arch Bridge Visit</div>
+          <div class="todo-card-desc">Marvel at Sri Lanka's most iconic colonial-era viaduct surrounded by lush jungle canopy. Watch the blue train pass overhead.</div>
+          <div class="todo-card-footer">
+            <div class="todo-meta">🕐 1–2 hrs · 🌿 Easy</div>
+            <button class="btn-add">+ Add to Trip</button>
+          </div>
+        </div>
+      </div>
+      <div class="todo-card reveal reveal-delay-2">
+        <div class="todo-card-image">
+          <img src="images/ravana.jpg" alt="Ravana Falls & Cave">
+          <div class="todo-badge badge-new">New</div>
+          <div class="todo-price">From $8</div>
+        </div>
+        <div class="todo-card-body">
+          <div class="todo-card-title">Ravana Falls & Cave</div>
+          <div class="todo-card-desc">Explore the legendary Ravana cave and the stunning multi-tiered waterfall with rich mythological significance.</div>
+          <div class="todo-card-footer">
+            <div class="todo-meta">🕐 2–3 hrs · 🌊 Easy</div>
+            <button class="btn-add">+ Add to Trip</button>
+          </div>
+        </div>
+      </div>
+      <div class="todo-card reveal">
+        <div class="todo-card-image">
+          <img src="images/tea plantation.png" alt="Tea Plantation Tour">
+          <div class="todo-price">From $15</div>
+        </div>
+        <div class="todo-card-body">
+          <div class="todo-card-title">Tea Plantation Tour</div>
+          <div class="todo-card-desc">Walk through endless emerald tea estates, witness the traditional picking process, and taste freshly brewed Ceylon tea.</div>
+          <div class="todo-card-footer">
+            <div class="todo-meta">🕐 Half day · 🍵 Guided</div>
+            <button class="btn-add">+ Add to Trip</button>
+          </div>
+        </div>
+      </div>
+      <div class="todo-card reveal reveal-delay-1">
+        <div class="todo-card-image">
+          <img src="images/flying ravana.jpeg" alt="Flying Ravana">
+          <div class="todo-badge badge-featured">Popular</div>
+          <div class="todo-price">From $10</div>
+        </div>
+        <div class="todo-card-body">
+          <div class="todo-card-title">Flying Ravana</div>
+          <div class="todo-card-desc">Experience Sri Lanka’s first mega zipline and glide above Ella’s tea estates while enjoying breathtaking mountain views and an adrenaline-filled ride.</div>
+          <div class="todo-card-footer">
+            <div class="todo-meta">🕐 6–7 hrs · ⚡ Challenging</div>
+            <button class="btn-add">+ Add to Trip</button>
+          </div>
+        </div>
+      </div>
+      <div class="todo-card reveal reveal-delay-2">
+        <div class="todo-card-image">
+          <img src="images/ella odyssey.webp" alt="Kandy–Ella Train Journey">
+          <div class="todo-badge badge-featured">Must Do</div>
+          <div class="todo-price">From $5</div>
+        </div>
+        <div class="todo-card-body">
+          <div class="todo-card-title">Kandy–Ella Train Journey</div>
+          <div class="todo-card-desc">Rated one of the world's greatest train rides, passing through cloud forests, tea gardens, and scenic mountain bridges.</div>
+          <div class="todo-card-footer">
+            <div class="todo-meta">🕐 5–7 hrs · 🚂 Scenic</div>
+            <button class="btn-add">+ Add to Trip</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STAYS -->
+<section class="section stays-section">
+  <div class="section-inner">
+    <div class="section-label">PLACES TO STAY</div>
+    <h2 class="section-title">Luxury & Comfortable <em>Stays</em></h2>
+    <p class="section-sub">Handpicked properties offering the finest sleep and views in Ella.</p>
+    <div class="stay-filters">
+      <button class="stay-filter active">Price Range</button>
+      <button class="stay-filter">Star Rating</button>
+      <button class="stay-filter">Property Type</button>
+      <button class="stay-filter">Availability</button>
+    </div>
+    <div class="stays-grid">
+      <div class="stay-card reveal">
+        <div class="stay-image">
+          <img src="images/98acres.jpg" alt="98 Acres Resort">
+          <div class="stay-badge">Luxury</div>
+          <div class="stay-rating">★ 4.9</div>
+        </div>
+        <div class="stay-body">
+          <div class="stay-name">98 Acres Resort & Spa</div>
+          <div class="stay-location">📍 Ella, Uva Province</div>
+          <div class="stay-price-row">
+            <div class="stay-price">$185 <span>/ night</span></div>
+            <div class="stay-avail" style="color:var(--green-light);font-size:12px;font-weight:500">✓ Available</div>
+          </div>
+          <div class="stay-amenities">
+            <span class="amenity">🏊 Pool</span>
+            <span class="amenity">🍃 Spa</span>
+            <span class="amenity">🌄 View</span>
+            <span class="amenity">🍽 Restaurant</span>
+          </div>
+          <button class="btn-stay">Book Now</button>
+        </div>
+      </div>
+      <div class="stay-card reveal reveal-delay-1">
+        <div class="stay-image">
+          <img src="images/hide ella.jpg" alt="Hide Ella">
+          <div class="stay-badge">Popular</div>
+          <div class="stay-rating">★ 4.7</div>
+        </div>
+        <div class="stay-body">
+          <div class="stay-name">Hide Ella Hotel & Resort</div>
+          <div class="stay-location">📍 Ella Town Centre</div>
+          <div class="stay-price-row">
+            <div class="stay-price">$90 <span>/ night</span></div>
+            <div class="stay-avail" style="color:var(--green-light);font-size:12px;font-weight:500">✓ Available</div>
+          </div>
+          <div class="stay-amenities">
+            <span class="amenity">🌿 Garden</span>
+            <span class="amenity">🍳 Breakfast</span>
+            <span class="amenity">🌄 View</span>
+          </div>
+          <button class="btn-stay">Book Now</button>
+        </div>
+      </div>
+      <div class="stay-card reveal reveal-delay-2">
+        <div class="stay-image">
+          <img src="images/ekho.jpg" alt="ravana pool club">
+          <div class="stay-badge" style="background:var(--green)">Best Value</div>
+          <div class="stay-rating">★ 4.6</div>
+        </div>
+        <div class="stay-body">
+          <div class="stay-name">EKHO</div>
+          <div class="stay-location">📍 Ella Heights</div>
+          <div class="stay-price-row">
+            <div class="stay-price">$200 <span>/ night</span></div>
+            <div class="stay-avail" style="color:#E06D44;font-size:12px;font-weight:500">⚡ 2 left</div>
+          </div>
+          <div class="stay-amenities">
+            <span class="amenity">🏊 Infinity Pool</span>
+            <span class="amenity">🍸 Bar</span>
+            <span class="amenity">🧘 Yoga</span>
+          </div>
+          <button class="btn-stay">Book Now</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PACKAGES -->
+<section class="section packages-section">
+  <div class="section-inner">
+    <div class="section-label">CURATED JOURNEYS</div>
+    <h2 class="section-title">Curated Experiences in <em>Ella</em></h2>
+    <p class="section-sub">Thoughtfully crafted packages. Let us plan your perfect highland escape.</p>
+    <div class="packages-grid">
+      <div class="pkg-card reveal">
+        <div class="pkg-top">
+          <div>
+            <div class="pkg-category">ADVENTURE</div>
+            <div class="pkg-name">The Adventure Escape</div>
+          </div>
+          <div class="pkg-tag">5 Days</div>
+        </div>
+        <p class="pkg-desc">An action-packed highland adventure combining iconic hikes, waterfall swims, and adrenaline-filled outdoor experiences.</p>
+        <div class="pkg-includes">
+          <div class="pkg-includes-title">Includes</div>
+          <div class="pkg-include">Little Adam's Peak hike</div>
+          <div class="pkg-include">Ella Rock summit trek</div>
+          <div class="pkg-include">Ravana waterfall visit</div>
+          <div class="pkg-include">4 nights accommodation</div>
+        </div>
+        <div class="pkg-footer">
+          <div class="pkg-price">$299 <span>/ person</span></div>
+          <button class="btn-pkg-outline">Add to Plan</button>
+        </div>
+      </div>
+      <div class="pkg-card featured reveal reveal-delay-1">
+        <div class="pkg-top">
+          <div>
+            <div class="pkg-category">ROMANCE</div>
+            <div class="pkg-name">Romantic Mountain Retreat</div>
+          </div>
+          <div class="pkg-tag pop">Popular</div>
+        </div>
+        <p class="pkg-desc">A dreamy highland getaway designed for couples — sunset views, candlelit dinners, and private tea estate walks in serene Ella.</p>
+        <div class="pkg-includes">
+          <div class="pkg-includes-title">Includes</div>
+          <div class="pkg-include">Sunset at Nine Arch Bridge</div>
+          <div class="pkg-include">Private tea estate tour</div>
+          <div class="pkg-include">Couples spa treatment</div>
+          <div class="pkg-include">Candlelit dinner</div>
+          <div class="pkg-include">5 nights luxury stay</div>
+        </div>
+        <div class="pkg-footer">
+          <div class="pkg-price">$589 <span>/ person</span></div>
+          <button class="btn-pkg">Book This Trip</button>
+        </div>
+      </div>
+      <div class="pkg-card reveal reveal-delay-2">
+        <div class="pkg-top">
+          <div>
+            <div class="pkg-category">FAMILY</div>
+            <div class="pkg-name">Family Nature Explorer</div>
+          </div>
+          <div class="pkg-tag">6 Days</div>
+        </div>
+        <p class="pkg-desc">Perfect for families seeking connection with nature through gentle hikes, wildlife encounters, and cultural immersion.</p>
+        <div class="pkg-includes">
+          <div class="pkg-includes-title">Includes</div>
+          <div class="pkg-include">Family-friendly nature walks</div>
+          <div class="pkg-include">Kandy–Ella train journey</div>
+          <div class="pkg-include">Little Adam's Peak hike</div>
+          <div class="pkg-include">5 nights family rooms</div>
+        </div>
+        <div class="pkg-footer">
+          <div class="pkg-price">$799 <span>/ family</span></div>
+          <button class="btn-pkg-outline">Add to Plan</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="section reviews-section">
+  <div class="section-inner">
+    <div class="section-label">VOICES OF TRAVELERS</div>
+    <h2 class="section-title" style="margin-bottom:48px">Voices of <em>Travelers</em></h2>
+    <div class="reviews-header">
+      <div class="reviews-score">
+        <div class="score-num">4.8</div>
+        <div class="score-stars">★★★★★</div>
+        <div class="score-count">Based on 1,240+ reviews</div>
+      </div>
+      <div class="review-bars">
+        <div class="review-bar-row">
+          <div class="review-bar-label">Scenery</div>
+          <div class="review-bar-track"><div class="review-bar-fill" style="width:97%"></div></div>
+          <div class="review-bar-val">4.9</div>
+        </div>
+        <div class="review-bar-row">
+          <div class="review-bar-label">Activities</div>
+          <div class="review-bar-track"><div class="review-bar-fill" style="width:92%"></div></div>
+          <div class="review-bar-val">4.6</div>
+        </div>
+        <div class="review-bar-row">
+          <div class="review-bar-label">Stays</div>
+          <div class="review-bar-track"><div class="review-bar-fill" style="width:94%"></div></div>
+          <div class="review-bar-val">4.7</div>
+        </div>
+        <div class="review-bar-row">
+          <div class="review-bar-label">Value</div>
+          <div class="review-bar-track"><div class="review-bar-fill" style="width:90%"></div></div>
+          <div class="review-bar-val">4.5</div>
+        </div>
+        <div class="review-bar-row">
+          <div class="review-bar-label">Food</div>
+          <div class="review-bar-track"><div class="review-bar-fill" style="width:88%"></div></div>
+          <div class="review-bar-val">4.4</div>
+        </div>
+      </div>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card reveal">
+        <div class="review-header">
+          <img class="reviewer-avatar" src="https://i.pravatar.cc/80?img=32" alt="Reviewer">
+          <div>
+            <div class="review-stars">★★★★★</div>
+            <div class="reviewer-name">Sarah Mitchell</div>
+            <div class="reviewer-date">February 2025 · Solo Traveler</div>
+          </div>
+        </div>
+        <p class="review-text">"Ella completely stole my heart. The Nine Arch Bridge at golden hour was the most beautiful thing I've ever seen. The morning mist over the mountains made me feel like I was living inside a painting. Absolutely magical."</p>
+        <div class="review-helpful">
+          <span>Helpful?</span>
+          <button class="helpful-btn">👍 Yes (24)</button>
+        </div>
+      </div>
+      <div class="review-card reveal reveal-delay-1">
+        <div class="review-header">
+          <img class="reviewer-avatar" src="https://i.pravatar.cc/80?img=11" alt="Reviewer">
+          <div>
+            <div class="review-stars">★★★★★</div>
+            <div class="reviewer-name">Marcus Chen</div>
+            <div class="reviewer-date">January 2025 · Couple</div>
+          </div>
+        </div>
+        <p class="review-text">"The Kandy to Ella train journey was the highlight of our entire Sri Lanka trip. We watched tea plantations roll by for hours and felt completely at peace. The booking service made everything seamless — highly recommend."</p>
+        <div class="review-helpful">
+          <span>Helpful?</span>
+          <button class="helpful-btn">👍 Yes (18)</button>
+        </div>
+      </div>
+      <div class="review-card reveal reveal-delay-2">
+        <div class="review-header">
+          <img class="reviewer-avatar" src="https://i.pravatar.cc/80?img=47" alt="Reviewer">
+          <div>
+            <div class="review-stars">★★★★☆</div>
+            <div class="reviewer-name">Priya Sharma</div>
+            <div class="reviewer-date">December 2024 · Family</div>
+          </div>
+        </div>
+        <p class="review-text">"Brought my whole family to Ella and everyone loved it — even the grandparents! The Little Adam's Peak hike was manageable for all ages and the views were spectacular. The local food scene is also fantastic."</p>
+        <div class="review-helpful">
+          <span>Helpful?</span>
+          <button class="helpful-btn">👍 Yes (31)</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MAP / HOW TO GET THERE -->
+<section class="section map-section">
+  <div class="section-inner">
+    <div class="section-label">HOW TO GET THERE</div>
+    <h2 class="section-title" style="margin-bottom:8px">Find Your Way to <em>Ella</em></h2>
+    <p class="section-sub">Popular transport options from major Sri Lankan cities to Ella.</p>
+    <div class="map-layout">
+      <div class="map-sidebar">
+        <div class="map-sidebar-title">Getting There</div>
+        <div class="map-sidebar-sub">Choose your preferred mode of transport from Colombo</div>
+        <div class="transport-options">
+          <div class="transport-item active" onclick="setTransport(this)">
+            <div class="transport-icon">🚂</div>
+            <div class="transport-info">
+              <div class="transport-name">Scenic Train</div>
+              <div class="transport-detail">~7 hrs · Most scenic · $4–12</div>
+            </div>
+          </div>
+          <div class="transport-item" onclick="setTransport(this)">
+            <div class="transport-icon">🚌</div>
+            <div class="transport-info">
+              <div class="transport-name">Bus</div>
+              <div class="transport-detail">~5 hrs · Budget option · $2–6</div>
+            </div>
+          </div>
+          <div class="transport-item" onclick="setTransport(this)">
+            <div class="transport-icon">🚗</div>
+            <div class="transport-info">
+              <div class="transport-name">Private Car</div>
+              <div class="transport-detail">~4 hrs · Most comfortable · $40–60</div>
+            </div>
+          </div>
+          <div class="transport-item" onclick="setTransport(this)">
+            <div class="transport-icon">✈️</div>
+            <div class="transport-info">
+              <div class="transport-name">Fly + Transfer</div>
+              <div class="transport-detail">Via Bandaranaike Airport · CMB</div>
+            </div>
+          </div>
+        </div>
+        <div class="map-nearby">
+          <div class="nearby-item">
+            <div class="nearby-name">🏙 Colombo</div>
+            <div class="nearby-dist">220 km away</div>
+          </div>
+          <div class="nearby-item">
+            <div class="nearby-name">🏛 Kandy</div>
+            <div class="nearby-dist">93 km away</div>
+          </div>
+          <div class="nearby-item">
+            <div class="nearby-name">🌊 Mirissa</div>
+            <div class="nearby-dist">110 km away</div>
+          </div>
+          <div class="nearby-item">
+            <div class="nearby-name">🏖 Galle</div>
+            <div class="nearby-dist">150 km away</div>
+          </div>
+        </div>
+      </div>
+      <div class="map-container">
+  <div class="map-placeholder">
+    <!-- Sri Lanka Map -->
+    <img src="lk.svg" alt="Sri Lanka Map" class="sri-map">
+
+    <!-- SVG Paths + Pins -->
+    <svg class="map-paths" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid meet">
+      
+      <!-- Paths from cities to Ella -->
+      <path d="M295,418 C290,400 350,340 430,393" stroke="#D4A843" stroke-width="2" stroke-dasharray="6,6" fill="none" />
+      <path d="M465,230 C360,250 480,320 430,393" stroke="#D4A843" stroke-width="2" stroke-dasharray="6,6" fill="none" />
+      <path d="M330,510 C390,450 350,430 430,393" stroke="#D4A843" stroke-width="2" stroke-dasharray="6,6" fill="none" />
+
+      <!-- Main Pin: Ella -->
+      <circle cx="430" cy="393" r="10" fill="#D4A843">
+        <animate attributeName="r" values="10;13;10" dur="2s" repeatCount="indefinite"/>
+      </circle>
+      <text x="430" y="373" text-anchor="middle" fill="#fff" font-size="14px">📍 Ella</text>
+
+      <!-- Secondary Pins -->
+      <circle cx="295" cy="418" r="6" fill="rgba(212,168,67,0.5)" />
+      <text x="295" y="405" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-size="10px">🏙 Colombo</text>
+
+      <circle cx="465" cy="230" r="6" fill="rgba(212,168,67,0.5)" />
+      <text x="465" y="220" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-size="10px">🌊 Trincomalee</text>
+
+      <circle cx="330" cy="510" r="6" fill="rgba(212,168,67,0.5)" />
+      <text x="330" y="500" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-size="10px">🏖 Galle</text>
+      
+
+    </svg>
+  </div>
+</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="section-label">YOUR ADVENTURE AWAITS</div>
+  <h2 class="cta-title">Ready to Experience <em>Ella?</em></h2>
+  <p class="cta-sub">From misty morning hikes to the perfect highland sunset — let us curate your ideal Sri Lanka escape, stress-free.</p>
+  <div class="cta-btns">
+    <button class="btn-primary" style="font-size:14px;padding:15px 32px"><i class="bi bi-buildings"></i> Plan Your Trip</button>
+    <button class="btn-secondary" style="font-size:14px;padding:15px 28px"><i class="bi bi-bookmark-plus"></i> Get Free Travel Guide</button>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo"><div style="display: flex;"><div class="h1" style="color: white;">Ceylon</div>Tales</div></div>
+        <p>Curating extraordinary travel experiences across Sri Lanka's most breathtaking destinations since 2018.</p>
+        <div class="footer-socials">
+          <a class="social-btn" href="#">𝕏</a>
+          <a class="social-btn" href="#">f</a>
+          <a class="social-btn" href="#">in</a>
+          <a class="social-btn" href="#"><i class="bi bi-instagram"></i></a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Destinations</div>
+        <ul class="footer-links">
+          <li><a href="#">Ella</a></li>
+          <li><a href="#">Sigiriya</a></li>
+          <li><a href="#">Mirissa</a></li>
+          <li><a href="#">Galle</a></li>
+          <li><a href="#">Kandy</a></li>
+          <li><a href="#">Yala</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Explore</div>
+        <ul class="footer-links">
+          <li><a href="#">Things To Do</a></li>
+          <li><a href="#">Where to Stay</a></li>
+          <li><a href="#">Travel Packages</a></li>
+          <li><a href="#">Train Routes</a></li>
+          <li><a href="#">Travel Blog</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Stay Updated</div>
+        <p style="font-size:13px;color:var(--text-dim);margin-bottom:14px">Get curated Sri Lanka travel tips and exclusive deals.</p>
+        <div style="display:flex;gap:8px">
+          <input type="email" placeholder="Your email" style="flex:1;background:var(--card);border:1px solid var(--border2);color:var(--text);padding:9px 14px;border-radius:6px;font-size:12px;font-family:'DM Sans',sans-serif;outline:none">
+          <button class="btn-gold" style="white-space:nowrap">Subscribe</button>
+        </div>
+        <div style="margin-top:20px">
+          <div class="footer-col-title">Contact</div>
+          <div style="font-size:13px;color:var(--text-dim);line-height:2">
+            <i class="bi bi-envelope-at"></i> hello@explorejourney.lk<br>
+            <i class="bi bi-telephone"></i> +94 77 123 4567
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2025 CeylonTales. All rights reserved. · Privacy · Terms</div>
+      <div class="footer-badge">
+        <span>🇱🇰</span>
+        <span>Proudly Sri Lankan</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Scroll reveal
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.12 });
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// Filter buttons
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    btn.closest('.filters').querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+  });
+});
+
+// Stay filters
+document.querySelectorAll('.stay-filter').forEach(btn => {
+  btn.addEventListener('click', () => {
+    btn.closest('.stay-filters').querySelectorAll('.stay-filter').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+  });
+});
+
+// Transport selector
+function setTransport(el) {
+  el.closest('.transport-options').querySelectorAll('.transport-item').forEach(t => t.classList.remove('active'));
+  el.classList.add('active');
+}
+
+// Navbar scroll effect
+window.addEventListener('scroll', () => {
+  const nav = document.querySelector('nav');
+  if (window.scrollY > 60) {
+    nav.style.borderBottomColor = 'rgba(212,168,67,0.2)';
+    nav.style.background = 'rgba(13,17,23,0.97)';
+  } else {
+    nav.style.borderBottomColor = 'rgba(255,255,255,0.07)';
+    nav.style.background = 'rgba(13,17,23,0.92)';
+  }
+});
+
+// Add to trip button
+document.querySelectorAll('.btn-add').forEach(btn => {
+  btn.addEventListener('click', function() {
+    if (this.classList.contains('added')) {
+      this.textContent = '+ Add to Trip';
+      this.classList.remove('added');
+      this.style.background = 'transparent';
+      this.style.color = 'var(--gold)';
+    } else {
+      this.textContent = '✓ Added';
+      this.classList.add('added');
+      this.style.background = 'var(--gold)';
+      this.style.color = '#0D1117';
+    }
+  });
+});
+
+// Review helpful buttons
+document.querySelectorAll('.helpful-btn').forEach(btn => {
+  btn.addEventListener('click', function() {
+    const match = this.textContent.match(/\((\d+)\)/);
+    if (match) {
+      const num = parseInt(match[1]) + 1;
+      this.textContent = this.textContent.replace(/\(\d+\)/, `(${num})`);
+      this.style.borderColor = 'var(--gold)';
+      this.style.color = 'var(--gold)';
+    }
+  });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CeylonTails - Explore Sri Lanka by District & City</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="sortcss.css">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+<nav>
+  <a href="#" class="logo">Ceylon<span>Luxe</span></a>
+  <ul>
+    <li><a href="#">Home</a></li>
+    <li><a href="#" class="active">Destinations</a></li>
+    <li><a href="#">Experiences</a></li>
+    <li><a href="#">Hotels</a></li>
+    <li><a href="#">Packages</a></li>
+  </ul>
+  <div class="nav-right">
+    <button class="btn-signin">Sign In</button>
+    <button class="btn-primary">Get Started</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-label">Sri Lanka Tourism</div>
+  <div class="hero-content fade-up">
+    <h1>Explore Sri Lanka by<br><em>District &amp; City</em></h1>
+    <p>Find breathtaking destinations, activities, and accommodations across the island.</p>
+    <div class="search-bar">
+      <div class="search-icon">🔍</div>
+      <input type="text" placeholder="Search by city or district..." id="searchInput">
+      <button class="btn-search" onclick="handleSearch()">Search</button>
+    </div>
+  </div>
+</section>
+
+<!-- FILTER BAR -->
+<div class="filter-bar">
+  <div class="filter-left">
+    <select class="filter-select" onchange="filterDestinations()">
+      <option>All Districts</option>
+      <option>Kandy District</option>
+      <option>Galle District</option>
+      <option>Badulla District</option>
+      <option>Trincomalee District</option>
+      <option>Hambantota District</option>
+      <option>Colombo District</option>
+    </select>
+    <select class="filter-select" onchange="filterDestinations()">
+      <option>All Cities</option>
+      <option>Kandy City</option>
+      <option>Peradeniya</option>
+      <option>Matale</option>
+      <option>Sigiriya</option>
+      <option>Galle Fort</option>
+      <option>Ella</option>
+    </select>
+    <select class="filter-select">
+      <option>Sort: Popularity</option>
+      <option>Sort: A–Z</option>
+      <option>Sort: Rating</option>
+      <option>Sort: Activities</option>
+    </select>
+    <button class="btn-clear" onclick="clearFilters()">✕ Clear Filters</button>
+  </div>
+  <div class="view-toggle">
+    <button class="view-btn active" id="gridBtn" onclick="switchView('grid')">⊞ Grid View</button>
+    <button class="view-btn" id="mapBtn" onclick="switchView('map')">🗺 Map View</button>
+    <span class="results-count" id="resultsCount">26 destinations found</span>
+  </div>
+</div>
+
+<!-- MAIN CONTENT -->
+<main>
+
+  <!-- TRENDING SECTION -->
+  <div class="section-eyebrow"><span>Hot Right Now</span></div>
+  <div class="section-header">
+    <h2>Trending <em>Destinations</em></h2>
+    <a href="#" class="view-all">View All</a>
+  </div>
+
+  <div class="trending-grid" id="trendingGrid">
+
+    <div class="trend-card fade-up d1">
+      <div class="trend-img">
+        <div class="trend-badge">#1 Trending</div>
+        <div class="trend-img-inner" style="background-image:url('nine.jfif')"></div>
+      </div>
+      <div class="trend-body">
+        <div class="trend-district">Badulla District</div>
+        <div class="trend-name">Ella</div>
+        <div class="trend-desc">Misty mountains, waterfalls & iconic train archway.</div>
+        <a href="#" class="btn-details">View Details</a>
+      </div>
+    </div>
+
+    <div class="trend-card fade-up d2">
+      <div class="trend-img">
+        <div class="trend-badge">#2 Trending</div>
+        <div class="trend-img-inner" style="background-image:url('galle.jfif')"></div>
+      </div>
+      <div class="trend-body">
+        <div class="trend-district">Galle District</div>
+        <div class="trend-name">Galle Fort</div>
+        <div class="trend-desc">Dutch colonial forts, surf beaches & vibrant coastal culture.</div>
+        <a href="#" class="btn-details">View Details</a>
+      </div>
+    </div>
+
+    <div class="trend-card fade-up d3">
+      <div class="trend-img">
+        <div class="trend-badge">#3 Trending</div>
+        <div class="trend-img-inner" style="background-image:url('sigi.jfif')"></div>
+      </div>
+      <div class="trend-body">
+        <div class="trend-district">Matale District</div>
+        <div class="trend-name">Sigiriya</div>
+        <div class="trend-desc">Epic rock fortress, cave gardens & ancient jungle frescoes.</div>
+        <a href="#" class="btn-details">View Details</a>
+      </div>
+    </div>
+
+    <div class="trend-card fade-up d4">
+      <div class="trend-img">
+        <div class="trend-badge">#4 Trending</div>
+        <div class="trend-img-inner" style="background-image:url('kandy.jfif')"></div>
+      </div>
+      <div class="trend-body">
+        <div class="trend-district">Kandy District</div>
+        <div class="trend-name">Kandy</div>
+        <div class="trend-desc">Historic city of the Temple of the Tooth, lush hills.</div>
+        <a href="#" class="btn-details">View Details</a>
+      </div>
+    </div>
+
+    <div class="trend-card fade-up d5">
+      <div class="trend-img">
+        <div class="trend-badge">#5 Trending</div>
+        <div class="trend-img-inner" style="background-image:url('trinco.jfif')"></div>
+      </div>
+      <div class="trend-body">
+        <div class="trend-district">Trincomalee</div>
+        <div class="trend-name">Trincomalee</div>
+        <div class="trend-desc">Crystal waters, whale watching & pristine beaches.</div>
+        <a href="#" class="btn-details">View Details</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- BROWSE BY DISTRICT -->
+  <div class="browse-section">
+    <div class="browse-eyebrow"><span>Browse by District</span></div>
+    <div class="section-header" style="margin-bottom:20px;">
+      <div style="font-size:12px;color:#666;">6 Districts · 24 Locations</div>
+    </div>
+
+    <!-- KANDY DISTRICT -->
+    <div class="district-block">
+      <div class="district-header" onclick="toggleDistrict('kandy')">
+        <div class="district-info">
+          <div class="province-tag">Central Province</div>
+          <div class="district-name">Kandy District</div>
+          <div class="district-desc">Sacred temples, lush hills, and the cultural heart of Sri Lanka.</div>
+          <div class="district-meta">
+            <span class="meta-chip">5 Locations</span>
+            <span class="meta-chip">22 Activities</span>
+            <span class="meta-chip">⭐ 4.8</span>
+          </div>
+        </div>
+        <div class="district-actions">
+          <span class="cities-count">4 Cities</span>
+          <button class="toggle-btn open" id="toggle-kandy">▲</button>
+        </div>
+      </div>
+      <div class="district-cities open" id="cities-kandy">
+        <div class="cities-grid">
+          <div class="city-card">
+            <div class="city-img">
+              <div class="city-img-inner" style="background-image:url('kandy.jfif')"></div>
+              <div class="city-img-label">Kandy City</div>
+            </div>
+            <div class="city-body">
+              <div class="city-name">Kandy City</div>
+              <div class="city-desc">The ancient capital, home to the Temple of the Tooth and vibrant cultural shows.</div>
+              <div class="city-footer">
+                <div class="city-stats">
+                  <div class="city-stat"><span>⭐</span> 4.9</div>
+                  <div class="city-stat">12 activities</div>
+                </div>
+                <a href="#" class="btn-explore">Explore More</a>
+              </div>
+            </div>
+          </div>
+          <div class="city-card">
+            <div class="city-img">
+              <div class="city-img-inner" style="background-image:url('pera.jfif')"></div>
+              <div class="city-img-label">Peradeniya</div>
+            </div>
+            <div class="city-body">
+              <div class="city-name">Peradeniya</div>
+              <div class="city-desc">World-famous Royal Botanical Gardens with 4,000+ plant species.</div>
+              <div class="city-footer">
+                <div class="city-stats">
+                  <div class="city-stat"><span>⭐</span> 4.7</div>
+                  <div class="city-stat">6 activities</div>
+                </div>
+                <a href="#" class="btn-explore">Explore More</a>
+              </div>
+            </div>
+          </div>
+          <div class="city-card">
+            <div class="city-img">
+              <div class="city-img-inner" style="background-image:url('mathale.jfif')"></div>
+              <div class="city-img-label">Matale</div>
+            </div>
+            <div class="city-body">
+              <div class="city-name">Matale</div>
+              <div class="city-desc">Spice gardens, ancient temples, and the gateway to Sigiriya.</div>
+              <div class="city-footer">
+                <div class="city-stats">
+                  <div class="city-stat"><span>⭐</span> 4.5</div>
+                  <div class="city-stat">8 activities</div>
+                </div>
+                <a href="#" class="btn-explore">Explore More</a>
+              </div>
+            </div>
+          </div>
+          <div class="city-card">
+            <div class="city-img">
+              <div class="city-img-inner" style="background-image:url('sigi.jfif')"></div>
+              <div class="city-img-label">Sigiriya</div>
+              <div class="unesco-badge">UNESCO</div>
+            </div>
+            <div class="city-body">
+              <div class="city-name">Sigiriya</div>
+              <div class="city-desc">The Lion Rock fortress — a UNESCO World Heritage Site with ancient frescoes.</div>
+              <div class="city-footer">
+                <div class="city-stats">
+                  <div class="city-stat"><span>⭐</span> 4.9</div>
+                  <div class="city-stat">5 activities</div>
+                </div>
+                <a href="#" class="btn-explore">Explore More</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- GALLE DISTRICT (banner) -->
+    <div class="district-banner" onclick="toggleDistrict('galle')">
+      <div class="district-banner-bg" style="background-image:url('')"></div>
+      <div class="district-banner-content">
+        <div class="province-tag" style="margin-bottom:2px;">Southern Province</div>
+        <div class="district-name" style="font-size:20px;">Galle District</div>
+        <div style="color:rgba(255,255,255,0.6);font-size:11px;">Dutch colonial forts, surf beaches, and vibrant coastal culture.</div>
+        <div class="district-meta" style="margin-top:6px;">
+          <span class="meta-chip">4 Locations</span>
+          <span class="meta-chip">28 Activities</span>
+          <span class="meta-chip">⭐ 4.8</span>
+        </div>
+      </div>
+      <div class="district-banner-right">
+        <span class="cities-count">4 Cities</span>
+        <button class="toggle-btn" id="toggle-galle">▼</button>
+      </div>
+    </div>
+    <div class="district-cities" id="cities-galle">
+      <div class="cities-grid" style="margin-bottom:16px;">
+        <div class="city-card">
+          <div class="city-img">
+            <div class="city-img-inner" style="background-image:url('galle.jfif')"></div>
+            <div class="city-img-label">Galle Fort</div>
+            <div class="unesco-badge">UNESCO</div>
+          </div>
+          <div class="city-body">
+            <div class="city-name">Galle Fort</div>
+            <div class="city-desc">17th-century Dutch fort, boutique hotels and cobblestone streets.</div>
+            <div class="city-footer">
+              <div class="city-stats"><div class="city-stat"><span>⭐</span> 4.9</div><div class="city-stat">10 activities</div></div>
+              <a href="#" class="btn-explore">Explore More</a>
+            </div>
+          </div>
+        </div>
+        <div class="city-card">
+          <div class="city-img">
+            <div class="city-img-inner" style="background-image:url('https://images.unsplash.com/photo-1559592413-7cec4d0cae2b?w=400&q=75')"></div>
+            <div class="city-img-label">Mirissa</div>
+          </div>
+          <div class="city-body">
+            <div class="city-name">Mirissa</div>
+            <div class="city-desc">Whale watching, golden beaches and a famous coconut tree hill.</div>
+            <div class="city-footer">
+              <div class="city-stats"><div class="city-stat"><span>⭐</span> 4.7</div><div class="city-stat">8 activities</div></div>
+              <a href="#" class="btn-explore">Explore More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BADULLA DISTRICT (banner) -->
+    <div class="district-banner" onclick="toggleDistrict('badulla')">
+      <div class="district-banner-bg" style="background-image:url('')"></div>
+      <div class="district-banner-content">
+        <div class="province-tag" style="margin-bottom:2px;">Uva Province</div>
+        <div class="district-name" style="font-size:20px;">Badulla District</div>
+        <div style="color:rgba(255,255,255,0.6);font-size:11px;">Misty highlands, tea estates, waterfalls, and the iconic Ella.</div>
+        <div class="district-meta" style="margin-top:6px;">
+          <span class="meta-chip">3 Locations</span>
+          <span class="meta-chip">18 Activities</span>
+          <span class="meta-chip">⭐ 4.6</span>
+        </div>
+      </div>
+      <div class="district-banner-right">
+        <span class="cities-count">3 Cities</span>
+        <button class="toggle-btn" id="toggle-badulla">▼</button>
+      </div>
+    </div>
+    <div class="district-cities" id="cities-badulla">
+      <div class="cities-grid" style="margin-bottom:16px;">
+        <div class="city-card">
+          <div class="city-img">
+            <div class="city-img-inner" style="background-image:url('https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=400&q=75')"></div>
+            <div class="city-img-label">Ella</div>
+          </div>
+          <div class="city-body">
+            <div class="city-name">Ella</div>
+            <div class="city-desc">Stunning mountain views, tea fields and the famous Nine Arch Bridge.</div>
+            <div class="city-footer">
+              <div class="city-stats"><div class="city-stat"><span>⭐</span> 4.8</div><div class="city-stat">10 activities</div></div>
+              <a href="#" class="btn-explore">Explore More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TRINCOMALEE DISTRICT (banner) -->
+    <div class="district-banner" onclick="toggleDistrict('trinco')">
+      <div class="district-banner-bg" style="background-image:url('')"></div>
+      <div class="district-banner-content">
+        <div class="province-tag" style="margin-bottom:2px;">Eastern Province</div>
+        <div class="district-name" style="font-size:20px;">Trincomalee District</div>
+        <div style="color:rgba(255,255,255,0.6);font-size:11px;">Natural harbour, whale watching, and pristine eastern beaches.</div>
+        <div class="district-meta" style="margin-top:6px;">
+          <span class="meta-chip">3 Locations</span>
+          <span class="meta-chip">15 Activities</span>
+          <span class="meta-chip">⭐ 4.4</span>
+        </div>
+      </div>
+      <div class="district-banner-right">
+        <span class="cities-count">3 Cities</span>
+        <button class="toggle-btn" id="toggle-trinco">▼</button>
+      </div>
+    </div>
+    <div class="district-cities" id="cities-trinco">
+      <div class="cities-grid" style="margin-bottom:16px;">
+        <div class="city-card">
+          <div class="city-img">
+            <div class="city-img-inner" style="background-image:url('trinco.jfif')"></div>
+            <div class="city-img-label">Trincomalee</div>
+          </div>
+          <div class="city-body">
+            <div class="city-name">Trincomalee</div>
+            <div class="city-desc">One of the finest natural harbours in the world with pristine beaches.</div>
+            <div class="city-footer">
+              <div class="city-stats"><div class="city-stat"><span>⭐</span> 4.5</div><div class="city-stat">9 activities</div></div>
+              <a href="#" class="btn-explore">Explore More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- HAMBANTOTA (banner) -->
+    <div class="district-banner" onclick="toggleDistrict('hambantota')">
+      <div class="district-banner-bg" style="background-image:url('')"></div>
+      <div class="district-banner-content">
+        <div class="province-tag" style="margin-bottom:2px;">Southern Province</div>
+        <div class="district-name" style="font-size:20px;">Hambantota District</div>
+        <div style="color:rgba(255,255,255,0.6);font-size:11px;">Yala National Park, leopards, elephants, and wild coastlines.</div>
+        <div class="district-meta" style="margin-top:6px;">
+          <span class="meta-chip">3 Locations</span>
+          <span class="meta-chip">22 Activities</span>
+          <span class="meta-chip">⭐ 4.7</span>
+        </div>
+      </div>
+      <div class="district-banner-right">
+        <span class="cities-count">3 Cities</span>
+        <button class="toggle-btn" id="toggle-hambantota">▼</button>
+      </div>
+    </div>
+    <div class="district-cities" id="cities-hambantota">
+      <div class="cities-grid" style="margin-bottom:16px;">
+        <div class="city-card">
+          <div class="city-img">
+            <div class="city-img-inner" style="background-image:url('https://images.unsplash.com/photo-1581852017103-68ac65514cf7?w=400&q=75')"></div>
+            <div class="city-img-label">Yala</div>
+          </div>
+          <div class="city-body">
+            <div class="city-name">Yala National Park</div>
+            <div class="city-desc">Sri Lanka's premier wildlife reserve, home to leopards and elephants.</div>
+            <div class="city-footer">
+              <div class="city-stats"><div class="city-stat"><span>⭐</span> 4.9</div><div class="city-stat">6 activities</div></div>
+              <a href="#" class="btn-explore">Explore More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- COLOMBO DISTRICT (banner) -->
+    <div class="district-banner" onclick="toggleDistrict('colombo')">
+      <div class="district-banner-bg" style="background-image:url('')"></div>
+      <div class="district-banner-content">
+        <div class="province-tag" style="margin-bottom:2px;">Western Province</div>
+        <div class="district-name" style="font-size:20px;">Colombo District</div>
+        <div style="color:rgba(255,255,255,0.6);font-size:11px;">Vibrant capital city with colonial history, cuisine, and nightlife.</div>
+        <div class="district-meta" style="margin-top:6px;">
+          <span class="meta-chip">4 Locations</span>
+          <span class="meta-chip">45 Activities</span>
+          <span class="meta-chip">⭐ 4.5</span>
+        </div>
+      </div>
+      <div class="district-banner-right">
+        <span class="cities-count">4 Cities</span>
+        <button class="toggle-btn" id="toggle-colombo">▼</button>
+      </div>
+    </div>
+    <div class="district-cities" id="cities-colombo">
+      <div class="cities-grid" style="margin-bottom:16px;">
+        <div class="city-card">
+          <div class="city-img">
+            <div class="city-img-inner" style="background-image:url('https://images.unsplash.com/photo-1588666309990-d68f08e3d4a6?w=400&q=75')"></div>
+            <div class="city-img-label">Colombo</div>
+          </div>
+          <div class="city-body">
+            <div class="city-name">Colombo</div>
+            <div class="city-desc">Sri Lanka's commercial capital with colonial buildings and vibrant markets.</div>
+            <div class="city-footer">
+              <div class="city-stats"><div class="city-stat"><span>⭐</span> 4.5</div><div class="city-stat">20 activities</div></div>
+              <a href="#" class="btn-explore">Explore More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- end browse section -->
+
+  </main>
+
+<!-- CTA SECTION -->
+<section class="cta-section">
+  <div class="cta-eyebrow">Your Journey Awaits</div>
+  <h2>Start Planning Your Perfect<em>Sri Lankan Journey</em></h2>
+  <div class="cta-bar"></div>
+  <p>Curated packages, instant bookings, and unforgettable experiences across the island.</p>
+  <div class="cta-buttons">
+    <button class="btn-cta-primary">Browse Packages</button>
+    <button class="btn-cta-secondary">View All Destinations</button>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="#" class="logo">Ceylon<span>Luxe</span></a>
+      <p>Your premier guide to exploring the breathtaking destinations, activities, and accommodations of Sri Lanka.</p>
+      <div class="social-links">
+        <a href="#" class="social-btn">f</a>
+        <a href="#" class="social-btn">in</a>
+        <a href="#" class="social-btn">𝕏</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Destinations</h4>
+      <ul>
+        <li><a href="#">Kandy District</a></li>
+        <li><a href="#">Galle District</a></li>
+        <li><a href="#">Badulla District</a></li>
+        <li><a href="#">Colombo City</a></li>
+        <li><a href="#">Coastal Guide</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Platform</h4>
+      <ul>
+        <li><a href="#">District Overview</a></li>
+        <li><a href="#">Travel Packages</a></li>
+        <li><a href="#">Partner Hotels</a></li>
+        <li><a href="#">Activity Booking</a></li>
+        <li><a href="#">Contact Us</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Newsletter</h4>
+      <p style="color:#555;font-size:12px;margin-bottom:10px;">Get travel tips and exclusive deals delivered to your inbox.</p>
+      <div class="newsletter-input">
+        <input type="email" placeholder="Enter your email">
+        <button>→</button>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2024 CeylonLuxe. All rights reserved.</p>
+    <div class="footer-links">
+      <a href="#">Privacy</a>
+      <a href="#">Terms</a>
+      <a href="#">Cookies</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Toggle district expand/collapse
+  function toggleDistrict(id) {
+    const cities = document.getElementById('cities-' + id);
+    const btn = document.getElementById('toggle-' + id);
+    if (!cities) return;
+    const isOpen = cities.classList.contains('open');
+    cities.classList.toggle('open', !isOpen);
+    if (btn) {
+      btn.textContent = isOpen ? '▼' : '▲';
+      btn.classList.toggle('open', !isOpen);
+    }
+  }
+
+  // Switch grid/map view
+  function switchView(type) {
+    document.getElementById('gridBtn').classList.toggle('active', type === 'grid');
+    document.getElementById('mapBtn').classList.toggle('active', type === 'map');
+    if (type === 'map') {
+      // Show a placeholder map message
+      const main = document.querySelector('main');
+      let mapMsg = document.getElementById('mapPlaceholder');
+      if (!mapMsg) {
+        mapMsg = document.createElement('div');
+        mapMsg.id = 'mapPlaceholder';
+        mapMsg.style.cssText = 'background:#1a1a1a;border:1px solid #2a2a2a;border-radius:12px;padding:60px;text-align:center;color:#666;font-size:14px;margin-bottom:40px;';
+        mapMsg.innerHTML = '<div style="font-size:40px;margin-bottom:12px;">🗺️</div><div>Interactive map view would render here.<br>Connect a maps API to enable this feature.</div>';
+        main.prepend(mapMsg);
+      }
+      mapMsg.style.display = 'block';
+      document.getElementById('trendingGrid').style.opacity = '0.3';
+    } else {
+      const mapMsg = document.getElementById('mapPlaceholder');
+      if (mapMsg) mapMsg.style.display = 'none';
+      document.getElementById('trendingGrid').style.opacity = '1';
+    }
+  }
+
+  // Simple search handler
+  function handleSearch() {
+    const val = document.getElementById('searchInput').value.trim();
+    if (!val) return;
+    // Scroll to matching district or highlight
+    const allNames = document.querySelectorAll('.district-name, .city-name, .trend-name');
+    allNames.forEach(el => {
+      if (el.textContent.toLowerCase().includes(val.toLowerCase())) {
+        el.closest('.district-block, .district-banner, .city-card, .trend-card')?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    });
+  }
+
+  document.getElementById('searchInput').addEventListener('keydown', e => {
+    if (e.key === 'Enter') handleSearch();
+  });
+
+  // Filter handler
+  function filterDestinations() {
+    const districtVal = document.querySelector('.filter-select').value;
+    const count = districtVal === 'All Districts' ? '26 destinations found' : 'Showing ' + districtVal;
+    document.getElementById('resultsCount').textContent = count;
+  }
+
+  // Clear filters
+  function clearFilters() {
+    document.querySelectorAll('.filter-select').forEach(s => s.selectedIndex = 0);
+    document.getElementById('resultsCount').textContent = '26 destinations found';
+  }
+
+  // Intersection Observer for fade-up on scroll
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.style.opacity = '1';
+        e.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.district-block, .district-banner, .city-card').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+    observer.observe(el);
+  });
+</script>
+
+</body>
+</html>
+

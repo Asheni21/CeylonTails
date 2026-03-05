@@ -1,0 +1,1446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CeylonTails – Packages</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,700;0,900;1,700&family=Playfair+Display:ital,wght@0,600;1,600&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+
+/* ══════════════════════════════════════
+   RESET & ROOT
+══════════════════════════════════════ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --navy:       #0d1120;
+  --navy-mid:   #111827;
+  --navy-card:  #141928;
+  --navy-light: #1a2236;
+  --gold:       #f5b800;
+  --gold-hover: #d49f00;
+  --text:       #ffffff;
+  --text-muted: #8896ab;
+  --text-sub:   #c5cdd9;
+  --border:     rgba(255,255,255,0.07);
+  --radius:     14px;
+  --radius-sm:  8px;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--navy);
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* ══════════════════════════════════════
+   NAVBAR
+══════════════════════════════════════ */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 200;
+  height: 62px;
+  background: rgba(13,17,32,0.96);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 48px;
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+.nav-brand-top {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  font-weight: 600;
+  font-style: italic;
+  color: #fff;
+}
+
+.nav-links {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+}
+.nav-links a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+  transition: color 0.2s;
+  position: relative;
+}
+.nav-links a:hover { color: #fff; }
+.nav-links a.active {
+  color: #fff;
+}
+.nav-links a.active::after {
+  content: '';
+  position: absolute;
+  bottom: -4px; left: 0; right: 0;
+  height: 2px;
+  background: var(--gold);
+  border-radius: 2px;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.nav-search-btn {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-size: 16px;
+  cursor: pointer;
+  transition: color 0.2s;
+  padding: 4px;
+}
+.nav-search-btn:hover { color: #fff; }
+
+.btn-plan {
+  background: var(--gold);
+  color: #000;
+  border: none;
+  padding: 9px 22px;
+  border-radius: 6px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s;
+  white-space: nowrap;
+}
+.btn-plan:hover { background: var(--gold-hover); transform: translateY(-1px); }
+
+/* ══════════════════════════════════════
+   HERO SECTION
+══════════════════════════════════════ */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 120px 40px 80px;
+  position: relative;
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 0%, rgba(245,184,0,0.07) 0%, transparent 70%),
+    var(--navy);
+  overflow: hidden;
+}
+
+/* subtle dot grid */
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(255,255,255,0.04) 1px, transparent 1px);
+  background-size: 32px 32px;
+  pointer-events: none;
+}
+
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(245,184,0,0.1);
+  border: 1px solid rgba(245,184,0,0.25);
+  border-radius: 20px;
+  padding: 5px 16px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 28px;
+  animation: fadeUp 0.6s ease both;
+}
+
+.hero h1 {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(40px, 6vw, 68px);
+  font-weight: 900;
+  line-height: 1.1;
+  max-width: 700px;
+  margin-bottom: 20px;
+  animation: fadeUp 0.6s ease 0.1s both;
+}
+.hero h1 .gold { color: var(--gold); }
+
+.hero-sub {
+  color: var(--text-muted);
+  font-size: 15px;
+  max-width: 480px;
+  line-height: 1.7;
+  margin-bottom: 52px;
+  animation: fadeUp 0.6s ease 0.2s both;
+}
+
+/* Search Bar */
+.search-panel {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 12px;
+  padding: 10px 10px 10px 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  max-width: 700px;
+  width: 100%;
+  backdrop-filter: blur(8px);
+  animation: fadeUp 0.6s ease 0.3s both;
+  flex-wrap: wrap;
+}
+
+.search-input-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+  min-width: 160px;
+}
+.search-icon { color: var(--text-muted); font-size: 14px; flex-shrink: 0; }
+.search-input {
+  background: none;
+  border: none;
+  outline: none;
+  color: #fff;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  width: 100%;
+}
+.search-input::placeholder { color: var(--text-muted); }
+
+.search-divider {
+  width: 1px;
+  height: 28px;
+  background: var(--border);
+  flex-shrink: 0;
+}
+
+.search-select {
+  background: none;
+  border: none;
+  outline: none;
+  color: var(--text-sub);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  cursor: pointer;
+  padding: 6px 24px 6px 0;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%238896ab'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 4px center;
+}
+.search-select option { background: #1a2236; }
+
+.btn-search {
+  background: var(--gold);
+  color: #000;
+  border: none;
+  padding: 10px 28px;
+  border-radius: 8px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s;
+  white-space: nowrap;
+}
+.btn-search:hover { background: var(--gold-hover); }
+
+/* ══════════════════════════════════════
+   SECTION WRAPPER
+══════════════════════════════════════ */
+section {
+  padding: 80px 48px;
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.section-eyebrow {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--gold);
+  text-align: center;
+  margin-bottom: 12px;
+}
+.section-title {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(28px, 4vw, 40px);
+  font-weight: 900;
+  text-align: center;
+  margin-bottom: 12px;
+}
+.section-sub {
+  color: var(--text-muted);
+  font-size: 14px;
+  text-align: center;
+  max-width: 480px;
+  margin: 0 auto 52px;
+  line-height: 1.7;
+}
+
+/* ══════════════════════════════════════
+   PACKAGE CARDS
+══════════════════════════════════════ */
+.packages-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.pkg-card {
+  background: var(--navy-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+  animation: fadeUp 0.6s ease both;
+}
+.pkg-card:nth-child(1) { animation-delay: 0.1s; }
+.pkg-card:nth-child(2) { animation-delay: 0.2s; }
+.pkg-card:nth-child(3) { animation-delay: 0.3s; }
+
+.pkg-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(245,184,0,0.3);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+}
+
+.pkg-img {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+.pkg-img-inner {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.5s ease;
+}
+.pkg-card:hover .pkg-img-inner { transform: scale(1.06); }
+
+.pkg-badge {
+  position: absolute;
+  top: 12px; left: 12px;
+  padding: 4px 10px;
+  border-radius: 5px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  z-index: 2;
+}
+.badge-bestseller { background: var(--gold); color: #000; }
+.badge-nature     { background: #22c55e; color: #000; }
+.badge-coastal    { background: #3b82f6; color: #fff; }
+
+/* gradient overlay */
+.pkg-img::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 60px;
+  background: linear-gradient(transparent, rgba(13,17,32,0.85));
+}
+
+.pkg-body { padding: 18px 18px 0; }
+
+.pkg-top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 6px;
+}
+.pkg-name {
+  font-family: 'Fraunces', serif;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+.pkg-rating {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--gold);
+  white-space: nowrap;
+}
+
+.pkg-duration {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--text-muted);
+  font-size: 11px;
+  margin-bottom: 10px;
+}
+
+.pkg-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+.pkg-tag {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.08);
+  color: var(--text-sub);
+  font-size: 10px;
+  padding: 3px 9px;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+.pkg-features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+.pkg-feature {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--text-muted);
+  font-size: 11px;
+}
+.feat-icon { font-size: 12px; }
+
+.pkg-divider {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 0 -18px;
+}
+
+.pkg-footer {
+  padding: 14px 18px 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.pkg-price-label {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 2px;
+}
+.pkg-price-row {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+}
+.pkg-price {
+  font-family: 'Fraunces', serif;
+  font-size: 26px;
+  font-weight: 700;
+  color: #fff;
+}
+.pkg-price-per {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+.pkg-budget {
+  font-size: 10px;
+  color: var(--text-muted);
+  text-align: right;
+}
+
+.pkg-actions {
+  display: flex;
+  gap: 8px;
+}
+.btn-details {
+  background: none;
+  border: 1px solid rgba(255,255,255,0.15);
+  color: var(--text-sub);
+  padding: 8px 16px;
+  border-radius: 7px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.btn-details:hover { border-color: rgba(255,255,255,0.35); color: #fff; }
+
+.btn-customize {
+  background: var(--gold);
+  color: #000;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 7px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s;
+}
+.btn-customize:hover { background: var(--gold-hover); transform: translateY(-1px); }
+
+/* ══════════════════════════════════════
+   TESTIMONIALS
+══════════════════════════════════════ */
+.testimonials-section {
+  background: var(--navy-mid);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 80px 0;
+}
+.testimonials-inner {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 48px;
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.testi-card {
+  background: var(--navy-light);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+  animation: fadeUp 0.6s ease both;
+  transition: border-color 0.2s;
+}
+.testi-card:nth-child(1) { animation-delay: 0.05s; }
+.testi-card:nth-child(2) { animation-delay: 0.15s; }
+.testi-card:nth-child(3) { animation-delay: 0.25s; }
+.testi-card:hover { border-color: rgba(245,184,0,0.2); }
+
+.testi-stars {
+  color: var(--gold);
+  font-size: 14px;
+  letter-spacing: 2px;
+  margin-bottom: 14px;
+}
+.testi-quote {
+  color: var(--text-sub);
+  font-size: 13px;
+  line-height: 1.7;
+  font-style: italic;
+  margin-bottom: 20px;
+}
+.testi-author {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.testi-avatar {
+  width: 38px; height: 38px;
+  border-radius: 50%;
+  background: var(--navy-mid);
+  overflow: hidden;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  border: 2px solid rgba(245,184,0,0.2);
+}
+.testi-name {
+  font-size: 13px;
+  font-weight: 700;
+}
+.testi-origin {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+/* ══════════════════════════════════════
+   CTA SECTION
+══════════════════════════════════════ */
+.cta-section {
+  text-align: center;
+  padding: 100px 48px;
+  position: relative;
+  overflow: hidden;
+}
+.cta-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 70% 80% at 50% 50%, rgba(245,184,0,0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+.cta-eyebrow {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 20px;
+}
+.cta-title {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(34px, 5vw, 56px);
+  font-weight: 900;
+  line-height: 1.1;
+  margin-bottom: 6px;
+}
+.cta-title .gold { color: var(--gold); }
+.cta-sub {
+  color: var(--text-muted);
+  font-size: 14px;
+  margin-bottom: 40px;
+}
+.cta-buttons {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.btn-cta-primary {
+  background: var(--gold);
+  color: #000;
+  border: none;
+  padding: 14px 32px;
+  border-radius: 8px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.btn-cta-primary:hover { background: var(--gold-hover); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(245,184,0,0.25); }
+.btn-cta-secondary {
+  background: none;
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.25);
+  padding: 14px 32px;
+  border-radius: 8px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.btn-cta-secondary:hover { border-color: var(--gold); color: var(--gold); }
+
+/* ══════════════════════════════════════
+   FOOTER
+══════════════════════════════════════ */
+footer {
+  background: #090c17;
+  border-top: 1px solid var(--border);
+  padding: 56px 48px 24px;
+}
+.footer-grid {
+  max-width: 1180px;
+  margin: 0 auto 40px;
+  display: grid;
+  grid-template-columns: 1.8fr 1fr 1fr 1.6fr;
+  gap: 48px;
+}
+
+.footer-brand-logo {
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: 14px;
+  text-decoration: none;
+}
+.footer-brand-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  font-weight: 600;
+  font-style: italic;
+  color: #fff;
+}
+.footer-brand p {
+  color: var(--text-muted);
+  font-size: 12px;
+  line-height: 1.7;
+  max-width: 210px;
+  margin-bottom: 20px;
+}
+.footer-socials {
+  display: flex;
+  gap: 10px;
+}
+.social-link {
+  width: 30px; height: 30px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--text-muted);
+  font-size: 12px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+.social-link:hover { border-color: var(--gold); color: var(--gold); }
+
+.footer-col h4 {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #fff;
+  margin-bottom: 16px;
+}
+.footer-col ul { list-style: none; }
+.footer-col ul li { margin-bottom: 10px; }
+.footer-col ul li a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 13px;
+  transition: color 0.2s;
+}
+.footer-col ul li a:hover { color: var(--gold); }
+
+.newsletter-form { margin-top: 4px; }
+.newsletter-form p {
+  color: var(--text-muted);
+  font-size: 12px;
+  margin-bottom: 12px;
+  line-height: 1.6;
+}
+.newsletter-row {
+  display: flex;
+  gap: 0;
+  border-radius: 7px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+.newsletter-input {
+  flex: 1;
+  background: rgba(255,255,255,0.04);
+  border: none;
+  outline: none;
+  padding: 10px 14px;
+  color: #fff;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+}
+.newsletter-input::placeholder { color: var(--text-muted); }
+.newsletter-btn {
+  background: var(--gold);
+  color: #000;
+  border: none;
+  padding: 10px 16px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.newsletter-btn:hover { background: var(--gold-hover); }
+
+.footer-bottom {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.footer-bottom p { color: #3a4560; font-size: 11px; }
+.footer-bottom-links { display: flex; gap: 20px; }
+.footer-bottom-links a { color: #3a4560; font-size: 11px; text-decoration: none; transition: color 0.2s; }
+.footer-bottom-links a:hover { color: var(--gold); }
+
+/* ══════════════════════════════════════
+   ANIMATIONS
+══════════════════════════════════════ */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(22px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Scroll reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* district tag on image */
+.pkg-district-tag {
+  position: absolute;
+  bottom: 10px; right: 10px;
+  background: rgba(0,0,0,0.65);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 600;
+  padding: 3px 9px;
+  border-radius: 5px;
+  backdrop-filter: blur(4px);
+  z-index: 3;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+/* results bar */
+.results-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(245,184,0,0.08);
+  border: 1px solid rgba(245,184,0,0.2);
+  border-radius: 8px;
+  padding: 10px 18px;
+  margin-bottom: 28px;
+  font-size: 13px;
+  color: var(--text-sub);
+}
+.btn-clear-filter {
+  background: none;
+  border: 1px solid rgba(245,184,0,0.4);
+  color: var(--gold);
+  font-size: 12px;
+  font-weight: 600;
+  padding: 5px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: 'DM Sans', sans-serif;
+  transition: all 0.2s;
+}
+.btn-clear-filter:hover { background: rgba(245,184,0,0.1); }
+
+/* pkg card hidden state */
+.pkg-card.hidden {
+  display: none;
+}
+
+/* empty state */
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--text-muted);
+}
+.empty-icon { font-size: 40px; margin-bottom: 14px; }
+.empty-title { font-size: 18px; font-weight: 700; color: var(--text-sub); margin-bottom: 6px; }
+.empty-sub { font-size: 13px; }
+
+/* Responsive */
+@media (max-width: 900px) {
+  nav { padding: 0 20px; }
+  .packages-grid,
+  .testimonials-grid { grid-template-columns: 1fr; }
+  section { padding: 60px 20px; }
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 28px; }
+  .search-panel { flex-direction: column; align-items: stretch; }
+  .search-divider { display: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- ══════════ NAVBAR ══════════ -->
+<nav>
+  <a href="#" class="nav-brand">
+    <span class="nav-brand-top">Ceylon<span style="color:var(--gold)">Tails</span></span>
+  </a>
+
+  <ul class="nav-links">
+    <li><a href="#">Destinations</a></li>
+    <li><a href="#">Experiences</a></li>
+    <li><a href="#" class="active">Packages</a></li>
+    <li><a href="#">Stays</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+
+  <div class="nav-right">
+    <button class="nav-search-btn">🔍</button>
+    <button class="btn-plan">Plan My Trip</button>
+  </div>
+</nav>
+
+<!-- ══════════ HERO ══════════ -->
+<div class="hero">
+  <div class="hero-eyebrow">✦ Premium Travel Experiences</div>
+  <h1>
+    Discover Customized<br>
+    <span class="gold">Sri Lanka Travel Packages</span>
+  </h1>
+  <p class="hero-sub">Explore hand-crafted travel experiences across Sri Lanka's most beautiful districts, tailored to your unique travel style.</p>
+
+  <div class="search-panel">
+    <div class="search-input-wrap">
+      <span class="search-icon">🔍</span>
+      <input type="text" class="search-input" placeholder="Search destination or district...">
+    </div>
+    <div class="search-divider"></div>
+    <select class="search-select" id="districtSelect" onchange="applyFilters()">
+      <option value="all">Any District</option>
+      <option value="kandy">Kandy</option>
+      <option value="galle">Galle</option>
+      <option value="ella">Ella (Badulla)</option>
+      <option value="sigiriya">Sigiriya (Matale)</option>
+      <option value="trincomalee">Trincomalee</option>
+      <option value="hambantota">Hambantota</option>
+      <option value="colombo">Colombo</option>
+    </select>
+    <div class="search-divider"></div>
+    <select class="search-select" id="durationSelect" onchange="applyFilters()">
+      <option value="all">Duration</option>
+      <option value="3">3–4 Days</option>
+      <option value="5">5–6 Days</option>
+      <option value="7">7–10 Days</option>
+    </select>
+    <div class="search-divider"></div>
+    <select class="search-select" id="typeSelect" onchange="applyFilters()">
+      <option value="all">Travel Type</option>
+      <option value="cultural">Cultural</option>
+      <option value="nature">Nature</option>
+      <option value="beach">Beach</option>
+    </select>
+    <button class="btn-search">Search</button>
+  </div>
+</div>
+
+<!-- ══════════ PACKAGES ══════════ -->
+<section id="packages-section">
+  <div class="section-eyebrow reveal">HAND-CRAFTED ITINERARIES</div>
+  <h2 class="section-title reveal" id="packages-heading">Popular Custom Travel Packages</h2>
+  <p class="section-sub reveal" id="packages-sub">Curated itineraries that combine the best of Sri Lanka's culture, nature, and luxury.</p>
+
+  <!-- Results info bar -->
+  <div class="results-bar reveal" id="resultsBar" style="display:none;">
+    <span id="resultsLabel"></span>
+    <button class="btn-clear-filter" onclick="clearDistrictFilter()">✕ Show All Districts</button>
+  </div>
+
+  <div class="packages-grid" id="packagesGrid">
+
+    <!-- KANDY -->
+    <div class="pkg-card reveal" data-district="kandy" data-duration="4" data-type="cultural">
+      <div class="pkg-img">
+        <div class="pkg-img-inner" style="background-image:url('https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?w=600&q=80')"></div>
+        <div class="pkg-badge badge-bestseller">Best Seller</div>
+        <div class="pkg-district-tag">📍 Kandy District</div>
+      </div>
+      <div class="pkg-body">
+        <div class="pkg-top-row">
+          <div class="pkg-name">Kandy Cultural Escape</div>
+          <div class="pkg-rating">★ 4.9</div>
+        </div>
+        <div class="pkg-duration">🕐 4 Days / 3 Nights</div>
+        <div class="pkg-tags">
+          <span class="pkg-tag">Temple of Tooth</span>
+          <span class="pkg-tag">Peradeniya</span>
+          <span class="pkg-tag">Kandy Lake</span>
+        </div>
+        <div class="pkg-features">
+          <div class="pkg-feature"><span class="feat-icon">🏨</span> Heritage Hotels</div>
+          <div class="pkg-feature"><span class="feat-icon">🎭</span> Cultural Shows</div>
+          <div class="pkg-feature"><span class="feat-icon">🚗</span> Transfers</div>
+        </div>
+      </div>
+      <hr class="pkg-divider">
+      <div class="pkg-footer">
+        <div>
+          <div class="pkg-price-label">From</div>
+          <div class="pkg-price-row"><span class="pkg-price">$420</span><span class="pkg-price-per">/ person</span></div>
+          <div class="pkg-budget">Budget: Mid-range</div>
+        </div>
+        <div class="pkg-actions">
+          <button class="btn-details">View Details</button>
+          <button class="btn-customize">Customize</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- GALLE -->
+    <div class="pkg-card reveal" data-district="galle" data-duration="5" data-type="beach">
+      <div class="pkg-img">
+        <div class="pkg-img-inner" style="background-image:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&q=80')"></div>
+        <div class="pkg-badge badge-coastal">Coastal Luxury</div>
+        <div class="pkg-district-tag">📍 Galle District</div>
+      </div>
+      <div class="pkg-body">
+        <div class="pkg-top-row">
+          <div class="pkg-name">Southern Coast Bliss</div>
+          <div class="pkg-rating">★ 4.9</div>
+        </div>
+        <div class="pkg-duration">🕐 5 Days / 4 Nights</div>
+        <div class="pkg-tags">
+          <span class="pkg-tag">Galle Fort</span>
+          <span class="pkg-tag">Mirissa</span>
+          <span class="pkg-tag">Unawatuna</span>
+        </div>
+        <div class="pkg-features">
+          <div class="pkg-feature"><span class="feat-icon">🏰</span> Fort Tour</div>
+          <div class="pkg-feature"><span class="feat-icon">🐋</span> Whale Watch</div>
+          <div class="pkg-feature"><span class="feat-icon">🏄</span> Surfing</div>
+        </div>
+      </div>
+      <hr class="pkg-divider">
+      <div class="pkg-footer">
+        <div>
+          <div class="pkg-price-label">From</div>
+          <div class="pkg-price-row"><span class="pkg-price">$520</span><span class="pkg-price-per">/ person</span></div>
+          <div class="pkg-budget">Budget: Premium</div>
+        </div>
+        <div class="pkg-actions">
+          <button class="btn-details">View Details</button>
+          <button class="btn-customize">Customize</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ELLA (Badulla) -->
+    <div class="pkg-card reveal" data-district="ella" data-duration="4" data-type="nature">
+      <div class="pkg-img">
+        <div class="pkg-img-inner" style="background-image:url('https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=600&q=80')"></div>
+        <div class="pkg-badge badge-nature">Nature Escape</div>
+        <div class="pkg-district-tag">📍 Badulla District</div>
+      </div>
+      <div class="pkg-body">
+        <div class="pkg-top-row">
+          <div class="pkg-name">Misty Hill Country</div>
+          <div class="pkg-rating">★ 4.8</div>
+        </div>
+        <div class="pkg-duration">🕐 4 Days / 3 Nights</div>
+        <div class="pkg-tags">
+          <span class="pkg-tag">Ella</span>
+          <span class="pkg-tag">Nine Arch Bridge</span>
+          <span class="pkg-tag">Little Adam's Peak</span>
+        </div>
+        <div class="pkg-features">
+          <div class="pkg-feature"><span class="feat-icon">🚂</span> Scenic Train</div>
+          <div class="pkg-feature"><span class="feat-icon">🍵</span> Tea Estates</div>
+          <div class="pkg-feature"><span class="feat-icon">🥾</span> Hiking</div>
+        </div>
+      </div>
+      <hr class="pkg-divider">
+      <div class="pkg-footer">
+        <div>
+          <div class="pkg-price-label">From</div>
+          <div class="pkg-price-row"><span class="pkg-price">$380</span><span class="pkg-price-per">/ person</span></div>
+          <div class="pkg-budget">Budget: Budget</div>
+        </div>
+        <div class="pkg-actions">
+          <button class="btn-details">View Details</button>
+          <button class="btn-customize">Customize</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- SIGIRIYA (Matale) -->
+    <div class="pkg-card reveal" data-district="sigiriya" data-duration="5" data-type="cultural">
+      <div class="pkg-img">
+        <div class="pkg-img-inner" style="background-image:url('https://images.unsplash.com/photo-1590123591659-8ff8e10a89ca?w=600&q=80')"></div>
+        <div class="pkg-badge badge-bestseller">Best Seller</div>
+        <div class="pkg-district-tag">📍 Matale District</div>
+      </div>
+      <div class="pkg-body">
+        <div class="pkg-top-row">
+          <div class="pkg-name">Cultural Triangle Tour</div>
+          <div class="pkg-rating">★ 4.9</div>
+        </div>
+        <div class="pkg-duration">🕐 5 Days / 4 Nights</div>
+        <div class="pkg-tags">
+          <span class="pkg-tag">Sigiriya</span>
+          <span class="pkg-tag">Dambulla</span>
+          <span class="pkg-tag">Polonnaruwa</span>
+        </div>
+        <div class="pkg-features">
+          <div class="pkg-feature"><span class="feat-icon">🏛️</span> UNESCO Sites</div>
+          <div class="pkg-feature"><span class="feat-icon">👤</span> Private Guide</div>
+          <div class="pkg-feature"><span class="feat-icon">🚗</span> Transfers</div>
+        </div>
+      </div>
+      <hr class="pkg-divider">
+      <div class="pkg-footer">
+        <div>
+          <div class="pkg-price-label">From</div>
+          <div class="pkg-price-row"><span class="pkg-price">$450</span><span class="pkg-price-per">/ person</span></div>
+          <div class="pkg-budget">Budget: Mid-range</div>
+        </div>
+        <div class="pkg-actions">
+          <button class="btn-details">View Details</button>
+          <button class="btn-customize">Customize</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- TRINCOMALEE -->
+    <div class="pkg-card reveal" data-district="trincomalee" data-duration="5" data-type="beach">
+      <div class="pkg-img">
+        <div class="pkg-img-inner" style="background-image:url('https://images.unsplash.com/photo-1559592413-7cec4d0cae2b?w=600&q=80')"></div>
+        <div class="pkg-badge badge-coastal">Beach & Sea</div>
+        <div class="pkg-district-tag">📍 Trincomalee District</div>
+      </div>
+      <div class="pkg-body">
+        <div class="pkg-top-row">
+          <div class="pkg-name">East Coast Paradise</div>
+          <div class="pkg-rating">★ 4.7</div>
+        </div>
+        <div class="pkg-duration">🕐 5 Days / 4 Nights</div>
+        <div class="pkg-tags">
+          <span class="pkg-tag">Trincomalee</span>
+          <span class="pkg-tag">Nilaveli</span>
+          <span class="pkg-tag">Pigeon Island</span>
+        </div>
+        <div class="pkg-features">
+          <div class="pkg-feature"><span class="feat-icon">🐠</span> Snorkelling</div>
+          <div class="pkg-feature"><span class="feat-icon">🐳</span> Whale Watch</div>
+          <div class="pkg-feature"><span class="feat-icon">⛵</span> Boat Trips</div>
+        </div>
+      </div>
+      <hr class="pkg-divider">
+      <div class="pkg-footer">
+        <div>
+          <div class="pkg-price-label">From</div>
+          <div class="pkg-price-row"><span class="pkg-price">$410</span><span class="pkg-price-per">/ person</span></div>
+          <div class="pkg-budget">Budget: Mid-range</div>
+        </div>
+        <div class="pkg-actions">
+          <button class="btn-details">View Details</button>
+          <button class="btn-customize">Customize</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- HAMBANTOTA -->
+    <div class="pkg-card reveal" data-district="hambantota" data-duration="6" data-type="nature">
+      <div class="pkg-img">
+        <div class="pkg-img-inner" style="background-image:url('https://images.unsplash.com/photo-1581852017103-68ac65514cf7?w=600&q=80')"></div>
+        <div class="pkg-badge badge-nature">Wildlife</div>
+        <div class="pkg-district-tag">📍 Hambantota District</div>
+      </div>
+      <div class="pkg-body">
+        <div class="pkg-top-row">
+          <div class="pkg-name">Yala Wildlife Safari</div>
+          <div class="pkg-rating">★ 4.8</div>
+        </div>
+        <div class="pkg-duration">🕐 6 Days / 5 Nights</div>
+        <div class="pkg-tags">
+          <span class="pkg-tag">Yala National Park</span>
+          <span class="pkg-tag">Bundala</span>
+          <span class="pkg-tag">Tissamaharama</span>
+        </div>
+        <div class="pkg-features">
+          <div class="pkg-feature"><span class="feat-icon">🦁</span> Leopard Safari</div>
+          <div class="pkg-feature"><span class="feat-icon">🐘</span> Elephant Watch</div>
+          <div class="pkg-feature"><span class="feat-icon">🦅</span> Bird Watching</div>
+        </div>
+      </div>
+      <hr class="pkg-divider">
+      <div class="pkg-footer">
+        <div>
+          <div class="pkg-price-label">From</div>
+          <div class="pkg-price-row"><span class="pkg-price">$560</span><span class="pkg-price-per">/ person</span></div>
+          <div class="pkg-budget">Budget: Premium</div>
+        </div>
+        <div class="pkg-actions">
+          <button class="btn-details">View Details</button>
+          <button class="btn-customize">Customize</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- COLOMBO -->
+    <div class="pkg-card reveal" data-district="colombo" data-duration="3" data-type="cultural">
+      <div class="pkg-img">
+        <div class="pkg-img-inner" style="background-image:url('https://images.unsplash.com/photo-1588666309990-d68f08e3d4a6?w=600&q=80')"></div>
+        <div class="pkg-badge" style="background:#a855f7;color:#fff;">City Life</div>
+        <div class="pkg-district-tag">📍 Colombo District</div>
+      </div>
+      <div class="pkg-body">
+        <div class="pkg-top-row">
+          <div class="pkg-name">Colombo City Experience</div>
+          <div class="pkg-rating">★ 4.6</div>
+        </div>
+        <div class="pkg-duration">🕐 3 Days / 2 Nights</div>
+        <div class="pkg-tags">
+          <span class="pkg-tag">Pettah Market</span>
+          <span class="pkg-tag">Gangaramaya</span>
+          <span class="pkg-tag">Galle Face</span>
+        </div>
+        <div class="pkg-features">
+          <div class="pkg-feature"><span class="feat-icon">🏙️</span> City Tour</div>
+          <div class="pkg-feature"><span class="feat-icon">🍜</span> Food Walk</div>
+          <div class="pkg-feature"><span class="feat-icon">🛍️</span> Shopping</div>
+        </div>
+      </div>
+      <hr class="pkg-divider">
+      <div class="pkg-footer">
+        <div>
+          <div class="pkg-price-label">From</div>
+          <div class="pkg-price-row"><span class="pkg-price">$280</span><span class="pkg-price-per">/ person</span></div>
+          <div class="pkg-budget">Budget: Budget</div>
+        </div>
+        <div class="pkg-actions">
+          <button class="btn-details">View Details</button>
+          <button class="btn-customize">Customize</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Empty state -->
+  <div class="empty-state" id="emptyState" style="display:none;">
+    <div class="empty-icon">🔍</div>
+    <div class="empty-title">No packages found</div>
+    <div class="empty-sub">Try a different district or filter combination.</div>
+    <button class="btn-cta-primary" style="margin-top:20px;" onclick="clearDistrictFilter()">Show All Packages</button>
+  </div>
+</section>
+
+<!-- ══════════ TESTIMONIALS ══════════ -->
+<div class="testimonials-section">
+  <div class="testimonials-inner">
+    <div class="section-eyebrow reveal">REAL EXPERIENCES</div>
+    <h2 class="section-title reveal">Voices of Travelers</h2>
+    <p class="section-sub reveal" style="margin-bottom:40px;"></p>
+
+    <div class="testimonials-grid">
+
+      <div class="testi-card reveal">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-quote">"The customized package for our honeymoon was absolutely perfect. Every hotel was stunning and the private transfers made it so relaxing."</p>
+        <div class="testi-author">
+          <div class="testi-avatar">👩</div>
+          <div>
+            <div class="testi-name">Sarah Jenkins</div>
+            <div class="testi-origin">United Kingdom</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testi-card reveal">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-quote">"I loved the flexibility of building my own package. We focused on wildlife and hiking, and the local guides were incredibly knowledgeable."</p>
+        <div class="testi-author">
+          <div class="testi-avatar">👨</div>
+          <div>
+            <div class="testi-name">Michael Chen</div>
+            <div class="testi-origin">Singapore</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testi-card reveal">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-quote">"A truly premium experience from start to finish. The attention to detail in every aspect of the itinerary was remarkable. Highly recommend."</p>
+        <div class="testi-author">
+          <div class="testi-avatar">👩‍🦱</div>
+          <div>
+            <div class="testi-name">Elena Rodriguez</div>
+            <div class="testi-origin">Spain</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ CTA ══════════ -->
+<div class="cta-section">
+  <div class="cta-eyebrow reveal">START YOUR ADVENTURE</div>
+  <h2 class="cta-title reveal">Ready to Plan Your Dream<br><span class="gold">Sri Lanka Trip?</span></h2>
+  <p class="cta-sub reveal">Start your journey today with a fully customized itinerary designed just for you.</p>
+  <div class="cta-buttons reveal">
+    <button class="btn-cta-primary">Customize My Trip</button>
+    <button class="btn-cta-secondary">Browse All Packages</button>
+  </div>
+</div>
+
+<!-- ══════════ FOOTER ══════════ -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="#" class="footer-brand-logo">
+        <span class="footer-brand-name">Ceylon<span style="color:var(--gold)">Tails</span></span>
+      </a>
+      <p>Curating unforgettable luxury travel experiences across the paradise island of Sri Lanka.</p>
+      <div class="footer-socials">
+        <a href="#" class="social-link">f</a>
+        <a href="#" class="social-link">ig</a>
+        <a href="#" class="social-link">𝕏</a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h4>Explore</h4>
+      <ul>
+        <li><a href="#">Destinations</a></li>
+        <li><a href="#">Experiences</a></li>
+        <li><a href="#">Packages</a></li>
+        <li><a href="#">Luxury Stays</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms of Service</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Newsletter</h4>
+      <div class="newsletter-form">
+        <p>Subscribe for travel inspiration and exclusive offers.</p>
+        <div class="newsletter-row">
+          <input type="email" class="newsletter-input" placeholder="Email address">
+          <button class="newsletter-btn">Go</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2025 CeylonTails. All rights reserved.</p>
+    <div class="footer-bottom-links">
+      <a href="#">Privacy</a>
+      <a href="#">Terms of Service</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ══ Scroll Reveal ══ */
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      setTimeout(() => entry.target.classList.add('visible'), 60);
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+/* ══ District label map ══ */
+const districtLabels = {
+  kandy:        'Kandy District',
+  galle:        'Galle District',
+  ella:         'Ella – Badulla District',
+  sigiriya:     'Sigiriya – Matale District',
+  trincomalee:  'Trincomalee District',
+  hambantota:   'Hambantota District',
+  colombo:      'Colombo District',
+};
+
+/* ══ Core filter function ══ */
+function applyFilters() {
+  const district = document.getElementById('districtSelect').value;
+  const duration = document.getElementById('durationSelect').value;
+  const type     = document.getElementById('typeSelect').value;
+  const q        = document.querySelector('.search-input').value.trim().toLowerCase();
+
+  const cards = document.querySelectorAll('.pkg-card');
+  let visibleCount = 0;
+
+  cards.forEach(card => {
+    const cardDistrict = card.dataset.district;
+    const cardDuration = parseInt(card.dataset.duration);
+    const cardType     = card.dataset.type;
+    const cardText     = card.innerText.toLowerCase();
+
+    // District match
+    const districtMatch = district === 'all' || cardDistrict === district;
+
+    // Duration match: bucket the card's days
+    let durationMatch = true;
+    if (duration !== 'all') {
+      const bucket = parseInt(duration);
+      if (bucket === 3)  durationMatch = cardDuration <= 4;
+      if (bucket === 5)  durationMatch = cardDuration >= 5 && cardDuration <= 6;
+      if (bucket === 7)  durationMatch = cardDuration >= 7;
+    }
+
+    // Type match
+    const typeMatch = type === 'all' || cardType === type;
+
+    // Text search
+    const textMatch = !q || cardText.includes(q);
+
+    const visible = districtMatch && durationMatch && typeMatch && textMatch;
+    card.classList.toggle('hidden', !visible);
+    if (visible) visibleCount++;
+  });
+
+  // Results bar
+  const bar = document.getElementById('resultsBar');
+  const label = document.getElementById('resultsLabel');
+  const empty = document.getElementById('emptyState');
+  const heading = document.getElementById('packages-heading');
+  const sub = document.getElementById('packages-sub');
+
+  if (district !== 'all') {
+    bar.style.display = 'flex';
+    label.textContent = `Showing ${visibleCount} package${visibleCount !== 1 ? 's' : ''} for ${districtLabels[district]}`;
+    heading.textContent = `${districtLabels[district]} Packages`;
+    sub.textContent = `Hand-crafted travel experiences tailored for ${districtLabels[district]}.`;
+  } else {
+    bar.style.display = 'none';
+    heading.textContent = 'Popular Custom Travel Packages';
+    sub.textContent = "Curated itineraries that combine the best of Sri Lanka's culture, nature, and luxury.";
+  }
+
+  // Empty state
+  empty.style.display = visibleCount === 0 ? 'block' : 'none';
+  document.getElementById('packagesGrid').style.display = visibleCount === 0 ? 'none' : 'grid';
+
+  // Scroll to packages section
+  if (district !== 'all') {
+    document.getElementById('packages-section').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+}
+
+/* ══ Clear filter ══ */
+function clearDistrictFilter() {
+  document.getElementById('districtSelect').selectedIndex = 0;
+  document.getElementById('durationSelect').selectedIndex = 0;
+  document.getElementById('typeSelect').selectedIndex = 0;
+  document.querySelector('.search-input').value = '';
+  applyFilters();
+}
+
+/* ══ Search button ══ */
+document.querySelector('.btn-search').addEventListener('click', applyFilters);
+document.querySelector('.search-input').addEventListener('keydown', e => {
+  if (e.key === 'Enter') applyFilters();
+});
+
+/* ══ Customize micro-interaction ══ */
+document.querySelectorAll('.btn-customize').forEach(btn => {
+  btn.addEventListener('click', function(e) {
+    e.stopPropagation();
+    const card = this.closest('.pkg-card');
+    card.style.boxShadow = '0 0 0 2px var(--gold), 0 20px 60px rgba(245,184,0,0.2)';
+    setTimeout(() => { card.style.boxShadow = ''; }, 600);
+  });
+});
+</script>
+</body>
+</html>

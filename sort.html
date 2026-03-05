@@ -43,29 +43,29 @@
 <!-- FILTER BAR -->
 <div class="filter-bar">
   <div class="filter-left">
-    <select class="filter-select" onchange="filterDestinations()">
-      <option>All Districts</option>
-      <option>Kandy District</option>
-      <option>Galle District</option>
-      <option>Badulla District</option>
-      <option>Trincomalee District</option>
-      <option>Hambantota District</option>
-      <option>Colombo District</option>
+    <select class="filter-select" id="districtFilter" onchange="filterDestinations()">
+      <option value="all">All Districts</option>
+      <option value="kandy">Kandy District</option>
+      <option value="galle">Galle District</option>
+      <option value="badulla">Badulla District</option>
+      <option value="trincomalee">Trincomalee District</option>
+      <option value="hambantota">Hambantota District</option>
+      <option value="colombo">Colombo District</option>
     </select>
-    <select class="filter-select" onchange="filterDestinations()">
-      <option>All Cities</option>
-      <option>Kandy City</option>
-      <option>Peradeniya</option>
-      <option>Matale</option>
-      <option>Sigiriya</option>
-      <option>Galle Fort</option>
-      <option>Ella</option>
+    <select class="filter-select" id="cityFilter" onchange="filterDestinations()">
+      <option value="all">All Cities</option>
+      <option value="Kandy City">Kandy City</option>
+      <option value="Peradeniya">Peradeniya</option>
+      <option value="Matale">Matale</option>
+      <option value="Sigiriya">Sigiriya</option>
+      <option value="Galle Fort">Galle Fort</option>
+      <option value="Ella">Ella</option>
     </select>
-    <select class="filter-select">
-      <option>Sort: Popularity</option>
-      <option>Sort: A–Z</option>
-      <option>Sort: Rating</option>
-      <option>Sort: Activities</option>
+    <select class="filter-select" id="sortFilter" onchange="filterDestinations()">
+      <option value="popularity">Sort: Popularity</option>
+      <option value="az">Sort: A–Z</option>
+      <option value="rating">Sort: Rating</option>
+      <option value="activities">Sort: Activities</option>
     </select>
     <button class="btn-clear" onclick="clearFilters()">✕ Clear Filters</button>
   </div>
@@ -163,7 +163,7 @@
     </div>
 
     <!-- KANDY DISTRICT -->
-    <div class="district-block">
+    <div class="district-block" data-district="kandy">
       <div class="district-header" onclick="toggleDistrict('kandy')">
         <div class="district-info">
           <div class="province-tag">Central Province</div>
@@ -180,9 +180,9 @@
           <button class="toggle-btn open" id="toggle-kandy">▲</button>
         </div>
       </div>
-      <div class="district-cities open" id="cities-kandy">
+      <div class="district-cities open" id="cities-kandy" data-district="kandy">
         <div class="cities-grid">
-          <div class="city-card">
+          <div class="city-card" data-district="kandy" data-name="Kandy City" data-visits="98000" data-rating="4.9" data-activities="12">
             <div class="city-img">
               <div class="city-img-inner" style="background-image:url('images/kandy.jfif')"></div>
               <div class="city-img-label">Kandy City</div>
@@ -256,7 +256,7 @@
     </div>
 
     <!-- GALLE DISTRICT (banner) -->
-    <div class="district-banner" onclick="toggleDistrict('galle')">
+    <div class="district-banner" data-district="galle" onclick="toggleDistrict('galle')">
       <div class="district-banner-bg" style="background-image:url('')"></div>
       <div class="district-banner-content">
         <div class="province-tag" style="margin-bottom:2px;">Southern Province</div>
@@ -308,7 +308,7 @@
     </div>
 
     <!-- BADULLA DISTRICT (banner) -->
-    <div class="district-banner" onclick="toggleDistrict('badulla')">
+    <div class="district-banner" data-district="badulla" onclick="toggleDistrict('badulla')">
       <div class="district-banner-bg" style="background-image:url('')"></div>
       <div class="district-banner-content">
         <div class="province-tag" style="margin-bottom:2px;">Uva Province</div>
@@ -345,7 +345,7 @@
     </div>
 
     <!-- TRINCOMALEE DISTRICT (banner) -->
-    <div class="district-banner" onclick="toggleDistrict('trinco')">
+    <div class="district-banner" data-district="trincomalee" onclick="toggleDistrict('trinco')">
       <div class="district-banner-bg" style="background-image:url('')"></div>
       <div class="district-banner-content">
         <div class="province-tag" style="margin-bottom:2px;">Eastern Province</div>
@@ -382,7 +382,7 @@
     </div>
 
     <!-- HAMBANTOTA (banner) -->
-    <div class="district-banner" onclick="toggleDistrict('hambantota')">
+    <div class="district-banner" data-district="hambantota" onclick="toggleDistrict('hambantota')">
       <div class="district-banner-bg" style="background-image:url('')"></div>
       <div class="district-banner-content">
         <div class="province-tag" style="margin-bottom:2px;">Southern Province</div>
@@ -419,7 +419,7 @@
     </div>
 
     <!-- COLOMBO DISTRICT (banner) -->
-    <div class="district-banner" onclick="toggleDistrict('colombo')">
+    <div class="district-banner" data-district="colombo" onclick="toggleDistrict('colombo')">
       <div class="district-banner-bg" style="background-image:url('')"></div>
       <div class="district-banner-content">
         <div class="province-tag" style="margin-bottom:2px;">Western Province</div>
@@ -523,7 +523,230 @@
 </footer>
 
 <script>
-  // Toggle district expand/collapse
+  // ─── DATA: visits per location (monthly avg) ────────────────────────────────
+  const visitData = {
+    // Kandy District
+    'kandy city':        { visits: 98000, district: 'kandy' },
+    'peradeniya':        { visits: 54000, district: 'kandy' },
+    'matale':            { visits: 31000, district: 'kandy' },
+    'sigiriya':          { visits: 87000, district: 'kandy' },
+    // Galle District
+    'galle fort':        { visits: 91000, district: 'galle' },
+    'mirissa':           { visits: 62000, district: 'galle' },
+    // Badulla District
+    'ella':              { visits: 95000, district: 'badulla' },
+    // Trincomalee
+    'trincomalee':       { visits: 43000, district: 'trincomalee' },
+    // Hambantota
+    'yala national park':{ visits: 78000, district: 'hambantota' },
+    // Colombo
+    'colombo':           { visits: 110000, district: 'colombo' },
+  };
+
+  // ─── TAG ALL CITY CARDS & TREND CARDS with data attributes ─────────────────
+  function tagCards() {
+    // Tag city cards from their city-name text
+    document.querySelectorAll('.city-card').forEach(card => {
+      const nameEl = card.querySelector('.city-name');
+      const ratingEl = card.querySelector('.city-stat span + .city-stat, .city-stat');
+      const statsEls = card.querySelectorAll('.city-stat');
+
+      if (!nameEl) return;
+      const name = nameEl.textContent.trim().toLowerCase();
+      const info = visitData[name];
+
+      if (info) {
+        card.dataset.district = info.district;
+        card.dataset.visits = info.visits;
+        card.dataset.name = nameEl.textContent.trim();
+      }
+
+      // Parse rating from first stat
+      statsEls.forEach(el => {
+        if (el.textContent.includes('⭐') || el.querySelector('span')) {
+          const match = el.textContent.match(/[\d.]+/);
+          if (match) card.dataset.rating = match[0];
+        }
+        const actMatch = el.textContent.match(/(\d+)\s*activit/);
+        if (actMatch) card.dataset.activities = actMatch[1];
+      });
+    });
+
+    // Tag trend cards
+    document.querySelectorAll('.trend-card').forEach(card => {
+      const nameEl = card.querySelector('.trend-name');
+      const districtEl = card.querySelector('.trend-district');
+      if (!nameEl) return;
+      const name = nameEl.textContent.trim().toLowerCase();
+      const info = visitData[name];
+      if (info) {
+        card.dataset.district = info.district;
+        card.dataset.visits = info.visits;
+        card.dataset.name = nameEl.textContent.trim();
+      } else if (districtEl) {
+        // fallback: derive district from text
+        card.dataset.district = districtEl.textContent.toLowerCase().replace(' district','').replace(' ','');
+      }
+    });
+  }
+
+  // ─── INJECT VISIT COUNT BADGES into city cards ──────────────────────────────
+  function injectVisitBadges() {
+    document.querySelectorAll('.city-card').forEach(card => {
+      const visits = parseInt(card.dataset.visits) || 0;
+      if (!visits) return;
+      // Don't add twice
+      if (card.querySelector('.visit-badge')) return;
+      const imgDiv = card.querySelector('.city-img');
+      if (imgDiv) {
+        const badge = document.createElement('div');
+        badge.className = 'visit-badge';
+        badge.innerHTML = `👥 ${(visits / 1000).toFixed(0)}K visits/mo`;
+        badge.style.cssText = `
+          position:absolute; bottom:8px; left:8px;
+          background:rgba(0,0,0,0.72); color:#e8c97a;
+          font-size:10px; font-weight:600; letter-spacing:.3px;
+          padding:3px 8px; border-radius:20px; z-index:4;
+          font-family:'DM Sans',sans-serif;
+        `;
+        imgDiv.style.position = 'relative';
+        imgDiv.appendChild(badge);
+      }
+    });
+
+    // Also inject into trend cards
+    document.querySelectorAll('.trend-card').forEach(card => {
+      const visits = parseInt(card.dataset.visits) || 0;
+      if (!visits || card.querySelector('.visit-badge')) return;
+      const imgDiv = card.querySelector('.trend-img');
+      if (imgDiv) {
+        const badge = document.createElement('div');
+        badge.className = 'visit-badge';
+        badge.innerHTML = `👥 ${(visits / 1000).toFixed(0)}K/mo`;
+        badge.style.cssText = `
+          position:absolute; bottom:8px; left:8px;
+          background:rgba(0,0,0,0.72); color:#e8c97a;
+          font-size:10px; font-weight:600;
+          padding:3px 8px; border-radius:20px; z-index:4;
+          font-family:'DM Sans',sans-serif;
+        `;
+        imgDiv.appendChild(badge);
+      }
+    });
+  }
+
+  // ─── FILTER & SORT ──────────────────────────────────────────────────────────
+  function filterDestinations() {
+    const districtVal = document.getElementById('districtFilter').value;
+    const cityVal = document.getElementById('cityFilter').value;
+    const sortVal = document.getElementById('sortFilter').value;
+
+    // ── District blocks / banners ──
+    const districtItems = document.querySelectorAll('.district-block, .district-banner');
+    districtItems.forEach(el => {
+      if (districtVal === 'all') {
+        el.style.display = '';
+      } else {
+        const match = el.dataset.district === districtVal;
+        el.style.display = match ? '' : 'none';
+        // Also show the cities container when filtering
+        if (match) {
+          const id = el.dataset.district === 'trincomalee' ? 'trinco' : el.dataset.district;
+          const citiesEl = document.getElementById('cities-' + id);
+          if (citiesEl && !citiesEl.classList.contains('open')) {
+            citiesEl.classList.add('open');
+            const btn = document.getElementById('toggle-' + id);
+            if (btn) { btn.textContent = '▲'; btn.classList.add('open'); }
+          }
+        }
+      }
+    });
+
+    // Also hide the associated cities container when district is hidden
+    document.querySelectorAll('.district-cities').forEach(el => {
+      if (districtVal !== 'all') {
+        const distMap = {
+          'cities-kandy':'kandy','cities-galle':'galle','cities-badulla':'badulla',
+          'cities-trinco':'trincomalee','cities-hambantota':'hambantota','cities-colombo':'colombo'
+        };
+        const thisDistrict = distMap[el.id];
+        el.style.display = thisDistrict === districtVal ? '' : 'none';
+      } else {
+        el.style.display = '';
+      }
+    });
+
+    // ── Trending section: filter + sort ──
+    const trendingGrid = document.getElementById('trendingGrid');
+    const trendCards = Array.from(trendingGrid.querySelectorAll('.trend-card'));
+
+    trendCards.forEach(card => {
+      const cardDistrict = card.dataset.district || '';
+      const districtMatch = districtVal === 'all' || cardDistrict === districtVal;
+      const nameMatch = cityVal === 'all' || (card.dataset.name || '').toLowerCase() === cityVal.toLowerCase();
+      card.style.display = (districtMatch && nameMatch) ? '' : 'none';
+    });
+
+    // Sort visible trend cards
+    const visibleTrend = trendCards.filter(c => c.style.display !== 'none');
+    sortCards(visibleTrend, sortVal);
+    visibleTrend.forEach(c => trendingGrid.appendChild(c));
+
+    // ── City cards: filter + sort ──
+    const cityCards = Array.from(document.querySelectorAll('.city-card'));
+    cityCards.forEach(card => {
+      const cardDistrict = card.dataset.district || '';
+      const cardName = (card.dataset.name || card.querySelector('.city-name')?.textContent || '').trim();
+      const districtMatch = districtVal === 'all' || cardDistrict === districtVal;
+      const cityMatch = cityVal === 'all' || cardName.toLowerCase() === cityVal.toLowerCase();
+      card.style.display = (districtMatch && cityMatch) ? '' : 'none';
+    });
+
+    // Sort visible city cards within each grid
+    document.querySelectorAll('.cities-grid').forEach(grid => {
+      const visible = Array.from(grid.querySelectorAll('.city-card')).filter(c => c.style.display !== 'none');
+      sortCards(visible, sortVal);
+      visible.forEach(c => grid.appendChild(c));
+    });
+
+    // ── Update count ──
+    const total = document.querySelectorAll('.city-card[style=""], .city-card:not([style])').length +
+                  document.querySelectorAll('.city-card[style*="display: none"]').length;
+    const visible = document.querySelectorAll('.city-card:not([style*="display: none"])').length;
+    document.getElementById('resultsCount').textContent =
+      districtVal === 'all' && cityVal === 'all'
+        ? `${visible} destinations found`
+        : `${visible} destination${visible !== 1 ? 's' : ''} found`;
+  }
+
+  function sortCards(cards, sortVal) {
+    cards.sort((a, b) => {
+      if (sortVal === 'popularity') {
+        return (parseInt(b.dataset.visits) || 0) - (parseInt(a.dataset.visits) || 0);
+      } else if (sortVal === 'az') {
+        return (a.dataset.name || '').localeCompare(b.dataset.name || '');
+      } else if (sortVal === 'rating') {
+        return parseFloat(b.dataset.rating || 0) - parseFloat(a.dataset.rating || 0);
+      } else if (sortVal === 'activities') {
+        return parseInt(b.dataset.activities || 0) - parseInt(a.dataset.activities || 0);
+      }
+      return 0;
+    });
+  }
+
+  // ─── CLEAR FILTERS ─────────────────────────────────────────────────────────
+  function clearFilters() {
+    document.getElementById('districtFilter').selectedIndex = 0;
+    document.getElementById('cityFilter').selectedIndex = 0;
+    document.getElementById('sortFilter').selectedIndex = 0;
+    // Show everything
+    document.querySelectorAll('.district-block, .district-banner, .district-cities, .city-card, .trend-card').forEach(el => {
+      el.style.display = '';
+    });
+    document.getElementById('resultsCount').textContent = '26 destinations found';
+  }
+
+  // ─── TOGGLE DISTRICT ───────────────────────────────────────────────────────
   function toggleDistrict(id) {
     const cities = document.getElementById('cities-' + id);
     const btn = document.getElementById('toggle-' + id);
@@ -536,12 +759,11 @@
     }
   }
 
-  // Switch grid/map view
+  // ─── VIEW TOGGLE ───────────────────────────────────────────────────────────
   function switchView(type) {
     document.getElementById('gridBtn').classList.toggle('active', type === 'grid');
     document.getElementById('mapBtn').classList.toggle('active', type === 'map');
     if (type === 'map') {
-      // Show a placeholder map message
       const main = document.querySelector('main');
       let mapMsg = document.getElementById('mapPlaceholder');
       if (!mapMsg) {
@@ -560,14 +782,13 @@
     }
   }
 
-  // Simple search handler
+  // ─── SEARCH ────────────────────────────────────────────────────────────────
   function handleSearch() {
-    const val = document.getElementById('searchInput').value.trim();
+    const val = document.getElementById('searchInput').value.trim().toLowerCase();
     if (!val) return;
-    // Scroll to matching district or highlight
     const allNames = document.querySelectorAll('.district-name, .city-name, .trend-name');
     allNames.forEach(el => {
-      if (el.textContent.toLowerCase().includes(val.toLowerCase())) {
+      if (el.textContent.toLowerCase().includes(val)) {
         el.closest('.district-block, .district-banner, .city-card, .trend-card')?.scrollIntoView({ behavior: 'smooth', block: 'center' });
       }
     });
@@ -577,20 +798,7 @@
     if (e.key === 'Enter') handleSearch();
   });
 
-  // Filter handler
-  function filterDestinations() {
-    const districtVal = document.querySelector('.filter-select').value;
-    const count = districtVal === 'All Districts' ? '26 destinations found' : 'Showing ' + districtVal;
-    document.getElementById('resultsCount').textContent = count;
-  }
-
-  // Clear filters
-  function clearFilters() {
-    document.querySelectorAll('.filter-select').forEach(s => s.selectedIndex = 0);
-    document.getElementById('resultsCount').textContent = '26 destinations found';
-  }
-
-  // Intersection Observer for fade-up on scroll
+  // ─── SCROLL ANIMATIONS ─────────────────────────────────────────────────────
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => {
       if (e.isIntersecting) {
@@ -600,11 +808,17 @@
     });
   }, { threshold: 0.1 });
 
-  document.querySelectorAll('.district-block, .district-banner, .city-card').forEach(el => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(20px)';
-    el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-    observer.observe(el);
+  // ─── INIT ──────────────────────────────────────────────────────────────────
+  document.addEventListener('DOMContentLoaded', () => {
+    tagCards();
+    injectVisitBadges();
+
+    document.querySelectorAll('.district-block, .district-banner, .city-card').forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(20px)';
+      el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+      observer.observe(el);
+    });
   });
 </script>
 

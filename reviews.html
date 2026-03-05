@@ -1,0 +1,1494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CeylonTales – Traveler Reviews</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,900;1,600;1,700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+
+/* ════════════════════════════════════════
+   RESET & ROOT
+════════════════════════════════════════ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --navy:        #0b0f1e;
+  --navy-mid:    #0f1525;
+  --navy-card:   #131929;
+  --navy-light:  #18213a;
+  --navy-border: #1e2a45;
+  --gold:        #f5a800;
+  --gold-light:  #ffc94d;
+  --gold-dim:    rgba(245,168,0,0.12);
+  --text:        #ffffff;
+  --text-muted:  #7a8aaa;
+  --text-sub:    #b0bdd4;
+  --green:       #22c55e;
+  --radius:      14px;
+  --radius-sm:   8px;
+  --border:      rgba(255,255,255,0.06);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--navy);
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* ════════════════════════════════════════
+   NAVBAR
+════════════════════════════════════════ */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 500;
+  height: 60px;
+  background: rgba(11,15,30,0.97);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--navy-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 44px;
+}
+
+.nav-logo {
+  text-decoration: none;
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  font-weight: 700;
+  font-style: italic;
+  color: #fff;
+}
+.nav-logo span { color: var(--gold); }
+
+.nav-links {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+}
+.nav-links a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+  transition: color 0.2s;
+  position: relative;
+}
+.nav-links a:hover { color: #fff; }
+.nav-links a.active {
+  color: #fff;
+}
+.nav-links a.active::after {
+  content: '';
+  position: absolute;
+  bottom: -4px; left: 0; right: 0;
+  height: 2px;
+  background: var(--gold);
+  border-radius: 2px;
+}
+
+.btn-plan {
+  background: var(--gold);
+  color: #000;
+  border: none;
+  padding: 9px 20px;
+  border-radius: 6px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s;
+}
+.btn-plan:hover { background: var(--gold-light); transform: translateY(-1px); }
+
+/* ════════════════════════════════════════
+   HERO
+════════════════════════════════════════ */
+.hero {
+  position: relative;
+  min-height: 480px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 100px 40px 60px;
+  overflow: hidden;
+}
+
+/* hero bg image with overlay */
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to bottom, rgba(11,15,30,0.45) 0%, rgba(11,15,30,0.7) 60%, rgba(11,15,30,1) 100%),
+    url('https://images.unsplash.com/photo-1586348943529-beaae6c28db9?w=1400&q=80') center/cover no-repeat;
+  z-index: 0;
+}
+.hero-img-label {
+  position: absolute;
+  top: 70px; left: 16px;
+  font-size: 10px;
+  color: rgba(255,255,255,0.4);
+  z-index: 2;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 640px;
+}
+
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(245,168,0,0.12);
+  border: 1px solid rgba(245,168,0,0.3);
+  border-radius: 20px;
+  padding: 5px 14px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 22px;
+  animation: fadeUp 0.6s ease both;
+}
+.hero-eyebrow::before { content: '●'; font-size: 6px; }
+
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(36px, 5vw, 56px);
+  font-weight: 900;
+  line-height: 1.1;
+  margin-bottom: 10px;
+  animation: fadeUp 0.6s ease 0.1s both;
+}
+.hero h1 .gold {
+  color: var(--gold);
+  font-style: italic;
+  display: block;
+}
+
+.hero-sub {
+  color: var(--text-sub);
+  font-size: 14px;
+  line-height: 1.7;
+  max-width: 460px;
+  margin: 0 auto;
+  animation: fadeUp 0.6s ease 0.2s both;
+}
+
+/* ════════════════════════════════════════
+   FILTER BAR
+════════════════════════════════════════ */
+.filter-section {
+  background: var(--navy-mid);
+  border-bottom: 1px solid var(--navy-border);
+  padding: 20px 44px;
+  position: sticky;
+  top: 60px;
+  z-index: 100;
+}
+
+.filter-row {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.filter-search-wrap {
+  flex: 1;
+  min-width: 200px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--navy-card);
+  border: 1px solid var(--navy-border);
+  border-radius: var(--radius-sm);
+  padding: 9px 14px;
+  transition: border-color 0.2s;
+}
+.filter-search-wrap:focus-within { border-color: var(--gold); }
+.filter-search-icon { color: var(--text-muted); font-size: 13px; flex-shrink: 0; }
+.filter-search-input {
+  background: none;
+  border: none;
+  outline: none;
+  color: #fff;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  width: 100%;
+}
+.filter-search-input::placeholder { color: var(--text-muted); }
+
+.filter-select {
+  background: var(--navy-card);
+  border: 1px solid var(--navy-border);
+  color: var(--text-sub);
+  padding: 9px 32px 9px 14px;
+  border-radius: var(--radius-sm);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%237a8aaa'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 8px;
+  transition: border-color 0.2s;
+  outline: none;
+}
+.filter-select option { background: #131929; }
+.filter-select:focus, .filter-select.active-filter { border-color: var(--gold); color: #fff; }
+
+.btn-filter-search {
+  background: var(--gold);
+  color: #000;
+  border: none;
+  padding: 9px 22px;
+  border-radius: var(--radius-sm);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+  transition: background 0.2s;
+}
+.btn-filter-search:hover { background: var(--gold-light); }
+
+/* ════════════════════════════════════════
+   MAIN CONTENT AREA
+════════════════════════════════════════ */
+.main-wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 56px 44px 80px;
+}
+
+/* ════════════════════════════════════════
+   FEATURED STORY
+════════════════════════════════════════ */
+.featured-label {
+  text-align: center;
+  margin-bottom: 28px;
+}
+.featured-label h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 26px;
+  font-weight: 700;
+}
+.featured-label h2 span { color: var(--gold); font-style: italic; }
+.featured-underline {
+  width: 50px;
+  height: 2px;
+  background: var(--gold);
+  margin: 8px auto 0;
+  border-radius: 2px;
+}
+
+.featured-card {
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  background: var(--navy-card);
+  border: 1px solid var(--navy-border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin-bottom: 64px;
+  position: relative;
+  transition: border-color 0.3s;
+}
+.featured-card:hover { border-color: rgba(245,168,0,0.3); }
+
+.featured-img {
+  position: relative;
+  min-height: 300px;
+  overflow: hidden;
+}
+.featured-img-inner {
+  position: absolute;
+  inset: 0;
+  background: url('https://images.unsplash.com/photo-1590059390047-10eb7bb5f573?w=600&q=80') center/cover no-repeat;
+  transition: transform 0.5s ease;
+}
+.featured-card:hover .featured-img-inner { transform: scale(1.04); }
+
+.featured-img-label {
+  position: absolute;
+  top: 10px; left: 10px;
+  font-size: 9px;
+  color: rgba(255,255,255,0.5);
+  z-index: 2;
+}
+.featured-editor-badge {
+  position: absolute;
+  top: 10px; left: 10px;
+  background: var(--gold);
+  color: #000;
+  font-size: 9px;
+  font-weight: 800;
+  padding: 3px 9px;
+  border-radius: 4px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.featured-img-caption {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  padding: 10px 12px;
+  font-size: 10px;
+  color: rgba(255,255,255,0.6);
+  background: linear-gradient(transparent, rgba(0,0,0,0.5));
+}
+
+.featured-body {
+  padding: 36px 36px 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+
+.featured-quote-mark {
+  position: absolute;
+  top: 24px; right: 28px;
+  font-family: 'Playfair Display', serif;
+  font-size: 80px;
+  color: rgba(245,168,0,0.1);
+  line-height: 1;
+  pointer-events: none;
+}
+
+.featured-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 4px;
+}
+.featured-title .gold { color: var(--gold); font-style: italic; }
+
+.featured-quote {
+  color: var(--text-sub);
+  font-size: 13px;
+  line-height: 1.8;
+  font-style: italic;
+  margin: 18px 0 24px;
+  border-left: 3px solid var(--gold);
+  padding-left: 16px;
+}
+
+.featured-author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+.author-avatar {
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+  border: 2px solid rgba(245,168,0,0.3);
+  background: var(--navy-light);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px;
+}
+.author-name { font-size: 13px; font-weight: 700; }
+.author-meta { font-size: 11px; color: var(--text-muted); margin-top: 1px; }
+.author-meta .country { color: var(--gold); font-weight: 600; }
+.author-meta .type { color: var(--text-muted); }
+
+.btn-read-story {
+  align-self: flex-start;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--gold);
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: 'DM Sans', sans-serif;
+  padding: 0;
+  transition: gap 0.2s;
+}
+.btn-read-story:hover { gap: 10px; }
+.btn-read-story::after { content: '→'; }
+
+/* ════════════════════════════════════════
+   REVIEWS LIST
+════════════════════════════════════════ */
+.reviews-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+.reviews-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  font-weight: 700;
+}
+.reviews-title span { color: var(--gold); font-style: italic; }
+
+.reviews-sort {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+.sort-select {
+  background: var(--navy-card);
+  border: 1px solid var(--navy-border);
+  color: var(--text-sub);
+  padding: 6px 28px 6px 10px;
+  border-radius: 6px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='5'%3E%3Cpath d='M0 0l4 5 4-5z' fill='%237a8aaa'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  outline: none;
+}
+
+.reviews-count {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-bottom: 24px;
+}
+.reviews-count span { color: var(--text-sub); font-weight: 600; }
+
+.reviews-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* ════════════════════════════════════════
+   REVIEW CARD
+════════════════════════════════════════ */
+.review-card {
+  background: var(--navy-card);
+  border: 1px solid var(--navy-border);
+  border-radius: var(--radius);
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  overflow: hidden;
+  transition: border-color 0.25s, transform 0.25s;
+  animation: fadeUp 0.5s ease both;
+}
+.review-card:hover {
+  border-color: rgba(245,168,0,0.25);
+  transform: translateX(3px);
+}
+
+.review-img {
+  position: relative;
+  overflow: hidden;
+  min-height: 160px;
+}
+.review-img-inner {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.4s ease;
+}
+.review-card:hover .review-img-inner { transform: scale(1.06); }
+
+.review-img-label {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  font-size: 9px;
+  color: rgba(255,255,255,0.45);
+  padding: 6px 8px;
+  background: linear-gradient(transparent, rgba(0,0,0,0.5));
+}
+.review-type-badge {
+  position: absolute;
+  top: 8px; left: 8px;
+  font-size: 9px;
+  font-weight: 800;
+  padding: 3px 8px;
+  border-radius: 4px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  z-index: 2;
+}
+.type-cultural  { background: #3b82f6; color: #fff; }
+.type-nature    { background: #22c55e; color: #000; }
+.type-wildlife  { background: #f97316; color: #fff; }
+.type-beach     { background: #06b6d4; color: #000; }
+.type-city      { background: #a855f7; color: #fff; }
+
+.review-body {
+  padding: 20px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.review-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.review-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.review-stars {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.star { color: var(--gold); font-size: 12px; }
+.star.empty { color: var(--navy-border); }
+.review-rating-num { color: var(--gold); font-size: 12px; font-weight: 700; margin-left: 4px; }
+
+.review-text {
+  color: var(--text-sub);
+  font-size: 12.5px;
+  line-height: 1.7;
+  font-style: italic;
+}
+
+.review-author-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 4px;
+}
+.review-avatar {
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  background: var(--navy-light);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 15px;
+  border: 1px solid var(--navy-border);
+  flex-shrink: 0;
+  overflow: hidden;
+}
+.review-author-name { font-size: 12px; font-weight: 700; }
+.review-author-meta { font-size: 11px; color: var(--text-muted); }
+.review-author-meta .dot { margin: 0 4px; }
+
+/* ════════════════════════════════════════
+   LOAD MORE
+════════════════════════════════════════ */
+.load-more-wrap {
+  text-align: center;
+  margin-top: 36px;
+}
+.btn-load-more {
+  background: none;
+  border: 1px solid var(--navy-border);
+  color: var(--text-sub);
+  padding: 12px 28px;
+  border-radius: 8px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.btn-load-more:hover { border-color: var(--gold); color: var(--gold); }
+.spin-icon { display: inline-block; }
+.btn-load-more.loading .spin-icon { animation: spin 0.7s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ════════════════════════════════════════
+   EMPTY STATE
+════════════════════════════════════════ */
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+  display: none;
+}
+.empty-state-icon { font-size: 40px; margin-bottom: 14px; }
+.empty-state-title { font-size: 18px; font-weight: 700; color: var(--text-sub); margin-bottom: 6px; }
+.empty-state-sub { font-size: 13px; color: var(--text-muted); margin-bottom: 20px; }
+.btn-clear-filters {
+  background: none;
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  padding: 9px 22px;
+  border-radius: 7px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.btn-clear-filters:hover { background: var(--gold-dim); }
+
+/* ════════════════════════════════════════
+   CTA / COMMUNITY SECTION
+════════════════════════════════════════ */
+.cta-section {
+  background: var(--navy-mid);
+  border-top: 1px solid var(--navy-border);
+  border-bottom: 1px solid var(--navy-border);
+  padding: 80px 44px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.cta-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 60% 70% at 50% 50%, rgba(245,168,0,0.05) 0%, transparent 70%);
+  pointer-events: none;
+}
+.cta-dots {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin-bottom: 28px;
+}
+.cta-dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--navy-border);
+}
+.cta-dot.active { background: var(--gold); width: 20px; border-radius: 3px; }
+
+.cta-eyebrow {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 18px;
+}
+.cta-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(30px, 4vw, 46px);
+  font-weight: 900;
+  line-height: 1.15;
+  margin-bottom: 14px;
+  position: relative;
+  z-index: 1;
+}
+.cta-title .gold { color: var(--gold); font-style: italic; }
+.cta-sub {
+  color: var(--text-muted);
+  font-size: 14px;
+  max-width: 440px;
+  margin: 0 auto 36px;
+  line-height: 1.7;
+  position: relative;
+  z-index: 1;
+}
+.cta-buttons {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 1;
+}
+.btn-write {
+  background: var(--gold);
+  color: #000;
+  border: none;
+  padding: 13px 28px;
+  border-radius: 8px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+.btn-write:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(245,168,0,0.25); }
+.btn-explore-pkg {
+  background: none;
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.2);
+  padding: 13px 28px;
+  border-radius: 8px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+.btn-explore-pkg:hover { border-color: var(--gold); color: var(--gold); }
+
+/* ════════════════════════════════════════
+   FOOTER
+════════════════════════════════════════ */
+footer {
+  background: #070b18;
+  border-top: 1px solid var(--navy-border);
+  padding: 52px 44px 22px;
+}
+.footer-grid {
+  max-width: 1100px;
+  margin: 0 auto 40px;
+  display: grid;
+  grid-template-columns: 1.8fr 1fr 1fr 1.5fr;
+  gap: 44px;
+}
+.footer-brand-logo {
+  text-decoration: none;
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  font-weight: 700;
+  font-style: italic;
+  color: #fff;
+  display: block;
+  margin-bottom: 12px;
+}
+.footer-brand-logo span { color: var(--gold); }
+.footer-brand-tagline {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+}
+.footer-brand p {
+  color: var(--text-muted);
+  font-size: 12px;
+  line-height: 1.7;
+  max-width: 220px;
+  margin-bottom: 18px;
+}
+.footer-socials { display: flex; gap: 8px; }
+.social-btn {
+  width: 30px; height: 30px;
+  border: 1px solid var(--navy-border);
+  border-radius: 6px;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.social-btn:hover { border-color: var(--gold); color: var(--gold); }
+
+.footer-col h4 {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #fff;
+  margin-bottom: 16px;
+}
+.footer-col ul { list-style: none; }
+.footer-col ul li { margin-bottom: 9px; }
+.footer-col ul li a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 13px;
+  transition: color 0.2s;
+}
+.footer-col ul li a:hover { color: var(--gold); }
+
+.footer-contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin-bottom: 10px;
+  color: var(--text-muted);
+  font-size: 12px;
+  line-height: 1.5;
+}
+.contact-icon { font-size: 13px; flex-shrink: 0; margin-top: 1px; }
+
+.newsletter-sub { color: var(--text-muted); font-size: 12px; margin-bottom: 12px; line-height: 1.5; }
+.newsletter-row {
+  display: flex;
+  border-radius: 7px;
+  overflow: hidden;
+  border: 1px solid var(--navy-border);
+}
+.newsletter-input {
+  flex: 1;
+  background: var(--navy-card);
+  border: none;
+  outline: none;
+  padding: 10px 12px;
+  color: #fff;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+}
+.newsletter-input::placeholder { color: var(--text-muted); }
+.newsletter-btn {
+  background: var(--gold);
+  border: none;
+  padding: 10px 16px;
+  color: #000;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.newsletter-btn:hover { background: var(--gold-light); }
+
+.footer-bottom {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding-top: 20px;
+  border-top: 1px solid var(--navy-border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.footer-bottom p { color: #2a3550; font-size: 11px; }
+.footer-bottom-links { display: flex; gap: 18px; }
+.footer-bottom-links a { color: #2a3550; font-size: 11px; text-decoration: none; transition: color 0.2s; }
+.footer-bottom-links a:hover { color: var(--gold); }
+
+/* ════════════════════════════════════════
+   ANIMATIONS
+════════════════════════════════════════ */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* Responsive */
+@media (max-width: 860px) {
+  nav, .filter-section, .main-wrap, .cta-section, footer { padding-left: 20px; padding-right: 20px; }
+  .featured-card { grid-template-columns: 1fr; }
+  .featured-img { min-height: 220px; }
+  .review-card { grid-template-columns: 1fr; }
+  .review-img { min-height: 160px; }
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 28px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ════ NAVBAR ════ -->
+<nav>
+  <a href="#" class="nav-logo">Ceylon<span>Tales</span></a>
+  <ul class="nav-links">
+    <li><a href="#">Home</a></li>
+    <li><a href="#">Destinations</a></li>
+    <li><a href="#">Packages</a></li>
+    <li><a href="#" class="active">Reviews</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+  <button class="btn-plan">Plan Your Trip</button>
+</nav>
+
+<!-- ════ HERO ════ -->
+<div class="hero">
+  <div class="hero-bg"></div>
+  <span class="hero-img-label">📷 Sri Lanka Tea Plantation</span>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Verified Traveler Stories</div>
+    <h1>
+      Traveler Experiences
+      <span class="gold">Across Sri Lanka</span>
+    </h1>
+    <p class="hero-sub">Read authentic reviews and stories shared by travelers who explored Sri Lanka's beautiful destinations.</p>
+  </div>
+</div>
+
+<!-- ════ FILTER BAR ════ -->
+<div class="filter-section">
+  <div class="filter-row">
+    <div class="filter-search-wrap">
+      <span class="filter-search-icon">🔍</span>
+      <input type="text" class="filter-search-input" id="searchInput" placeholder="Search destination or place...">
+    </div>
+    <select class="filter-select" id="districtFilter">
+      <option value="all">All Districts</option>
+      <option value="kandy">Kandy</option>
+      <option value="galle">Galle</option>
+      <option value="ella">Ella / Badulla</option>
+      <option value="sigiriya">Sigiriya / Matale</option>
+      <option value="trincomalee">Trincomalee</option>
+      <option value="yala">Yala / Hambantota</option>
+      <option value="colombo">Colombo</option>
+    </select>
+    <select class="filter-select" id="expFilter">
+      <option value="all">All Experiences</option>
+      <option value="cultural">Cultural</option>
+      <option value="nature">Nature</option>
+      <option value="wildlife">Wildlife</option>
+      <option value="beach">Beach</option>
+      <option value="city">City</option>
+    </select>
+    <select class="filter-select" id="ratingFilter">
+      <option value="all">All Ratings</option>
+      <option value="5">★★★★★ 5 Stars</option>
+      <option value="4">★★★★ 4+ Stars</option>
+      <option value="3">★★★ 3+ Stars</option>
+    </select>
+    <button class="btn-filter-search" onclick="applyFilters()">🔍 Search</button>
+  </div>
+</div>
+
+<!-- ════ MAIN ════ -->
+<div class="main-wrap">
+
+  <!-- Featured Story -->
+  <div class="reveal">
+    <div class="featured-label">
+      <h2>Featured Story <span>of the Month</span></h2>
+      <div class="featured-underline"></div>
+    </div>
+
+    <div class="featured-card">
+      <div class="featured-img">
+        <div class="featured-img-inner"></div>
+        <div class="featured-editor-badge">✦ Editor's Choice</div>
+        <div class="featured-img-caption">📷 Train ride Ella to Kandy</div>
+      </div>
+      <div class="featured-body">
+        <div class="featured-quote-mark">"</div>
+        <div class="featured-title">
+          A Train Ride Through<br>
+          <span class="gold">The Clouds</span>
+        </div>
+        <p class="featured-quote">
+          "The journey from Kandy to Ella isn't just transportation; it's a moving meditation. Hanging out the open door, feeling the cool mist of the tea plantations on my face, I realized this was the moment I had traveled 5,000 miles to experience."
+        </p>
+        <div class="featured-author">
+          <div class="author-avatar">👩</div>
+          <div>
+            <div class="author-name">Elena Rossi</div>
+            <div class="author-meta"><span class="country">ITALY</span> <span class="dot">•</span> <span class="type">SOLO TRAVELER</span></div>
+          </div>
+        </div>
+        <button class="btn-read-story">Read Full Story</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Reviews List -->
+  <div class="reviews-header">
+    <div class="reviews-title">Latest <span>Reviews</span></div>
+    <div class="reviews-sort">
+      Sort by:
+      <select class="sort-select" id="sortSelect" onchange="applyFilters()">
+        <option value="recent">Most Recent</option>
+        <option value="rating">Highest Rated</option>
+        <option value="oldest">Oldest First</option>
+      </select>
+    </div>
+  </div>
+  <div class="reviews-count" id="reviewsCount">Showing <span>12</span> recent reviews</div>
+
+  <div class="reviews-list" id="reviewsList">
+
+    <!-- Review 1 -->
+    <div class="review-card" data-district="sigiriya" data-type="cultural" data-rating="5" data-date="2024-10">
+      <div class="review-img">
+        <div class="review-img-inner" style="background-image:url('https://images.unsplash.com/photo-1590123591659-8ff8e10a89ca?w=400&q=80')"></div>
+        <div class="review-type-badge type-cultural">Cultural</div>
+        <div class="review-img-label">📷 Nine Arches Bridge</div>
+      </div>
+      <div class="review-body">
+        <div class="review-top">
+          <div class="review-title">Sigiriya Rock Fortress</div>
+          <div class="review-stars">
+            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+            <span class="review-rating-num">5.0</span>
+          </div>
+        </div>
+        <p class="review-text">"Amazing sunrise view from the rock fortress. The climb was worth it and the view was breathtaking. Our guide was incredibly knowledgeable about the history of the water gardens. A must-visit for anyone coming to Sri Lanka!"</p>
+        <div class="review-author-row">
+          <div class="review-avatar">👩</div>
+          <div>
+            <div class="review-author-name">Sarah Jenkins</div>
+            <div class="review-author-meta">United Kingdom <span class="dot">•</span> Visited Oct 2023</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Review 2 -->
+    <div class="review-card" data-district="ella" data-type="nature" data-rating="5" data-date="2024-11">
+      <div class="review-img">
+        <div class="review-img-inner" style="background-image:url('https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=400&q=80')"></div>
+        <div class="review-type-badge type-nature">Nature</div>
+        <div class="review-img-label">📷 Nine Arches Bridge</div>
+      </div>
+      <div class="review-body">
+        <div class="review-top">
+          <div class="review-title">Ella – Nine Arches Bridge</div>
+          <div class="review-stars">
+            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+            <span class="review-rating-num">5.0</span>
+          </div>
+        </div>
+        <p class="review-text">"The train ride to Ella was spectacular, but seeing the Nine Arches Bridge in person was the highlight. We timed out visit perfectly to see the blue train pass by. The atmosphere in the tea hills is so peaceful."</p>
+        <div class="review-author-row">
+          <div class="review-avatar">👨</div>
+          <div>
+            <div class="review-author-name">Michael Chen</div>
+            <div class="review-author-meta">Singapore <span class="dot">•</span> Visited Nov 2023</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Review 3 -->
+    <div class="review-card" data-district="galle" data-type="cultural" data-rating="4" data-date="2024-01">
+      <div class="review-img">
+        <div class="review-img-inner" style="background-image:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400&q=80')"></div>
+        <div class="review-type-badge type-cultural">Cultural</div>
+        <div class="review-img-label">📷 Galle Fort</div>
+      </div>
+      <div class="review-body">
+        <div class="review-top">
+          <div class="review-title">Galle Fort Sunset</div>
+          <div class="review-stars">
+            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star empty">★</span>
+            <span class="review-rating-num">4.0</span>
+          </div>
+        </div>
+        <p class="review-text">"Walking the ramparts at sunset was magical. The mix of colonial architecture and the ocean breeze is unique. We found a lovely café inside the fort for dinner. Highly recommend spending at least two days here."</p>
+        <div class="review-author-row">
+          <div class="review-avatar">👩</div>
+          <div>
+            <div class="review-author-name">Emma Wilson</div>
+            <div class="review-author-meta">Australia <span class="dot">•</span> Visited Jan 2024</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Review 4 -->
+    <div class="review-card" data-district="yala" data-type="wildlife" data-rating="4" data-date="2024-09">
+      <div class="review-img">
+        <div class="review-img-inner" style="background-image:url('https://images.unsplash.com/photo-1581852017103-68ac65514cf7?w=400&q=80')"></div>
+        <div class="review-type-badge type-wildlife">Wildlife</div>
+        <div class="review-img-label">📷 Yala National Park</div>
+      </div>
+      <div class="review-body">
+        <div class="review-top">
+          <div class="review-title">Yala National Park Safari</div>
+          <div class="review-stars">
+            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star empty">★</span>
+            <span class="review-rating-num">4.0</span>
+          </div>
+        </div>
+        <p class="review-text">"We were lucky enough to spot a leopard within the first hour! The park is teeming with wildlife. Our driver was very respectful of the animals and knew exactly where to look. An unforgettable experience."</p>
+        <div class="review-author-row">
+          <div class="review-avatar">👨</div>
+          <div>
+            <div class="review-author-name">David Miller</div>
+            <div class="review-author-meta">USA <span class="dot">•</span> Visited Sep 2024</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Review 5 -->
+    <div class="review-card" data-district="galle" data-type="beach" data-rating="5" data-date="2024-02">
+      <div class="review-img">
+        <div class="review-img-inner" style="background-image:url('https://images.unsplash.com/photo-1559592413-7cec4d0cae2b?w=400&q=80')"></div>
+        <div class="review-type-badge type-beach">Beach</div>
+        <div class="review-img-label">📷 Mirissa Beach</div>
+      </div>
+      <div class="review-body">
+        <div class="review-top">
+          <div class="review-title">Mirissa Beach &amp; Whale Watching</div>
+          <div class="review-stars">
+            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+            <span class="review-rating-num">5.0</span>
+          </div>
+        </div>
+        <p class="review-text">"The beaches are pristine and the whale watching tour was incredible. We saw blue whales and dolphins! The seafood in Mirissa is also some of the best I've ever had."</p>
+        <div class="review-author-row">
+          <div class="review-avatar">👩</div>
+          <div>
+            <div class="review-author-name">Priya Patel</div>
+            <div class="review-author-meta">India <span class="dot">•</span> Visited Feb 2024</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Review 6 -->
+    <div class="review-card" data-district="kandy" data-type="cultural" data-rating="5" data-date="2024-03">
+      <div class="review-img">
+        <div class="review-img-inner" style="background-image:url('https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?w=400&q=80')"></div>
+        <div class="review-type-badge type-cultural">Cultural</div>
+        <div class="review-img-label">📷 Temple of the Tooth</div>
+      </div>
+      <div class="review-body">
+        <div class="review-top">
+          <div class="review-title">Kandy Temple &amp; Cultural Show</div>
+          <div class="review-stars">
+            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+            <span class="review-rating-num">5.0</span>
+          </div>
+        </div>
+        <p class="review-text">"The Temple of the Tooth is absolutely magnificent. The evening Kandyan dance performance was a bonus we didn't expect. The whole city has this calm, spiritual energy that is hard to find anywhere else."</p>
+        <div class="review-author-row">
+          <div class="review-avatar">👨</div>
+          <div>
+            <div class="review-author-name">James Carter</div>
+            <div class="review-author-meta">Canada <span class="dot">•</span> Visited Mar 2024</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Review 7 -->
+    <div class="review-card" data-district="trincomalee" data-type="beach" data-rating="5" data-date="2024-07">
+      <div class="review-img">
+        <div class="review-img-inner" style="background-image:url('https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=400&q=80')"></div>
+        <div class="review-type-badge type-beach">Beach</div>
+        <div class="review-img-label">📷 Nilaveli Beach</div>
+      </div>
+      <div class="review-body">
+        <div class="review-top">
+          <div class="review-title">Trincomalee &amp; Pigeon Island</div>
+          <div class="review-stars">
+            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+            <span class="review-rating-num">5.0</span>
+          </div>
+        </div>
+        <p class="review-text">"Nilaveli beach is untouched paradise. The snorkelling at Pigeon Island National Park was world-class — the coral and fish life is extraordinary. Far less crowded than the south coast. A hidden gem!"</p>
+        <div class="review-author-row">
+          <div class="review-avatar">👩</div>
+          <div>
+            <div class="review-author-name">Sophie Laurent</div>
+            <div class="review-author-meta">France <span class="dot">•</span> Visited Jul 2024</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Review 8 -->
+    <div class="review-card" data-district="colombo" data-type="city" data-rating="4" data-date="2024-05">
+      <div class="review-img">
+        <div class="review-img-inner" style="background-image:url('https://images.unsplash.com/photo-1588666309990-d68f08e3d4a6?w=400&q=80')"></div>
+        <div class="review-type-badge type-city">City</div>
+        <div class="review-img-label">📷 Colombo City</div>
+      </div>
+      <div class="review-body">
+        <div class="review-top">
+          <div class="review-title">Colombo Food &amp; Culture Walk</div>
+          <div class="review-stars">
+            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star empty">★</span>
+            <span class="review-rating-num">4.0</span>
+          </div>
+        </div>
+        <p class="review-text">"Colombo surprised us with its energy and diversity. The Pettah market is chaotic in the best way. Gangaramaya temple is stunning. The street food is incredible — especially the kottu roti at midnight!"</p>
+        <div class="review-author-row">
+          <div class="review-avatar">👨</div>
+          <div>
+            <div class="review-author-name">Alex Thompson</div>
+            <div class="review-author-meta">Germany <span class="dot">•</span> Visited May 2024</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Empty state -->
+  <div class="empty-state" id="emptyState">
+    <div class="empty-state-icon">🔍</div>
+    <div class="empty-state-title">No reviews found</div>
+    <div class="empty-state-sub">Try adjusting your filters or search term.</div>
+    <button class="btn-clear-filters" onclick="clearFilters()">Clear All Filters</button>
+  </div>
+
+  <!-- Load More -->
+  <div class="load-more-wrap" id="loadMoreWrap">
+    <button class="btn-load-more" id="loadMoreBtn" onclick="loadMore()">
+      <span class="spin-icon">↻</span> Load More Reviews
+    </button>
+  </div>
+
+</div><!-- /main-wrap -->
+
+<!-- ════ CTA ════ -->
+<div class="cta-section">
+  <div class="cta-dots">
+    <div class="cta-dot"></div>
+    <div class="cta-dot active"></div>
+    <div class="cta-dot"></div>
+  </div>
+  <div class="cta-eyebrow">Community</div>
+  <h2 class="cta-title">Share Your <span class="gold">Sri Lanka Experience</span></h2>
+  <p class="cta-sub">Have you visited Sri Lanka? Share your story and help other travelers discover amazing places. Your insights make our community stronger.</p>
+  <div class="cta-buttons">
+    <button class="btn-write">✏️ Write a Review</button>
+    <button class="btn-explore-pkg">🗺 Explore Travel Packages</button>
+  </div>
+</div>
+
+<!-- ════ FOOTER ════ -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="#" class="footer-brand-logo">Ceylon<span>Tales</span></a>
+      <div class="footer-brand-tagline">Luxury Sri Lanka Travel</div>
+      <p>Crafting extraordinary journeys through the timeless beauty of Sri Lanka since 2010. Every experience is curated with passion and precision.</p>
+      <div class="footer-socials">
+        <a href="#" class="social-btn">f</a>
+        <a href="#" class="social-btn">ig</a>
+        <a href="#" class="social-btn">𝕏</a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h4>Explore</h4>
+      <ul>
+        <li><a href="#">Destinations</a></li>
+        <li><a href="#">Travel Packages</a></li>
+        <li><a href="#">Traveler Stories</a></li>
+        <li><a href="#">Photo Gallery</a></li>
+        <li><a href="#">Travel Blog</a></li>
+        <li><a href="#">Sri Lanka Guide</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="#">Luxury Tours</a></li>
+        <li><a href="#">Private Transfers</a></li>
+        <li><a href="#">Hotel Bookings</a></li>
+        <li><a href="#">Safari Packages</a></li>
+        <li><a href="#">Cultural Experiences</a></li>
+        <li><a href="#">Custom Itineraries</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Contact Us</h4>
+      <div class="footer-contact-item"><span class="contact-icon">📍</span> 42 Galle Road, Colombo 03, Sri Lanka</div>
+      <div class="footer-contact-item"><span class="contact-icon">📞</span> +94 11 234 5678</div>
+      <div class="footer-contact-item"><span class="contact-icon">✉️</span> hello@ceylontales.lk</div>
+      <div style="margin-top:16px;">
+        <div class="newsletter-sub">Subscribe for travel inspiration</div>
+        <div class="newsletter-row">
+          <input type="email" class="newsletter-input" placeholder="Your email">
+          <button class="newsletter-btn">Join</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2024 CeylonTales. All rights reserved. Crafted with ♥ for Sri Lanka.</p>
+    <div class="footer-bottom-links">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Service</a>
+      <a href="#">Cookie Policy</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ════ Scroll Reveal ════ */
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+/* ════ All reviews data (from DOM) ════ */
+const allCards = Array.from(document.querySelectorAll('.review-card'));
+let visibleCount = 5; // show 5 initially, load more reveals rest
+
+function initCards() {
+  allCards.forEach((card, i) => {
+    card.style.display = i < visibleCount ? '' : 'none';
+    card.style.animationDelay = (i % 5) * 0.08 + 's';
+  });
+  updateLoadMore();
+}
+
+/* ════ Apply Filters ════ */
+function applyFilters() {
+  const q        = document.getElementById('searchInput').value.trim().toLowerCase();
+  const district = document.getElementById('districtFilter').value;
+  const exp      = document.getElementById('expFilter').value;
+  const rating   = document.getElementById('ratingFilter').value;
+  const sort     = document.getElementById('sortSelect').value;
+
+  // Highlight active filters
+  ['districtFilter','expFilter','ratingFilter'].forEach(id => {
+    const el = document.getElementById(id);
+    el.classList.toggle('active-filter', el.value !== 'all');
+  });
+
+  let filtered = allCards.filter(card => {
+    const text       = card.innerText.toLowerCase();
+    const cardDist   = card.dataset.district;
+    const cardType   = card.dataset.type;
+    const cardRating = parseInt(card.dataset.rating);
+
+    const qMatch    = !q || text.includes(q);
+    const distMatch = district === 'all' || cardDist === district;
+    const expMatch  = exp === 'all' || cardType === exp;
+    const ratMatch  = rating === 'all' || cardRating >= parseInt(rating);
+
+    return qMatch && distMatch && expMatch && ratMatch;
+  });
+
+  // Sort
+  if (sort === 'rating') {
+    filtered.sort((a, b) => parseInt(b.dataset.rating) - parseInt(a.dataset.rating));
+  } else if (sort === 'recent') {
+    filtered.sort((a, b) => b.dataset.date.localeCompare(a.dataset.date));
+  } else if (sort === 'oldest') {
+    filtered.sort((a, b) => a.dataset.date.localeCompare(b.dataset.date));
+  }
+
+  // Hide all, show filtered
+  allCards.forEach(c => c.style.display = 'none');
+  visibleCount = Math.min(5, filtered.length);
+  filtered.forEach((card, i) => {
+    if (i < visibleCount) {
+      card.style.display = '';
+      card.style.animation = 'none';
+      requestAnimationFrame(() => {
+        card.style.animation = '';
+        card.style.animationDelay = i * 0.08 + 's';
+      });
+      // Re-append in sorted order
+      document.getElementById('reviewsList').appendChild(card);
+    }
+  });
+
+  // Store filtered for load more
+  window._filtered = filtered;
+
+  // Count label
+  const countEl = document.getElementById('reviewsCount');
+  countEl.innerHTML = `Showing <span>${Math.min(visibleCount, filtered.length)}</span> of <span>${filtered.length}</span> reviews`;
+
+  // Empty state
+  const empty = document.getElementById('emptyState');
+  empty.style.display = filtered.length === 0 ? 'block' : 'none';
+  document.getElementById('reviewsList').style.display = filtered.length === 0 ? 'none' : 'flex';
+
+  updateLoadMore(filtered);
+}
+
+/* ════ Load More ════ */
+function loadMore() {
+  const btn = document.getElementById('loadMoreBtn');
+  btn.classList.add('loading');
+
+  setTimeout(() => {
+    btn.classList.remove('loading');
+    const filtered = window._filtered || allCards;
+    const newCount = Math.min(visibleCount + 3, filtered.length);
+    filtered.forEach((card, i) => {
+      if (i >= visibleCount && i < newCount) {
+        card.style.display = '';
+        card.style.animation = 'none';
+        document.getElementById('reviewsList').appendChild(card);
+        requestAnimationFrame(() => {
+          card.style.animation = '';
+          card.style.animationDelay = '0s';
+        });
+      }
+    });
+    visibleCount = newCount;
+    document.getElementById('reviewsCount').innerHTML =
+      `Showing <span>${visibleCount}</span> of <span>${filtered.length}</span> reviews`;
+    updateLoadMore(filtered);
+  }, 700);
+}
+
+function updateLoadMore(filtered) {
+  const f = filtered || window._filtered || allCards;
+  const wrap = document.getElementById('loadMoreWrap');
+  wrap.style.display = visibleCount >= f.length ? 'none' : 'block';
+}
+
+/* ════ Clear Filters ════ */
+function clearFilters() {
+  document.getElementById('searchInput').value = '';
+  document.getElementById('districtFilter').value = 'all';
+  document.getElementById('expFilter').value = 'all';
+  document.getElementById('ratingFilter').value = 'all';
+  document.getElementById('districtFilter').classList.remove('active-filter');
+  document.getElementById('expFilter').classList.remove('active-filter');
+  document.getElementById('ratingFilter').classList.remove('active-filter');
+  window._filtered = allCards;
+  visibleCount = 5;
+  initCards();
+  document.getElementById('reviewsCount').innerHTML = `Showing <span>5</span> of <span>${allCards.length}</span> reviews`;
+  document.getElementById('emptyState').style.display = 'none';
+  document.getElementById('reviewsList').style.display = 'flex';
+}
+
+/* ════ Live search ════ */
+document.getElementById('searchInput').addEventListener('input', applyFilters);
+document.getElementById('districtFilter').addEventListener('change', applyFilters);
+document.getElementById('expFilter').addEventListener('change', applyFilters);
+document.getElementById('ratingFilter').addEventListener('change', applyFilters);
+
+/* ════ Init ════ */
+window._filtered = allCards;
+initCards();
+document.getElementById('reviewsCount').innerHTML = `Showing <span>5</span> of <span>${allCards.length}</span> reviews`;
+</script>
+</body>
+</html>

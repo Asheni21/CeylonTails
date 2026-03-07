@@ -491,6 +491,20 @@ nav{
 .feature-icon .bi,.feature-icon .fa-mountain{
     color: #ebcd25;
 }
+.todo-card{
+  transition: all 0.35s ease;
+}
+
+.todo-card.hide{
+  opacity:0;
+  transform:scale(0.9);
+  pointer-events:none;
+  position:absolute;
+}
+
+.todo-grid{
+  position:relative;
+}
 /* Pin pulse animation */
 @keyframes pinPulse {
   0% { transform: scale(1); opacity:1; }

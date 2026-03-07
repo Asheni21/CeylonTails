@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Explore Sigiriya — Sri Lanka Premium Travel</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="stylesheet" href="bootstrap-icons.css" type="text/css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">    
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+    <div>
+      <div style="display: flex;"><div class="h1" style="color: white;">Ceylon</div>Tales</div>
+      <div style="font-size:9px;letter-spacing:2px;color:var(--text-muted);margin-top:1px">PREMIUM TRAVEL</div>
+    </div>
+  </div>
+  <ul class="nav-links">
+    <li><a href="sort.html">Destinations</a></li>
+    <li><a href="packages.html">Packages</a></li>
+    <li><a href="reviews.html">Experiences</a></li>
+    <li><a href="#">About Us</a></li>
+  </ul>
+  <div class="nav-actions">
+    <button class="btn-outline"><i class="bi bi-heart"></i> Saved</button>
+    <button class="btn-gold">Plan Trip</button>
+    <a href="profile.html"><img src="images/ella/prof5.jpg" alt="profile pic" style="border-radius: 50%; width: 40px; height: 40px;"></a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" style="background-image: url('images/sigiriya/hero.jpg');">
+  <div style="position:relative;z-index:2;max-width:780px; padding: 10px;">
+    <div class="hero-breadcrumb">
+      <a href="home.html">Home</a><span class="sep">›</span>
+      <a href="sort.html">Destinations</a><span class="sep">›</span>
+      <span>Sigiriya</span>
+    </div>
+    <div style="background:rgba(255, 183, 16, 0.226);color:#ffffff;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:5px 14px;border-radius:20px;display:inline-block;margin-bottom:16px">
+      <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 18"><path fill="currentColor" d="M13.413 11.413Q14 10.825 14 10t-.587-1.412T12 8t-1.412.588T10 10t.588 1.413T12 12t1.413-.587M12 19.35q3.05-2.8 4.525-5.087T18 10.2q0-2.725-1.737-4.462T12 4T7.738 5.738T6 10.2q0 1.775 1.475 4.063T12 19.35M12 22q-4.025-3.425-6.012-6.362T4 10.2q0-3.75 2.413-5.975T12 2t5.588 2.225T20 10.2q0 2.5-1.987 5.438T12 22m0-12"/></svg> SIGIRIYA, SRI LANKA
+    </div>
+    <h1 class="hero-title">
+      Explore <em>Sigiriya</em>
+    </h1>
+    <p class="hero-desc" style="font-size: 20px;">An ancient sky fortress rising from the jungle plains — Sigiriya is Sri Lanka's most iconic UNESCO World Heritage wonder and a crown jewel of the Cultural Triangle.</p>
+    <div class="hero-tags">
+      <div class="hero-tag">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 28"><path fill="currentColor" d="M7.625 6.4L12 .725L16.375 6.4l6.85 2.3l-4.325 6.125l.175 6.825L12 19.675L4.925 21.65L5.1 14.8L.8 8.7zM8.85 8.125L4 9.725L7.1 14.2L7 18.975l5-1.375l5 1.4l-.1-4.8L20 9.775l-4.85-1.65L12 4zM12 11.5"/></svg> 4.9 Rating
+      </div>
+      <div class="hero-tag"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M13.413 11.413Q14 10.825 14 10t-.587-1.412T12 8t-1.412.588T10 10t.588 1.413T12 12t1.413-.587M12 19.35q3.05-2.8 4.525-5.087T18 10.2q0-2.725-1.737-4.462T12 4T7.738 5.738T6 10.2q0 1.775 1.475 4.063T12 19.35M12 22q-4.025-3.425-6.012-6.362T4 10.2q0-3.75 2.413-5.975T12 2t5.588 2.225T20 10.2q0 2.5-1.987 5.438T12 22m0-12"/></svg> Central Province</div>
+      <div class="hero-tag"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 26"><path fill="currentColor" d="M11.288 4.713Q11 4.425 11 4V2q0-.425.288-.712T12 1t.713.288T13 2v2q0 .425-.288.713T12 5t-.712-.288M16.95 7.05q-.275-.275-.275-.687t.275-.713l1.4-1.425q.3-.3.712-.3t.713.3q.275.275.275.7t-.275.7L18.35 7.05q-.275.275-.7.275t-.7-.275M20 13q-.425 0-.713-.288T19 12t.288-.712T20 11h2q.425 0 .713.288T23 12t-.288.713T22 13zm-8.712 9.713Q11 22.425 11 22v-2q0-.425.288-.712T12 19t.713.288T13 20v2q0 .425-.288.713T12 23t-.712-.288M5.65 7.05l-1.425-1.4q-.3-.3-.3-.725t.3-.7q.275-.275.7-.275t.7.275L7.05 5.65q.275.275.275.7t-.275.7q-.3.275-.7.275t-.7-.275m12.7 12.725l-1.4-1.425q-.275-.3-.275-.712t.275-.688t.688-.275t.712.275l1.425 1.4q.3.275.288.7t-.288.725q-.3.3-.725.3t-.7-.3M2 13q-.425 0-.712-.288T1 12t.288-.712T2 11h2q.425 0 .713.288T5 12t-.288.713T4 13zm2.225 6.775q-.275-.275-.275-.7t.275-.7L5.65 16.95q.275-.275.687-.275t.713.275q.3.3.3.713t-.3.712l-1.4 1.4q-.3.3-.725.3t-.7-.3M7.75 16.25Q6 14.5 6 12t1.75-4.25T12 6t4.25 1.75T18 12t-1.75 4.25T12 18t-4.25-1.75m7.075-1.425Q16 13.65 16 12t-1.175-2.825T12 8T9.175 9.175T8 12t1.175 2.825T12 16t2.825-1.175M12 12"/></svg> Best: Jan-Apr</div>
+      <div class="hero-tag"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-clock" viewBox="0 0 16 16"><path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71z"/><path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0"/></svg> Avg Stay: 2–3 Days</div>
+    </div>
+    <div class="hero-btns">
+      <a href="#experience" class="btn-primary">
+        <i class="bi bi-lightning-charge"></i> View Activities
+      </a>
+      <a href="#book" class="btn-secondary">
+        <i class="bi bi-buildings"></i> Book Accommodation
+      </a>
+      <a href="#package" class="btn-secondary">
+        <i class="bi bi-box-seam"></i> View Packages
+      </a>
+    </div>
+  </div>
+  <div style="position:absolute;bottom:30px;left:50%;transform:translateX(-50%);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--text-muted);display:flex;flex-direction:column;align-items:center;gap:8px">
+    <div style="width:1px;height:40px;background:linear-gradient(to bottom,var(--gold),transparent);animation:scrollPulse 2s infinite"></div>
+    Scroll to explore
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section about-section">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div class="about-image reveal">
+        <img src="images/sigiriya/sigiriya.webp" alt="Sigiriya Rock Fortress">
+        <div class="about-stats">
+          <div class="about-stat">
+            <div class="about-stat-val">200m</div>
+            <div class="about-stat-label">Rock Height</div>
+          </div>
+          <div class="about-stat">
+            <div class="about-stat-val">5th C</div>
+            <div class="about-stat-label">Built</div>
+          </div>
+          <div class="about-stat">
+            <div class="about-stat-val">4.9★</div>
+            <div class="about-stat-label">Rating</div>
+          </div>
+        </div>
+      </div>
+      <div class="about-content reveal reveal-delay-1">
+        <div class="section-label">ABOUT THE DESTINATION</div>
+        <h2 class="about-title">The Eighth Wonder of the <em>Ancient World</em></h2>
+        <p class="about-text">Rising dramatically 200 metres above the surrounding jungle plains of north-central Sri Lanka, Sigiriya — the Lion Rock — is a 5th-century royal citadel built by King Kashyapa. A UNESCO World Heritage Site since 1982, it is considered one of the best-preserved examples of ancient urban planning in the world.</p>
+        <p class="about-text">From its famous frescoed ladies to the lion-paw gateway, the mirror wall, and breathtaking summit ruins, every step of the climb rewards visitors with layers of history, artistry, and panoramic wonder that stretch to the horizon.</p>
+        <div class="about-features">
+          <div class="about-feature">
+            <div class="feature-icon"><i class="fa-solid fa-landmark"></i></div>
+            <div class="about-feature-text">
+              <div class="about-feature-title">UNESCO Heritage</div>
+              <div class="about-feature-sub">Since 1982</div>
+            </div>
+          </div>
+          <div class="about-feature">
+            <div class="feature-icon"><i class="fa-solid fa-image"></i></div>
+            <div class="about-feature-text">
+              <div class="about-feature-title">Ancient Frescoes</div>
+              <div class="about-feature-sub">5th-century art</div>
+            </div>
+          </div>
+          <div class="about-feature">
+            <div class="feature-icon"><i class="bi bi-binoculars"></i></div>
+            <div class="about-feature-text">
+              <div class="about-feature-title">Panoramic Views</div>
+              <div class="about-feature-sub">360° jungle vistas</div>
+            </div>
+          </div>
+          <div class="about-feature">
+            <div class="feature-icon"><i class="fa-solid fa-tree"></i></div>
+            <div class="about-feature-text">
+              <div class="about-feature-title">Water Gardens</div>
+              <div class="about-feature-sub">Ancient hydraulics</div>
+            </div>
+          </div>
+        </div>
+        <a href="#" class="read-more">Read more about Sigiriya →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THINGS TO DO -->
+<section class="section todo-section" id="experience">
+  <br><br>
+  <div class="section-inner">
+    <div class="section-label">EXPERIENCES</div>
+    <h2 class="section-title">Things to Do in <em>Sigiriya</em></h2>
+    <p class="section-sub">From scaling a 5th-century fortress to exploring elephant corridors, every moment here writes history.</p>
+    <div class="filters">
+      <button class="filter-btn active" data-filter="all">All Activities</button>
+      <button class="filter-btn" data-filter="heritage">Heritage</button>
+      <button class="filter-btn" data-filter="nature">Nature</button>
+      <button class="filter-btn" data-filter="cultural">Cultural</button>
+      <button class="filter-btn" data-filter="adventure">Adventure</button>
+      <button class="filter-btn" data-filter="wellness">Wellness</button>
+    </div>
+    <div class="todo-grid">
+      <div class="todo-card reveal" data-category="heritage">
+        <div class="todo-card-image">
+          <img src="images/sigiriya/sigiriya-rock.jpg" alt="Sigiriya Rock Climb">
+          <div class="todo-badge badge-featured">Featured</div>
+          <div class="todo-price">From $30</div>
+        </div>
+        <div class="todo-card-body">
+          <div class="todo-card-title">Sigiriya Rock Fortress Climb</div>
+          <div class="todo-card-desc">Ascend 1,200 steps through lion-paw gateways, ancient frescoes, and mirror walls to the breathtaking summit ruins of King Kashyapa's 5th-century palace.</div>
+          <div class="todo-card-footer">
+            <div class="todo-meta">🕐 3–4 hrs · ⚡ Moderate</div>
+            <button class="btn-add">+ Add to Trip</button>
+          </div>
+        </div>
+      </div>
+      <div class="todo-card reveal reveal-delay-1" data-category="heritage nature">
+        <div class="todo-card-image">
+          <img src="images/sigiriya/pidurangala-rock.webp" alt="Pidurangala Rock Sunrise">
+          <div class="todo-badge badge-popular">Popular</div>
+          <div class="todo-price">From $5</div>
+        </div>
+        <div class="todo-card-body">
+          <div class="todo-card-title">Pidurangala Rock Sunrise</div>
+          <div class="todo-card-desc">Hike the adjacent Pidurangala rock before dawn for the most iconic view of Sigiriya silhouetted against a blazing sunrise — a photographer's dream.</div>
+          <div class="todo-card-footer">
+            <div class="todo-meta">🕐 2–3 hrs · 🌅 Early morning</div>
+            <button class="btn-add">+ Add to Trip</button>
+          </div>
+        </div>
+      </div>
+      <div class="todo-card reveal reveal-delay-2" data-category="nature adventure">
+        <div class="todo-card-image">
+          <img src="images/sigiriya/minneriya.jpg" alt="Minneriya Elephant Safari">
+          <div class="todo-badge badge-new">Must Do</div>
+          <div class="todo-price">From $40</div>
+        </div>
+        <div class="todo-card-body">
+          <div class="todo-card-title">Minneriya Elephant Safari</div>
+          <div class="todo-card-desc">Witness "The Gathering" — one of Asia's greatest wildlife spectacles — as hundreds of wild elephants converge at Minneriya Tank just 30 minutes away.</div>
+          <div class="todo-card-footer">
+            <div class="todo-meta">🕐 3–4 hrs · 🐘 Guided</div>
+            <button class="btn-add">+ Add to Trip</button>
+          </div>
+        </div>
+      </div>
+      <div class="todo-card reveal" data-category="cultural heritage">
+        <div class="todo-card-image">
+          <img src="images/sigiriya/plonnaruwa.jpg" alt="Polonnaruwa Ancient City">
+          <div class="todo-price">From $25</div>
+        </div>
+        <div class="todo-card-body">
+          <div class="todo-card-title">Polonnaruwa Ancient City</div>
+          <div class="todo-card-desc">Cycle through the sprawling medieval capital of Sri Lanka — ancient dagobas, colossal Buddha statues, and royal bathing pools await in this UNESCO city.</div>
+          <div class="todo-card-footer">
+            <div class="todo-meta">🕐 Half day · 🚲 Cycling tour</div>
+            <button class="btn-add">+ Add to Trip</button>
+          </div>
+        </div>
+      </div>
+      <div class="todo-card reveal reveal-delay-1" data-category="adventure nature">
+        <div class="todo-card-image">
+          <img src="images/sigiriya/hot-balloon.jpg" alt="Hot Air Balloon Ride">
+          <div class="todo-badge badge-featured">Exclusive</div>
+          <div class="todo-price">From $180</div>
+        </div>
+        <div class="todo-card-body">
+          <div class="todo-card-title">Hot Air Balloon over Sigiriya</div>
+          <div class="todo-card-desc">Drift silently above the jungle plains at sunrise, gazing down on Sigiriya Rock from the sky — an unforgettable, once-in-a-lifetime perspective.</div>
+          <div class="todo-card-footer">
+            <div class="todo-meta">🕐 1–2 hrs · 🎈 Luxury</div>
+            <button class="btn-add">+ Add to Trip</button>
+          </div>
+        </div>
+      </div>
+      <div class="todo-card reveal reveal-delay-2" data-category="cultural wellness">
+        <div class="todo-card-image">
+          <img src="images/sigiriya/bullock cart.jpg" alt="Village Bullock Cart Tour">
+          <div class="todo-badge badge-featured">Authentic</div>
+          <div class="todo-price">From $20</div>
+        </div>
+        <div class="todo-card-body">
+          <div class="todo-card-title">Village Bullock Cart & Cooking</div>
+          <div class="todo-card-desc">Ride through a traditional Sri Lankan village on a bullock cart, visit a local farm, and learn to cook authentic Sri Lankan rice and curry from scratch.</div>
+          <div class="todo-card-footer">
+            <div class="todo-meta">🕐 3–4 hrs · 🍛 Cultural</div>
+            <button class="btn-add">+ Add to Trip</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STAYS -->
+<section class="section stays-section" id="book">
+  <div class="section-inner">
+    <div class="section-label">PLACES TO STAY</div>
+    <h2 class="section-title">Luxury & Comfortable <em>Stays</em></h2>
+    <p class="section-sub">Handpicked properties offering the finest sleep and views in Sigiriya.</p>
+
+    <div class="stay-filters">
+      <button class="stay-filter active" id="price">Price Range</button>
+      <button class="stay-filter" id="rating">Star Rating</button>
+      <button class="stay-filter" id="type">Property Type</button>
+      <button class="stay-filter" id="availability">Availability</button>
+    </div>
+
+    <div class="stays-grid">
+      <div class="stay-card reveal" data-price="350" data-rating="4.9" data-type="luxury" data-available="true">
+        <div class="stay-image">
+          <img src="images/sigiriya/water-garden.jpg" alt="Water Garden Sigiriya">
+          <div class="stay-badge">Luxury</div>
+          <div class="stay-rating">★ 4.9</div>
+        </div>
+        <div class="stay-body">
+          <div class="stay-name">Water Garden Sigiriya</div>
+          <div class="stay-location">📍 Sigiriya, Cultural Triangle</div>
+          <div class="stay-price-row">
+            <div class="stay-price">$350 <span>/ night</span></div>
+            <div class="stay-avail" style="color:var(--green-light);font-size:12px;font-weight:500">✓ Available</div>
+          </div>
+          <div class="stay-amenities">
+            <span class="amenity">🏊 Pool</span>
+            <span class="amenity">🍃 Spa</span>
+            <span class="amenity">🪨 Rock View</span>
+            <span class="amenity">🍽 Restaurant</span>
+          </div>
+          <a class="btn-stay" href="booking.html">Book Now</a>
+        </div>
+      </div>
+      <div class="stay-card reveal reveal-delay-1" data-price="110" data-rating="4.7" data-type="hotel" data-available="true">
+        <div class="stay-image">
+          <img src="images/sigiriya/jetwing.jpg" alt="Jetwing Vil Uyana">
+          <div class="stay-badge">Popular</div>
+          <div class="stay-rating">★ 4.7</div>
+        </div>
+        <div class="stay-body">
+          <div class="stay-name">Jetwing Vil Uyana</div>
+          <div class="stay-location">📍 Sigiriya Village</div>
+          <div class="stay-price-row">
+            <div class="stay-price">$110 <span>/ night</span></div>
+            <div class="stay-avail" style="color:var(--green-light);font-size:12px;font-weight:500">✓ Available</div>
+          </div>
+          <div class="stay-amenities">
+            <span class="amenity">🌿 Wetlands</span>
+            <span class="amenity">🍳 Breakfast</span>
+            <span class="amenity">🦜 Wildlife</span>
+          </div>
+          <a class="btn-stay" href="booking.html">Book Now</a>
+        </div>
+      </div>
+      <div class="stay-card reveal reveal-delay-2" data-price="220" data-rating="4.8" data-type="resort" data-available="false">
+        <div class="stay-image">
+          <img src="images/sigiriya/aliya-resort.avif" alt="Aliya Resort & Spa">
+          <div class="stay-badge" style="background:var(--green)">Best Value</div>
+          <div class="stay-rating">★ 4.8</div>
+        </div>
+        <div class="stay-body">
+          <div class="stay-name">Aliya Resort & Spa</div>
+          <div class="stay-location">📍 Sigiriya Heights</div>
+          <div class="stay-price-row">
+            <div class="stay-price">$220 <span>/ night</span></div>
+            <div class="stay-avail" style="color:#E06D44;font-size:12px;font-weight:500">⚡ 2 left</div>
+          </div>
+          <div class="stay-amenities">
+            <span class="amenity">🏊 Infinity Pool</span>
+            <span class="amenity">🍸 Bar</span>
+            <span class="amenity">🧘 Yoga</span>
+          </div>
+          <a class="btn-stay" href="booking.html">Book Now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PACKAGES -->
+<section class="section packages-section" id="package">
+  <div class="section-inner">
+    <div class="section-label">CURATED JOURNEYS</div>
+    <h2 class="section-title">Curated Experiences in <em>Sigiriya</em></h2>
+    <p class="section-sub">Thoughtfully crafted packages. Let us plan your perfect Cultural Triangle escape.</p>
+    <div class="packages-grid">
+      <div class="pkg-card reveal">
+        <div class="pkg-top">
+          <div>
+            <div class="pkg-category">HERITAGE</div>
+            <div class="pkg-name">The Cultural Triangle Explorer</div>
+          </div>
+          <div class="pkg-tag">5 Days</div>
+        </div>
+        <p class="pkg-desc">Immerse yourself in Sri Lanka's ancient kingdoms — from Sigiriya's sky fortress to Polonnaruwa's medieval ruins and the sacred cave temples of Dambulla.</p>
+        <div class="pkg-includes">
+          <div class="pkg-includes-title">Includes</div>
+          <div class="pkg-include">Sigiriya Rock fortress climb</div>
+          <div class="pkg-include">Polonnaruwa cycling tour</div>
+          <div class="pkg-include">Dambulla Cave Temple</div>
+          <div class="pkg-include">4 nights accommodation</div>
+        </div>
+        <div class="pkg-footer">
+          <div class="pkg-price">$319 <span>/ person</span></div>
+          <button class="btn-pkg-outline">Add to Plan</button>
+        </div>
+      </div>
+      <div class="pkg-card featured reveal reveal-delay-1">
+        <div class="pkg-top">
+          <div>
+            <div class="pkg-category">LUXURY</div>
+            <div class="pkg-name">Sky & Jungle Luxury Retreat</div>
+          </div>
+          <div class="pkg-tag pop">Popular</div>
+        </div>
+        <p class="pkg-desc">A premium highland escape — balloon rides at sunrise, private fortress climbs, elephant safaris at Minneriya, and spa evenings beneath the stars in Sigiriya.</p>
+        <div class="pkg-includes">
+          <div class="pkg-includes-title">Includes</div>
+          <div class="pkg-include">Hot air balloon at sunrise</div>
+          <div class="pkg-include">Private fortress guided climb</div>
+          <div class="pkg-include">Minneriya elephant safari</div>
+          <div class="pkg-include">Couples spa treatment</div>
+          <div class="pkg-include">5 nights luxury stay</div>
+        </div>
+        <div class="pkg-footer">
+          <div class="pkg-price">$749 <span>/ person</span></div>
+          <button class="btn-pkg">Book This Trip</button>
+        </div>
+      </div>
+      <div class="pkg-card reveal reveal-delay-2">
+        <div class="pkg-top">
+          <div>
+            <div class="pkg-category">FAMILY</div>
+            <div class="pkg-name">Family Ancient Kingdom</div>
+          </div>
+          <div class="pkg-tag">6 Days</div>
+        </div>
+        <p class="pkg-desc">A perfect family adventure blending history and wildlife — explore ancient cities, watch wild elephants gather, and experience authentic village life together.</p>
+        <div class="pkg-includes">
+          <div class="pkg-includes-title">Includes</div>
+          <div class="pkg-include">Sigiriya Rock family climb</div>
+          <div class="pkg-include">Minneriya elephant safari</div>
+          <div class="pkg-include">Village bullock cart tour</div>
+          <div class="pkg-include">5 nights family rooms</div>
+        </div>
+        <div class="pkg-footer">
+          <div class="pkg-price">$849 <span>/ family</span></div>
+          <button class="btn-pkg-outline">Add to Plan</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="section reviews-section">
+  <div class="section-inner">
+    <div class="section-label">VOICES OF TRAVELERS</div>
+    <h2 class="section-title" style="margin-bottom:48px">Voices of <em>Travelers</em></h2>
+    <div class="reviews-header">
+      <div class="reviews-score">
+        <div class="score-num">4.9</div>
+        <div class="score-stars">★★★★★</div>
+        <div class="score-count">Based on 2,100+ reviews</div>
+      </div>
+      <div class="review-bars">
+        <div class="review-bar-row">
+          <div class="review-bar-label">History</div>
+          <div class="review-bar-track"><div class="review-bar-fill" style="width:99%"></div></div>
+          <div class="review-bar-val">5.0</div>
+        </div>
+        <div class="review-bar-row">
+          <div class="review-bar-label">Scenery</div>
+          <div class="review-bar-track"><div class="review-bar-fill" style="width:97%"></div></div>
+          <div class="review-bar-val">4.9</div>
+        </div>
+        <div class="review-bar-row">
+          <div class="review-bar-label">Stays</div>
+          <div class="review-bar-track"><div class="review-bar-fill" style="width:94%"></div></div>
+          <div class="review-bar-val">4.7</div>
+        </div>
+        <div class="review-bar-row">
+          <div class="review-bar-label">Value</div>
+          <div class="review-bar-track"><div class="review-bar-fill" style="width:90%"></div></div>
+          <div class="review-bar-val">4.5</div>
+        </div>
+        <div class="review-bar-row">
+          <div class="review-bar-label">Guides</div>
+          <div class="review-bar-track"><div class="review-bar-fill" style="width:95%"></div></div>
+          <div class="review-bar-val">4.8</div>
+        </div>
+      </div>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card reveal">
+        <div class="review-header">
+          <img class="reviewer-avatar" src="https://i.pravatar.cc/80?img=15" alt="Reviewer">
+          <div>
+            <div class="review-stars">★★★★★</div>
+            <div class="reviewer-name">Elena Vasquez</div>
+            <div class="reviewer-date">February 2025 · Solo Traveler</div>
+          </div>
+        </div>
+        <p class="review-text">"Standing on top of Sigiriya and looking out over the endless jungle was genuinely one of the greatest moments of my life. The frescoes, the lion paws, the mirror wall — it felt like stepping inside a living history book."</p>
+        <div class="review-helpful">
+          <span>Helpful?</span>
+          <button class="helpful-btn">👍 Yes (57)</button>
+        </div>
+      </div>
+      <div class="review-card reveal reveal-delay-1">
+        <div class="review-header">
+          <img class="reviewer-avatar" src="https://i.pravatar.cc/80?img=22" alt="Reviewer">
+          <div>
+            <div class="review-stars">★★★★★</div>
+            <div class="reviewer-name">Thomas Nakamura</div>
+            <div class="reviewer-date">January 2025 · Couple</div>
+          </div>
+        </div>
+        <p class="review-text">"The hot air balloon at sunrise was worth every penny. Drifting silently above Sigiriya Rock with the jungle stretching to infinity below us — my partner and I were completely speechless. Absolutely unforgettable."</p>
+        <div class="review-helpful">
+          <span>Helpful?</span>
+          <button class="helpful-btn">👍 Yes (43)</button>
+        </div>
+      </div>
+      <div class="review-card reveal reveal-delay-2">
+        <div class="review-header">
+          <img class="reviewer-avatar" src="https://i.pravatar.cc/80?img=54" alt="Reviewer">
+          <div>
+            <div class="review-stars">★★★★☆</div>
+            <div class="reviewer-name">Fatima Al-Rashid</div>
+            <div class="reviewer-date">December 2024 · Family</div>
+          </div>
+        </div>
+        <p class="review-text">"We combined Sigiriya with the Minneriya elephant safari and it was the perfect two days. The kids were mesmerised by the rock and absolutely wild about the elephants. The village cooking class rounded it off beautifully."</p>
+        <div class="review-helpful">
+          <span>Helpful?</span>
+          <button class="helpful-btn">👍 Yes (38)</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MAP / HOW TO GET THERE -->
+<section class="section map-section">
+  <div class="section-inner">
+    <div class="section-label">HOW TO GET THERE</div>
+    <h2 class="section-title" style="margin-bottom:8px">Find Your Way to <em>Sigiriya</em></h2>
+    <p class="section-sub">Popular transport options from major Sri Lankan cities to Sigiriya.</p>
+    <div class="map-layout">
+      <div class="map-sidebar">
+        <div class="map-sidebar-title">Getting There</div>
+        <div class="map-sidebar-sub">Choose your preferred mode of transport from Colombo</div>
+        <div class="transport-options">
+          <div class="transport-item active" onclick="setTransport(this)">
+            <div class="transport-icon">🚗</div>
+            <div class="transport-info">
+              <div class="transport-name">Private Car</div>
+              <div class="transport-detail">~4 hrs · Most comfortable · $45–65</div>
+            </div>
+          </div>
+          <div class="transport-item" onclick="setTransport(this)">
+            <div class="transport-icon">🚌</div>
+            <div class="transport-info">
+              <div class="transport-name">Bus via Dambulla</div>
+              <div class="transport-detail">~5 hrs · Budget option · $2–5</div>
+            </div>
+          </div>
+          <div class="transport-item" onclick="setTransport(this)">
+            <div class="transport-icon">🚂</div>
+            <div class="transport-info">
+              <div class="transport-name">Train to Habarana + Transfer</div>
+              <div class="transport-detail">~4 hrs total · Scenic route</div>
+            </div>
+          </div>
+          <div class="transport-item" onclick="setTransport(this)">
+            <div class="transport-icon">✈️</div>
+            <div class="transport-info">
+              <div class="transport-name">Fly + Transfer</div>
+              <div class="transport-detail">Via Bandaranaike Airport · CMB</div>
+            </div>
+          </div>
+        </div>
+        <div class="map-nearby">
+          <div class="nearby-item">
+            <div class="nearby-name">🏙 Colombo</div>
+            <div class="nearby-dist">170 km away</div>
+          </div>
+          <div class="nearby-item">
+            <div class="nearby-name">🏯 Kandy</div>
+            <div class="nearby-dist">90 km away</div>
+          </div>
+          <div class="nearby-item">
+            <div class="nearby-name">🏛 Polonnaruwa</div>
+            <div class="nearby-dist">60 km away</div>
+          </div>
+          <div class="nearby-item">
+            <div class="nearby-name">🕌 Dambulla</div>
+            <div class="nearby-dist">20 km away</div>
+          </div>
+        </div>
+      </div>
+      <div class="map-container">
+        <div class="map-placeholder">
+          <img src="lk.svg" alt="Sri Lanka Map" class="sri-map">
+          <svg class="map-paths" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid meet">
+
+            <!-- Paths to Sigiriya -->
+            <path d="M295,418 C310,380 360,330 400,300" stroke="#D4A843" stroke-width="2" stroke-dasharray="6,6" fill="none" />
+            <path d="M390,365 C372,355 385,330 400,300" stroke="#D4A843" stroke-width="2" stroke-dasharray="6,6" fill="none" />
+            <path d="M430,275 C460,300 435,298 400,300" stroke="#D4A843" stroke-width="2" stroke-dasharray="6,6" fill="none" />
+
+            <!-- Main Pin: Sigiriya -->
+            <circle cx="400" cy="300" r="10" fill="#D4A843">
+              <animate attributeName="r" values="10;13;10" dur="2s" repeatCount="indefinite"/>
+            </circle>
+            <text x="418" y="290" text-anchor="middle" fill="#fff" font-size="10px">📍 Sigiriya</text>
+
+            <!-- Secondary Pins -->
+            <circle cx="295" cy="418" r="6" fill="rgba(212,168,67,0.5)" />
+            <text x="295" y="405" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-size="8px">🏙 Colombo</text>
+
+            <circle cx="390" cy="365" r="6" fill="rgba(212,168,67,0.5)" />
+            <text x="390" y="375" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-size="8px">🏯 Kandy</text>
+
+            <circle cx="430" cy="275" r="6" fill="rgba(212,168,67,0.5)" />
+            <text x="430" y="265" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-size="8px">🏛 Polonnaruwa</text>
+
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="section-label">YOUR ADVENTURE AWAITS</div>
+  <h2 class="cta-title">Ready to Experience <em>Sigiriya?</em></h2>
+  <p class="cta-sub">From scaling an ancient sky fortress to drifting above the jungle at sunrise — let us curate your ideal Sri Lanka cultural escape, stress-free.</p>
+  <div class="cta-btns">
+    <button class="btn-primary" style="font-size:14px;padding:15px 32px"><i class="bi bi-buildings"></i> Customize Packages</button>
+    <a href="reviews.html" class="btn-secondary" style="font-size:14px;padding:15px 28px"><i class="bi bi-bookmark-plus"></i> User Experiences</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo"><div style="display: flex;"><div class="h1" style="color: white;">Ceylon</div>Tales</div></div>
+        <p>Curating extraordinary travel experiences across Sri Lanka's most breathtaking destinations since 2018.</p>
+        <div class="footer-socials">
+          <a class="social-btn" href="#">𝕏</a>
+          <a class="social-btn" href="#">f</a>
+          <a class="social-btn" href="#">in</a>
+          <a class="social-btn" href="#"><i class="bi bi-instagram"></i></a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Destinations</div>
+        <ul class="footer-links">
+          <li><a href="ella.html">Ella</a></li>
+          <li><a href="sigiriya.html">Sigiriya</a></li>
+          <li><a href="mirissa.html">Mirissa</a></li>
+          <li><a href="galle.html">Galle</a></li>
+          <li><a href="kandy.html">Kandy</a></li>
+          <li><a href="yala.html">Yala</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Explore</div>
+        <ul class="footer-links">
+          <li><a href="#">Things To Do</a></li>
+          <li><a href="#">Where to Stay</a></li>
+          <li><a href="packages.html">Travel Packages</a></li>
+          <li><a href="#">Cultural Routes</a></li>
+          <li><a href="review.html">Travel Blog</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Stay Updated</div>
+        <p style="font-size:13px;color:var(--text-dim);margin-bottom:14px">Get curated Sri Lanka travel tips and exclusive deals.</p>
+        <div style="display:flex;gap:8px">
+          <input type="email" placeholder="Your email" style="flex:1;background:var(--card);border:1px solid var(--border2);color:var(--text);padding:9px 14px;border-radius:6px;font-size:12px;font-family:'DM Sans',sans-serif;outline:none">
+          <button class="btn-gold" style="white-space:nowrap">Subscribe</button>
+        </div>
+        <div style="margin-top:20px">
+          <div class="footer-col-title">Contact</div>
+          <div style="font-size:13px;color:var(--text-dim);line-height:2">
+            <i class="bi bi-envelope-at"></i> hello@explorejourney.lk<br>
+            <i class="bi bi-telephone"></i> +94 77 123 4567
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2025 CeylonTales. All rights reserved. · Privacy · Terms</div>
+      <div class="footer-badge">
+        <span>🇱🇰</span>
+        <span>Proudly Sri Lankan</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Scroll reveal
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) e.target.classList.add('visible');
+  });
+}, { threshold: 0.12 });
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// Filter buttons
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    btn.closest('.filters').querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+  });
+});
+
+// Stay filters
+document.querySelectorAll('.stay-filter').forEach(btn => {
+  btn.addEventListener('click', () => {
+    btn.closest('.stay-filters').querySelectorAll('.stay-filter').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+  });
+});
+
+// Transport selector
+function setTransport(el) {
+  el.closest('.transport-options').querySelectorAll('.transport-item').forEach(t => t.classList.remove('active'));
+  el.classList.add('active');
+}
+
+// Navbar scroll effect
+window.addEventListener('scroll', () => {
+  const nav = document.querySelector('nav');
+  if (window.scrollY > 60) {
+    nav.style.borderBottomColor = 'rgba(212,168,67,0.2)';
+    nav.style.background = 'rgba(13,17,23,0.97)';
+  } else {
+    nav.style.borderBottomColor = 'rgba(255,255,255,0.07)';
+    nav.style.background = 'rgba(13,17,23,0.92)';
+  }
+});
+
+// Add to trip button
+document.querySelectorAll('.btn-add').forEach(btn => {
+  btn.addEventListener('click', function() {
+    if (this.classList.contains('added')) {
+      this.textContent = '+ Add to Trip';
+      this.classList.remove('added');
+      this.style.background = 'transparent';
+      this.style.color = 'var(--gold)';
+    } else {
+      this.textContent = '✓ Added';
+      this.classList.add('added');
+      this.style.background = 'var(--gold)';
+      this.style.color = '#0D1117';
+    }
+  });
+});
+
+// Review helpful buttons
+document.querySelectorAll('.helpful-btn').forEach(btn => {
+  btn.addEventListener('click', function() {
+    const match = this.textContent.match(/\((\d+)\)/);
+    if (match) {
+      const num = parseInt(match[1]) + 1;
+      this.textContent = this.textContent.replace(/\(\d+\)/, `(${num})`);
+      this.style.borderColor = 'var(--gold)';
+      this.style.color = 'var(--gold)';
+    }
+  });
+});
+
+const grid = document.querySelector(".stays-grid");
+const cards = Array.from(document.querySelectorAll(".stay-card"));
+const buttons = document.querySelectorAll(".stay-filter");
+
+buttons.forEach(button => {
+  button.addEventListener("click", () => {
+    buttons.forEach(b => b.classList.remove("active"));
+    button.classList.add("active");
+
+    let sortedCards;
+    if(button.id === "price") sortedCards = cards.sort((a,b) => a.dataset.price - b.dataset.price);
+    if(button.id === "rating") sortedCards = cards.sort((a,b) => b.dataset.rating - a.dataset.rating);
+    if(button.id === "availability") sortedCards = cards.sort((a,b) => b.dataset.available.localeCompare(a.dataset.available));
+    if(button.id === "type") sortedCards = cards.sort((a,b) => a.dataset.type.localeCompare(b.dataset.type));
+
+    sortedCards.forEach(card => grid.appendChild(card));
+  });
+});
+
+const filterButtons = document.querySelectorAll(".filter-btn");
+const cards1 = document.querySelectorAll(".todo-card");
+
+filterButtons.forEach(button => {
+  button.addEventListener("click", () => {
+    const filter = button.dataset.filter;
+    filterButtons.forEach(btn => btn.classList.remove("active"));
+    button.classList.add("active");
+
+    cards1.forEach(card => {
+      const category = card.dataset.category;
+      if(filter === "all" || category.includes(filter)){
+        card.style.display = "block";
+      } else {
+        card.style.display = "none";
+      }
+    });
+  });
+});
+</script>
+</body>
+</html>

@@ -536,8 +536,8 @@
             <div class="nearby-dist">220 km away</div>
           </div>
           <div class="nearby-item">
-            <div class="nearby-name">🏛 Kandy</div>
-            <div class="nearby-dist">93 km away</div>
+            <div class="nearby-name">🏛 Trincomalee</div>
+            <div class="nearby-dist">276 km away</div>
           </div>
           <div class="nearby-item">
             <div class="nearby-name">🌊 Mirissa</div>
@@ -789,10 +789,9 @@ filterButtons.forEach(button => {
       const category = card.dataset.category;
 
       if(filter === "all" || category.includes(filter)){
-        card.classList.remove("hide");
-      } 
-      else{
-        card.classList.add("hide");
+        card.style.display = "block";
+      } else {
+        card.style.display = "none";
       }
 
     });

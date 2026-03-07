@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Explore Kandy — Sri Lanka Premium Travel</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="stylesheet" href="bootstrap-icons.css" type="text/css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">    
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+    <div>
+      <div style="display: flex;"><div class="h1" style="color: white;">Ceylon</div>Tales</div>
+      <div style="font-size:9px;letter-spacing:2px;color:var(--text-muted);margin-top:1px">PREMIUM TRAVEL</div>
+    </div>
+  </div>
+  <ul class="nav-links">
+    <li><a href="sort.html">Destinations</a></li>
+    <li><a href="packages.html">Packages</a></li>
+    <li><a href="reviews.html">Experiences</a></li>
+    <li><a href="#">About Us</a></li>
+  </ul>
+  <div class="nav-actions">
+    <button class="btn-outline"><i class="bi bi-heart"></i> Saved</button>
+    <button class="btn-gold">Plan Trip</button>
+    <a href="profile.html"><img src="images/ella/prof5.jpg" alt="profile pic" style="border-radius: 50%; width: 40px; height: 40px;"></a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div style="position:relative;z-index:2;max-width:780px; padding: 10px;">
+    <div class="hero-breadcrumb">
+      <a href="home.html">Home</a><span class="sep">›</span>
+      <a href="sort.html">Destinations</a><span class="sep">›</span>
+      <span>Kandy</span>
+    </div>
+    <div style="background:rgba(255, 183, 16, 0.226);color:#ffffff;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:5px 14px;border-radius:20px;display:inline-block;margin-bottom:16px">
+      <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 18"><path fill="currentColor" d="M13.413 11.413Q14 10.825 14 10t-.587-1.412T12 8t-1.412.588T10 10t.588 1.413T12 12t1.413-.587M12 19.35q3.05-2.8 4.525-5.087T18 10.2q0-2.725-1.737-4.462T12 4T7.738 5.738T6 10.2q0 1.775 1.475 4.063T12 19.35M12 22q-4.025-3.425-6.012-6.362T4 10.2q0-3.75 2.413-5.975T12 2t5.588 2.225T20 10.2q0 2.5-1.987 5.438T12 22m0-12"/></svg> KANDY, SRI LANKA
+    </div>
+    <h1 class="hero-title">
+      Explore <em>Kandy</em>
+    </h1>
+    <p class="hero-desc" style="font-size: 20px;">Sri Lanka's last royal capital and spiritual heart — where the sacred Temple of the Tooth, misty highland hills, and the living traditions of Kandyan culture converge in timeless harmony.</p>
+    <div class="hero-tags">
+      <div class="hero-tag">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 28"><path fill="currentColor" d="M7.625 6.4L12 .725L16.375 6.4l6.85 2.3l-4.325 6.125l.175 6.825L12 19.675L4.925 21.65L5.1 14.8L.8 8.7zM8.85 8.125L4 9.725L7.1 14.2L7 18.975l5-1.375l5 1.4l-.1-4.8L20 9.775l-4.85-1.65L12 4zM12 11.5"/></svg> 4.8 Rating
+      </div>
+      <div class="hero-tag"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M13.413 11.413Q14 10.825 14 10t-.587-1.412T12 8t-1.412.588T10 10t.588 1.413T12 12t1.413-.587M12 19.35q3.05-2.8 4.525-5.087T18 10.2q0-2.725-1.737-4.462T12 4T7.738 5.738T6 10.2q0 1.775 1.475 4.063T12 19.35M12 22q-4.025-3.425-6.012-6.362T4 10.2q0-3.75 2.413-5.975T12 2t5.588 2.225T20 10.2q0 2.5-1.987 5.438T12 22m0-12"/></svg> Central Province</div>
+      <div class="hero-tag"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 26"><path fill="currentColor" d="M11.288 4.713Q11 4.425 11 4V2q0-.425.288-.712T12 1t.713.288T13 2v2q0 .425-.288.713T12 5t-.712-.288M16.95 7.05q-.275-.275-.275-.687t.275-.713l1.4-1.425q.3-.3.712-.3t.713.3q.275.275.275.7t-.275.7L18.35 7.05q-.275.275-.7.275t-.7-.275M20 13q-.425 0-.713-.288T19 12t.288-.712T20 11h2q.425 0 .713.288T23 12t-.288.713T22 13zm-8.712 9.713Q11 22.425 11 22v-2q0-.425.288-.712T12 19t.713.288T13 20v2q0 .425-.288.713T12 23t-.712-.288M5.65 7.05l-1.425-1.4q-.3-.3-.3-.725t.3-.7q.275-.275.7-.275t.7.275L7.05 5.65q.275.275.275.7t-.275.7q-.3.275-.7.275t-.7-.275m12.7 12.725l-1.4-1.425q-.275-.3-.275-.712t.275-.688t.688-.275t.712.275l1.425 1.4q.3.275.288.7t-.288.725q-.3.3-.725.3t-.7-.3M2 13q-.425 0-.712-.288T1 12t.288-.712T2 11h2q.425 0 .713.288T5 12t-.288.713T4 13zm2.225 6.775q-.275-.275-.275-.7t.275-.7L5.65 16.95q.275-.275.687-.275t.713.275q.3.3.3.713t-.3.712l-1.4 1.4q-.3.3-.725.3t-.7-.3M7.75 16.25Q6 14.5 6 12t1.75-4.25T12 6t4.25 1.75T18 12t-1.75 4.25T12 18t-4.25-1.75m7.075-1.425Q16 13.65 16 12t-1.175-2.825T12 8T9.175 9.175T8 12t1.175 2.825T12 16t2.825-1.175M12 12"/></svg> Best: Dec–Apr</div>
+      <div class="hero-tag"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-clock" viewBox="0 0 16 16"><path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71z"/><path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0"/></svg> Avg Stay: 2–4 Days</div>
+    </div>
+    <div class="hero-btns">
+      <a href="#experience" class="btn-primary">
+        <i class="bi bi-lightning-charge"></i> View Activities
+      </a>
+      <a href="#book" class="btn-secondary">
+        <i class="bi bi-buildings"></i> Book Accommodation
+      </a>
+      <a href="#package" class="btn-secondary">
+        <i class="bi bi-box-seam"></i> View Packages
+      </a>
+    </div>
+  </div>
+  <div style="position:absolute;bottom:30px;left:50%;transform:translateX(-50%);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--text-muted);display:flex;flex-direction:column;align-items:center;gap:8px">
+    <div style="width:1px;height:40px;background:linear-gradient(to bottom,var(--gold),transparent);animation:scrollPulse 2s infinite"></div>
+    Scroll to explore
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section about-section">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div class="about-image reveal">
+        <img src="images/kandy/kandy.jpg" alt="Kandy City & Lake">
+        <div class="about-stats">
+          <div class="about-stat">
+            <div class="about-stat-val">488m</div>
+            <div class="about-stat-label">Elevation</div>
+          </div>
+          <div class="about-stat">
+            <div class="about-stat-val">4th C</div>
+            <div class="about-stat-label">Kingdom Est.</div>
+          </div>
+          <div class="about-stat">
+            <div class="about-stat-val">4.8★</div>
+            <div class="about-stat-label">Rating</div>
+          </div>
+        </div>
+      </div>
+      <div class="about-content reveal reveal-delay-1">
+        <div class="section-label">ABOUT THE DESTINATION</div>
+        <h2 class="about-title">The Sacred Heart of <em>Sri Lanka</em></h2>
+        <p class="about-text">Nestled in a bowl of verdant hills around the sacred Kandy Lake, Kandy is Sri Lanka's last royal capital and its spiritual soul. Home to the Temple of the Tooth Relic — Buddhism's most venerated site — this UNESCO World Heritage City is where ancient Kandyan culture, classical dance, and royal gardens breathe alongside a vibrant modern highland town.</p>
+        <p class="about-text">Gateway to the legendary Kandy–Ella scenic train journey and the lush Knuckles Mountain Range, Kandy rewards visitors with layers of history, living tradition, and misty highland beauty that few destinations on earth can match.</p>
+        <div class="about-features">
+          <div class="about-feature">
+            <div class="feature-icon"><i class="fa-solid fa-place-of-worship"></i></div>
+            <div class="about-feature-text">
+              <div class="about-feature-title">Temple of the Tooth</div>
+              <div class="about-feature-sub">Most sacred Buddhist site</div>
+            </div>
+          </div>
+          <div class="about-feature">
+            <div class="feature-icon"><i class="fa-solid fa-masks-theater"></i></div>
+            <div class="about-feature-text">
+              <div class="about-feature-title">Kandyan Dance</div>
+              <div class="about-feature-sub">Ancient classical performance</div>
+            </div>
+          </div>
+          <div class="about-feature">
+            <div class="feature-icon"><i class="fa-solid fa-seedling"></i></div>
+            <div class="about-feature-text">
+              <div class="about-feature-title">Royal Botanic Gardens</div>
+              <div class="about-feature-sub">147 acres of flora</div>
+            </div>
+          </div>
+          <div class="about-feature">
+            <div class="feature-icon"><i class="bi bi-train-front"></i></div>
+            <div class="about-feature-text">
+              <div class="about-feature-title">Scenic Railway</div>
+              <div class="about-feature-sub">Gateway to the hill country</div>
+            </div>
+          </div>
+        </div>
+        <a href="#" class="read-more">Read more about Kandy →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THINGS TO DO -->
+<section class="section todo-section" id="experience">
+  <br><br>
+  <div class="section-inner">
+    <div class="section-label">EXPERIENCES</div>
+    <h2 class="section-title">Things to Do in <em>Kandy</em></h2>
+    <p class="section-sub">From sacred temples and classical dance to highland hikes and elephant encounters, Kandy offers every kind of traveller something unforgettable.</p>
+    <div class="filters">
+      <button class="filter-btn active" data-filter="all">All Activities</button>
+      <button class="filter-btn" data-filter="heritage">Heritage</button>
+      <button class="filter-btn" data-filter="nature">Nature</button>
+      <button class="filter-btn" data-filter="cultural">Cultural</button>
+      <button class="filter-btn" data-filter="adventure">Adventure</button>
+      <button class="filter-btn" data-filter="wellness">Wellness</button>
+    </div>
+    <div class="todo-grid">
+
+      <div class="todo-card reveal" data-category="heritage cultural">
+        <div class="todo-card-image">
+          <img src="images/kandy/temple-of-the-tooth.avif" alt="Temple of the Tooth Relic">
+          <div class="todo-badge badge-featured">Featured</div>
+          <div class="todo-price">From $8</div>
+        </div>
+        <div class="todo-card-body">
+          <div class="todo-card-title">Temple of the Tooth Relic</div>
+          <div class="todo-card-desc">Visit Buddhism's holiest shrine, housing a sacred relic of the Buddha. Attend the mesmerising nightly puja ceremony with drumming, incense, and flickering oil lamps inside the ancient royal complex.</div>
+          <div class="todo-card-footer">
+            <div class="todo-meta">🕐 2–3 hrs · 🛕 Sacred</div>
+            <button class="btn-add">+ Add to Trip</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="todo-card reveal reveal-delay-1" data-category="nature">
+        <div class="todo-card-image">
+          <img src="images/kandy/botanical-garden.webp" alt="Peradeniya Royal Botanic Gardens">
+          <div class="todo-badge badge-popular">Popular</div>
+          <div class="todo-price">From $12</div>
+        </div>
+        <div class="todo-card-body">
+          <div class="todo-card-title">Peradeniya Royal Botanic Gardens</div>
+          <div class="todo-card-desc">Wander 147 acres of one of Asia's finest botanical gardens — a giant Java fig tree, an orchid house, a cannonball tree avenue, and sweeping views over the Mahaweli River.</div>
+          <div class="todo-card-footer">
+            <div class="todo-meta">🕐 2–3 hrs · 🌿 Easy</div>
+            <button class="btn-add">+ Add to Trip</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="todo-card reveal reveal-delay-2" data-category="adventure nature">
+        <div class="todo-card-image">
+          <img src="images/kandy/ambuluwawa.webp" alt="Ambuluwawa Tower">
+          <div class="todo-badge badge-new">Exclusive</div>
+          <div class="todo-price">From $5</div>
+        </div>
+        <div class="todo-card-body">
+          <div class="todo-card-title">Ambuluwawa Tower & Biodiversity Complex</div>
+          <div class="todo-card-desc">Spiral up the unique multi-religious tower at Ambuluwawa, perched on a misty hilltop in Gampola — offering jaw-dropping 360° views over Kandy's highlands, cloud forests, and the valley below.</div>
+          <div class="todo-card-footer">
+            <div class="todo-meta">🕐 2–3 hrs · 🗼 Scenic</div>
+            <button class="btn-add">+ Add to Trip</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="todo-card reveal" data-category="heritage cultural">
+        <div class="todo-card-image">
+          <img src="images/kandy/kandy-lake.jpg" alt="Kandy Lake & City Walk">
+          <div class="todo-price">Free</div>
+        </div>
+        <div class="todo-card-body">
+          <div class="todo-card-title">Kandy Lake & City Walk</div>
+          <div class="todo-card-desc">Stroll the scenic lakeside promenade past the Cloud Wall, visit the Kandy Market, and soak up the colonial-era streetscape of Sri Lanka's hill capital at your own pace.</div>
+          <div class="todo-card-footer">
+            <div class="todo-meta">🕐 1–2 hrs · 🚶 Self-guided</div>
+            <button class="btn-add">+ Add to Trip</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="todo-card reveal reveal-delay-1" data-category="nature heritage">
+        <div class="todo-card-image">
+          <img src="images/kandy/udawatta.jpg" alt="Udawatta Kele Forest Sanctuary">
+          <div class="todo-badge badge-featured">Hidden Gem</div>
+          <div class="todo-price">From $5</div>
+        </div>
+        <div class="todo-card-body">
+          <div class="todo-card-title">Udawatta Kele Forest Sanctuary</div>
+          <div class="todo-card-desc">Wander through a royal forest reserve sitting directly above Kandy city — ancient meditation caves, towering fig trees, endemic birdlife, and a tranquil reservoir hidden inside a lush jungle canopy.</div>
+          <div class="todo-card-footer">
+            <div class="todo-meta">🕐 2–3 hrs · 🌿 Easy</div>
+            <button class="btn-add">+ Add to Trip</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="todo-card reveal reveal-delay-2" data-category="nature adventure">
+        <div class="todo-card-image">
+          <img src="images/kandy/pinnawala.jpg" alt="Pinnawala Elephant Orphanage">
+          <div class="todo-badge badge-popular">Popular</div>
+          <div class="todo-price">From $20</div>
+        </div>
+        <div class="todo-card-body">
+          <div class="todo-card-title">Elephant Bath at Pinnawala</div>
+          <div class="todo-card-desc">Watch and interact with one of the world's largest herds of rescued elephants as they bathe in the Maha Oya River at the famous Pinnawala Elephant Orphanage — a heartwarming experience for all ages.</div>
+          <div class="todo-card-footer">
+            <div class="todo-meta">🕐 2–3 hrs · 🐘 Guided</div>
+            <button class="btn-add">+ Add to Trip</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- STAYS -->
+<section class="section stays-section" id="book">
+  <div class="section-inner">
+    <div class="section-label">PLACES TO STAY</div>
+    <h2 class="section-title">Luxury & Comfortable <em>Stays</em></h2>
+    <p class="section-sub">Handpicked properties offering the finest sleep and hill views in Kandy.</p>
+
+    <div class="stay-filters">
+      <button class="stay-filter active" id="price">Price Range</button>
+      <button class="stay-filter" id="rating">Star Rating</button>
+      <button class="stay-filter" id="type">Property Type</button>
+      <button class="stay-filter" id="availability">Availability</button>
+    </div>
+
+    <div class="stays-grid">
+      <div class="stay-card reveal" data-price="280" data-rating="4.9" data-type="luxury" data-available="true">
+        <div class="stay-image">
+          <img src="images/kandy/kandy-house.jpg" alt="Kandy House">
+          <div class="stay-badge">Luxury</div>
+          <div class="stay-rating">★ 4.9</div>
+        </div>
+        <div class="stay-body">
+          <div class="stay-name">The Kandy House</div>
+          <div class="stay-location">📍 Kandy, Central Province</div>
+          <div class="stay-price-row">
+            <div class="stay-price">$280 <span>/ night</span></div>
+            <div class="stay-avail" style="color:var(--green-light);font-size:12px;font-weight:500">✓ Available</div>
+          </div>
+          <div class="stay-amenities">
+            <span class="amenity">🏊 Pool</span>
+            <span class="amenity">🍃 Spa</span>
+            <span class="amenity">🌄 Hill View</span>
+            <span class="amenity">🍽 Restaurant</span>
+          </div>
+          <a class="btn-stay" href="booking.html">Book Now</a>
+        </div>
+      </div>
+
+      <div class="stay-card reveal reveal-delay-1" data-price="95" data-rating="4.7" data-type="hotel" data-available="true">
+        <div class="stay-image">
+          <img src="images/kandy/regency.jpg" alt="Earl's Regency Hotel">
+          <div class="stay-badge">Popular</div>
+          <div class="stay-rating">★ 4.7</div>
+        </div>
+        <div class="stay-body">
+          <div class="stay-name">Earl's Regency Hotel</div>
+          <div class="stay-location">📍 Kandy Hillside</div>
+          <div class="stay-price-row">
+            <div class="stay-price">$95 <span>/ night</span></div>
+            <div class="stay-avail" style="color:var(--green-light);font-size:12px;font-weight:500">✓ Available</div>
+          </div>
+          <div class="stay-amenities">
+            <span class="amenity">🌿 Gardens</span>
+            <span class="amenity">🍳 Breakfast</span>
+            <span class="amenity">🏊 Pool</span>
+          </div>
+          <a class="btn-stay" href="booking.html">Book Now</a>
+        </div>
+      </div>
+
+      <div class="stay-card reveal reveal-delay-2" data-price="160" data-rating="4.6" data-type="resort" data-available="false">
+        <div class="stay-image">
+          <img src="images/kandy/mahaweli-reach.jpg" alt="Mahaweli Reach Hotel">
+          <div class="stay-badge" style="background:var(--green)">Best Value</div>
+          <div class="stay-rating">★ 4.6</div>
+        </div>
+        <div class="stay-body">
+          <div class="stay-name">Mahaweli Reach Hotel</div>
+          <div class="stay-location">📍 Kandy River Banks</div>
+          <div class="stay-price-row">
+            <div class="stay-price">$160 <span>/ night</span></div>
+            <div class="stay-avail" style="color:#E06D44;font-size:12px;font-weight:500">⚡ 2 left</div>
+          </div>
+          <div class="stay-amenities">
+            <span class="amenity">🏊 Infinity Pool</span>
+            <span class="amenity">🍸 Bar</span>
+            <span class="amenity">🌊 River View</span>
+          </div>
+          <a class="btn-stay" href="booking.html">Book Now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PACKAGES -->
+<section class="section packages-section" id="package">
+  <div class="section-inner">
+    <div class="section-label">CURATED JOURNEYS</div>
+    <h2 class="section-title">Curated Experiences in <em>Kandy</em></h2>
+    <p class="section-sub">Thoughtfully crafted packages. Let us plan your perfect highland cultural escape.</p>
+    <div class="packages-grid">
+
+      <div class="pkg-card reveal">
+        <div class="pkg-top">
+          <div>
+            <div class="pkg-category">CULTURAL</div>
+            <div class="pkg-name">The Sacred City Explorer</div>
+          </div>
+          <div class="pkg-tag">4 Days</div>
+        </div>
+        <p class="pkg-desc">Immerse yourself in Kandy's sacred heritage — the Temple of the Tooth, a mesmerising Kandyan dance show, Peradeniya's lush botanical gardens, and a serene lakeside evening.</p>
+        <div class="pkg-includes">
+          <div class="pkg-includes-title">Includes</div>
+          <div class="pkg-include">Temple of the Tooth visit & puja</div>
+          <div class="pkg-include">Kandyan dance evening show</div>
+          <div class="pkg-include">Peradeniya Botanic Gardens</div>
+          <div class="pkg-include">3 nights accommodation</div>
+        </div>
+        <div class="pkg-footer">
+          <div class="pkg-price">$269 <span>/ person</span></div>
+          <button class="btn-pkg-outline">Add to Plan</button>
+        </div>
+      </div>
+
+      <div class="pkg-card featured reveal reveal-delay-1">
+        <div class="pkg-top">
+          <div>
+            <div class="pkg-category">LUXURY</div>
+            <div class="pkg-name">Highland Luxury Retreat</div>
+          </div>
+          <div class="pkg-tag pop">Popular</div>
+        </div>
+        <p class="pkg-desc">A premium highland escape — a private temple tour at dawn, a full-day Knuckles Range trek, the legendary Kandy–Ella scenic train, and spa evenings in a colonial hilltop villa.</p>
+        <div class="pkg-includes">
+          <div class="pkg-includes-title">Includes</div>
+          <div class="pkg-include">Private dawn temple tour</div>
+          <div class="pkg-include">Knuckles Range guided hike</div>
+          <div class="pkg-include">Kandy–Ella scenic train</div>
+          <div class="pkg-include">Couples spa treatment</div>
+          <div class="pkg-include">5 nights luxury stay</div>
+        </div>
+        <div class="pkg-footer">
+          <div class="pkg-price">$649 <span>/ person</span></div>
+          <button class="btn-pkg">Book This Trip</button>
+        </div>
+      </div>
+
+      <div class="pkg-card reveal reveal-delay-2">
+        <div class="pkg-top">
+          <div>
+            <div class="pkg-category">FAMILY</div>
+            <div class="pkg-name">Family Cultural Journey</div>
+          </div>
+          <div class="pkg-tag">5 Days</div>
+        </div>
+        <p class="pkg-desc">A wonderful family adventure combining sacred history, wildlife, and nature — the Temple of the Tooth, Pinnawala elephants, Peradeniya Gardens, and a Kandyan cultural show all in one.</p>
+        <div class="pkg-includes">
+          <div class="pkg-includes-title">Includes</div>
+          <div class="pkg-include">Temple of the Tooth family visit</div>
+          <div class="pkg-include">Pinnawala Elephant Orphanage</div>
+          <div class="pkg-include">Peradeniya Botanic Gardens</div>
+          <div class="pkg-include">4 nights family rooms</div>
+        </div>
+        <div class="pkg-footer">
+          <div class="pkg-price">$749 <span>/ family</span></div>
+          <button class="btn-pkg-outline">Add to Plan</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="section reviews-section">
+  <div class="section-inner">
+    <div class="section-label">VOICES OF TRAVELERS</div>
+    <h2 class="section-title" style="margin-bottom:48px">Voices of <em>Travelers</em></h2>
+    <div class="reviews-header">
+      <div class="reviews-score">
+        <div class="score-num">4.8</div>
+        <div class="score-stars">★★★★★</div>
+        <div class="score-count">Based on 1,600+ reviews</div>
+      </div>
+      <div class="review-bars">
+        <div class="review-bar-row">
+          <div class="review-bar-label">Culture</div>
+          <div class="review-bar-track"><div class="review-bar-fill" style="width:99%"></div></div>
+          <div class="review-bar-val">4.9</div>
+        </div>
+        <div class="review-bar-row">
+          <div class="review-bar-label">Scenery</div>
+          <div class="review-bar-track"><div class="review-bar-fill" style="width:96%"></div></div>
+          <div class="review-bar-val">4.8</div>
+        </div>
+        <div class="review-bar-row">
+          <div class="review-bar-label">Stays</div>
+          <div class="review-bar-track"><div class="review-bar-fill" style="width:92%"></div></div>
+          <div class="review-bar-val">4.6</div>
+        </div>
+        <div class="review-bar-row">
+          <div class="review-bar-label">Food</div>
+          <div class="review-bar-track"><div class="review-bar-fill" style="width:94%"></div></div>
+          <div class="review-bar-val">4.7</div>
+        </div>
+        <div class="review-bar-row">
+          <div class="review-bar-label">Value</div>
+          <div class="review-bar-track"><div class="review-bar-fill" style="width:90%"></div></div>
+          <div class="review-bar-val">4.5</div>
+        </div>
+      </div>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card reveal">
+        <div class="review-header">
+          <img class="reviewer-avatar" src="https://i.pravatar.cc/80?img=18" alt="Reviewer">
+          <div>
+            <div class="review-stars">★★★★★</div>
+            <div class="reviewer-name">Amara De Silva</div>
+            <div class="reviewer-date">January 2025 · Solo Traveler</div>
+          </div>
+        </div>
+        <p class="review-text">"The evening puja ceremony at the Temple of the Tooth was one of the most moving spiritual experiences of my life. The drumming, the incense, the sheer devotion in the air — Kandy has a depth that very few places on earth can match."</p>
+        <div class="review-helpful">
+          <span>Helpful?</span>
+          <button class="helpful-btn">👍 Yes (52)</button>
+        </div>
+      </div>
+      <div class="review-card reveal reveal-delay-1">
+        <div class="review-header">
+          <img class="reviewer-avatar" src="https://i.pravatar.cc/80?img=25" alt="Reviewer">
+          <div>
+            <div class="review-stars">★★★★★</div>
+            <div class="reviewer-name">Oliver Bennett</div>
+            <div class="reviewer-date">February 2025 · Couple</div>
+          </div>
+        </div>
+        <p class="review-text">"We caught the Kandy–Ella train at dawn and I've never seen anything so beautiful in my life. But the city itself charmed us completely too — the lake at sunset, the dance show, the food. Kandy deserves far more than a single night."</p>
+        <div class="review-helpful">
+          <span>Helpful?</span>
+          <button class="helpful-btn">👍 Yes (44)</button>
+        </div>
+      </div>
+      <div class="review-card reveal reveal-delay-2">
+        <div class="review-header">
+          <img class="reviewer-avatar" src="https://i.pravatar.cc/80?img=49" alt="Reviewer">
+          <div>
+            <div class="review-stars">★★★★☆</div>
+            <div class="reviewer-name">Nadia Fernandez</div>
+            <div class="reviewer-date">December 2024 · Family</div>
+          </div>
+        </div>
+        <p class="review-text">"The kids were absolutely spellbound at Pinnawala watching the elephants bathe in the river. The Botanic Gardens were stunning and the cultural dance show had the whole family glued to their seats. Kandy is brilliant for families."</p>
+        <div class="review-helpful">
+          <span>Helpful?</span>
+          <button class="helpful-btn">👍 Yes (36)</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MAP / HOW TO GET THERE -->
+<section class="section map-section">
+  <div class="section-inner">
+    <div class="section-label">HOW TO GET THERE</div>
+    <h2 class="section-title" style="margin-bottom:8px">Find Your Way to <em>Kandy</em></h2>
+    <p class="section-sub">Popular transport options from major Sri Lankan cities to Kandy.</p>
+    <div class="map-layout">
+      <div class="map-sidebar">
+        <div class="map-sidebar-title">Getting There</div>
+        <div class="map-sidebar-sub">Choose your preferred mode of transport from Colombo</div>
+        <div class="transport-options">
+          <div class="transport-item active" onclick="setTransport(this)">
+            <div class="transport-icon">🚂</div>
+            <div class="transport-info">
+              <div class="transport-name">Scenic Train</div>
+              <div class="transport-detail">~2.5 hrs · Most scenic · $2–8</div>
+            </div>
+          </div>
+          <div class="transport-item" onclick="setTransport(this)">
+            <div class="transport-icon">🚗</div>
+            <div class="transport-info">
+              <div class="transport-name">Private Car</div>
+              <div class="transport-detail">~2.5 hrs · Most comfortable · $35–50</div>
+            </div>
+          </div>
+          <div class="transport-item" onclick="setTransport(this)">
+            <div class="transport-icon">🚌</div>
+            <div class="transport-info">
+              <div class="transport-name">Express Bus</div>
+              <div class="transport-detail">~3 hrs · Budget option · $1–3</div>
+            </div>
+          </div>
+          <div class="transport-item" onclick="setTransport(this)">
+            <div class="transport-icon">✈️</div>
+            <div class="transport-info">
+              <div class="transport-name">Fly + Transfer</div>
+              <div class="transport-detail">Via Bandaranaike Airport · CMB</div>
+            </div>
+          </div>
+        </div>
+        <div class="map-nearby">
+          <div class="nearby-item">
+            <div class="nearby-name">🏙 Colombo</div>
+            <div class="nearby-dist">115 km away</div>
+          </div>
+          <div class="nearby-item">
+            <div class="nearby-name">🌄 Ella</div>
+            <div class="nearby-dist">140 km away</div>
+          </div>
+          <div class="nearby-item">
+            <div class="nearby-name">🪨 Sigiriya</div>
+            <div class="nearby-dist">90 km away</div>
+          </div>
+          <div class="nearby-item">
+            <div class="nearby-name">🌿 Nuwara Eliya</div>
+            <div class="nearby-dist">75 km away</div>
+          </div>
+        </div>
+      </div>
+      <div class="map-container">
+        <div class="map-placeholder">
+          <img src="images/lk.svg" alt="Sri Lanka Map" class="sri-map">
+          <svg class="map-paths" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid meet">
+
+            <!-- Paths to Kandy -->
+            <path d="M295,418 C310,405 330,392 360,375" stroke="#D4A843" stroke-width="2" stroke-dasharray="6,6" fill="none" />
+            <path d="M430,393 C410,388 385,380 360,375" stroke="#D4A843" stroke-width="2" stroke-dasharray="6,6" fill="none" />
+            <path d="M400,300 C392,320 378,348 360,375" stroke="#D4A843" stroke-width="2" stroke-dasharray="6,6" fill="none" />
+
+            <!-- Main Pin: Kandy -->
+            <circle cx="360" cy="375" r="10" fill="#D4A843">
+              <animate attributeName="r" values="10;13;10" dur="2s" repeatCount="indefinite"/>
+            </circle>
+            <text x="360" y="357" text-anchor="middle" fill="#fff" font-size="10px">📍 Kandy</text>
+
+            <!-- Secondary Pins -->
+            <circle cx="295" cy="418" r="6" fill="rgba(212,168,67,0.5)" />
+            <text x="295" y="408" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-size="8px">🏙 Colombo</text>
+
+            <!-- Ella: southeast of Kandy -->
+            <circle cx="430" cy="393" r="6" fill="rgba(212,168,67,0.5)" />
+            <text x="430" y="383" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-size="8px">🌄 Ella</text>
+
+            <!-- Sigiriya: north of Kandy -->
+            <circle cx="400" cy="300" r="6" fill="rgba(212,168,67,0.5)" />
+            <text x="400" y="290" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-size="8px">🪨 Sigiriya</text>
+
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="section-label">YOUR ADVENTURE AWAITS</div>
+  <h2 class="cta-title">Ready to Experience <em>Kandy?</em></h2>
+  <p class="cta-sub">From sacred dawn ceremonies to legendary train journeys into the hills — let us curate your ideal Sri Lanka highland escape, stress-free.</p>
+  <div class="cta-btns">
+    <button class="btn-primary" style="font-size:14px;padding:15px 32px"><i class="bi bi-buildings"></i> Customize Packages</button>
+    <a href="reviews.html" class="btn-secondary" style="font-size:14px;padding:15px 28px"><i class="bi bi-bookmark-plus"></i> User Experiences</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo"><div style="display: flex;"><div class="h1" style="color: white;">Ceylon</div>Tales</div></div>
+        <p>Curating extraordinary travel experiences across Sri Lanka's most breathtaking destinations since 2018.</p>
+        <div class="footer-socials">
+          <a class="social-btn" href="#">𝕏</a>
+          <a class="social-btn" href="#">f</a>
+          <a class="social-btn" href="#">in</a>
+          <a class="social-btn" href="#"><i class="bi bi-instagram"></i></a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Destinations</div>
+        <ul class="footer-links">
+          <li><a href="ella.html">Ella</a></li>
+          <li><a href="sigiriya.html">Sigiriya</a></li>
+          <li><a href="mirissa.html">Mirissa</a></li>
+          <li><a href="galle.html">Galle</a></li>
+          <li><a href="kandy.html">Kandy</a></li>
+          <li><a href="yala.html">Yala</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Explore</div>
+        <ul class="footer-links">
+          <li><a href="#">Things To Do</a></li>
+          <li><a href="#">Where to Stay</a></li>
+          <li><a href="packages.html">Travel Packages</a></li>
+          <li><a href="#">Cultural Routes</a></li>
+          <li><a href="reviews.html">Travel Blog</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Stay Updated</div>
+        <p style="font-size:13px;color:var(--text-dim);margin-bottom:14px">Get curated Sri Lanka travel tips and exclusive deals.</p>
+        <div style="display:flex;gap:8px">
+          <input type="email" placeholder="Your email" style="flex:1;background:var(--card);border:1px solid var(--border2);color:var(--text);padding:9px 14px;border-radius:6px;font-size:12px;font-family:'DM Sans',sans-serif;outline:none">
+          <button class="btn-gold" style="white-space:nowrap">Subscribe</button>
+        </div>
+        <div style="margin-top:20px">
+          <div class="footer-col-title">Contact</div>
+          <div style="font-size:13px;color:var(--text-dim);line-height:2">
+            <i class="bi bi-envelope-at"></i> hello@explorejourney.lk<br>
+            <i class="bi bi-telephone"></i> +94 77 123 4567
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2025 CeylonTales. All rights reserved. · Privacy · Terms</div>
+      <div class="footer-badge">
+        <span>🇱🇰</span>
+        <span>Proudly Sri Lankan</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Scroll reveal
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) e.target.classList.add('visible');
+  });
+}, { threshold: 0.12 });
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// Filter buttons
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    btn.closest('.filters').querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+  });
+});
+
+// Stay filters
+document.querySelectorAll('.stay-filter').forEach(btn => {
+  btn.addEventListener('click', () => {
+    btn.closest('.stay-filters').querySelectorAll('.stay-filter').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+  });
+});
+
+// Transport selector
+function setTransport(el) {
+  el.closest('.transport-options').querySelectorAll('.transport-item').forEach(t => t.classList.remove('active'));
+  el.classList.add('active');
+}
+
+// Navbar scroll effect
+window.addEventListener('scroll', () => {
+  const nav = document.querySelector('nav');
+  if (window.scrollY > 60) {
+    nav.style.borderBottomColor = 'rgba(212,168,67,0.2)';
+    nav.style.background = 'rgba(13,17,23,0.97)';
+  } else {
+    nav.style.borderBottomColor = 'rgba(255,255,255,0.07)';
+    nav.style.background = 'rgba(13,17,23,0.92)';
+  }
+});
+
+// Add to trip button
+document.querySelectorAll('.btn-add').forEach(btn => {
+  btn.addEventListener('click', function() {
+    if (this.classList.contains('added')) {
+      this.textContent = '+ Add to Trip';
+      this.classList.remove('added');
+      this.style.background = 'transparent';
+      this.style.color = 'var(--gold)';
+    } else {
+      this.textContent = '✓ Added';
+      this.classList.add('added');
+      this.style.background = 'var(--gold)';
+      this.style.color = '#0D1117';
+    }
+  });
+});
+
+// Review helpful buttons
+document.querySelectorAll('.helpful-btn').forEach(btn => {
+  btn.addEventListener('click', function() {
+    const match = this.textContent.match(/\((\d+)\)/);
+    if (match) {
+      const num = parseInt(match[1]) + 1;
+      this.textContent = this.textContent.replace(/\(\d+\)/, `(${num})`);
+      this.style.borderColor = 'var(--gold)';
+      this.style.color = 'var(--gold)';
+    }
+  });
+});
+
+const grid = document.querySelector(".stays-grid");
+const cards = Array.from(document.querySelectorAll(".stay-card"));
+const buttons = document.querySelectorAll(".stay-filter");
+
+buttons.forEach(button => {
+  button.addEventListener("click", () => {
+    buttons.forEach(b => b.classList.remove("active"));
+    button.classList.add("active");
+
+    let sortedCards;
+    if(button.id === "price") sortedCards = cards.sort((a,b) => a.dataset.price - b.dataset.price);
+    if(button.id === "rating") sortedCards = cards.sort((a,b) => b.dataset.rating - a.dataset.rating);
+    if(button.id === "availability") sortedCards = cards.sort((a,b) => b.dataset.available.localeCompare(a.dataset.available));
+    if(button.id === "type") sortedCards = cards.sort((a,b) => a.dataset.type.localeCompare(b.dataset.type));
+
+    sortedCards.forEach(card => grid.appendChild(card));
+  });
+});
+
+const filterButtons = document.querySelectorAll(".filter-btn");
+const cards1 = document.querySelectorAll(".todo-card");
+
+filterButtons.forEach(button => {
+  button.addEventListener("click", () => {
+    const filter = button.dataset.filter;
+    filterButtons.forEach(btn => btn.classList.remove("active"));
+    button.classList.add("active");
+
+    cards1.forEach(card => {
+      const category = card.dataset.category;
+      if(filter === "all" || category.includes(filter)){
+        card.style.display = "block";
+      } else {
+        card.style.display = "none";
+      }
+    });
+  });
+});
+</script>
+</body>
+</html>

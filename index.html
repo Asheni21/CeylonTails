@@ -142,15 +142,15 @@
     <h2 class="section-title">Things to Do in <em>Ella</em></h2>
     <p class="section-sub">From sunrise hikes to scenic train rides, every moment in Ella is a memory in the making.</p>
     <div class="filters">
-      <button class="filter-btn active">All Activities</button>
-      <button class="filter-btn">Hiking</button>
-      <button class="filter-btn">Nature</button>
-      <button class="filter-btn">Cultural</button>
-      <button class="filter-btn">Train Rides</button>
-      <button class="filter-btn">Wellness</button>
+      <button class="filter-btn active" data-filter="all">All Activities</button>
+      <button class="filter-btn" data-filter="hiking">Hiking</button>
+      <button class="filter-btn" data-filter="nature">Nature</button>
+      <button class="filter-btn" data-filter="cultural">Cultural</button>
+      <button class="filter-btn" data-filter="train">Train Rides</button>
+      <button class="filter-btn" data-filter="wellness">Wellness</button>
     </div>
     <div class="todo-grid">
-      <div class="todo-card reveal">
+      <div class="todo-card reveal" data-category="hiking">
         <div class="todo-card-image">
           <img src="images/ella/littlr adam's peak.jpg" alt="Hiking Little Adam's Peak">
           <div class="todo-badge badge-featured">Featured</div>
@@ -165,7 +165,7 @@
           </div>
         </div>
       </div>
-      <div class="todo-card reveal reveal-delay-1">
+      <div class="todo-card reveal reveal-delay-1" data-category="nature">
         <div class="todo-card-image">
           <img src="images/ella/nine arch.jpg" alt="Nine Arch Bridge Visit">
           <div class="todo-badge badge-popular">Popular</div>
@@ -180,7 +180,7 @@
           </div>
         </div>
       </div>
-      <div class="todo-card reveal reveal-delay-2">
+      <div class="todo-card reveal reveal-delay-2" data-category="nature cultural">
         <div class="todo-card-image">
           <img src="images/ella/ravana.jpg" alt="Ravana Falls & Cave">
           <div class="todo-badge badge-new">New</div>
@@ -195,7 +195,7 @@
           </div>
         </div>
       </div>
-      <div class="todo-card reveal">
+      <div class="todo-card reveal" data-category="nature">
         <div class="todo-card-image">
           <img src="images/ella/tea plantation.png" alt="Tea Plantation Tour">
           <div class="todo-price">From $15</div>
@@ -209,7 +209,7 @@
           </div>
         </div>
       </div>
-      <div class="todo-card reveal reveal-delay-1">
+      <div class="todo-card reveal reveal-delay-1" data-category="hiking">
         <div class="todo-card-image">
           <img src="images/ella/flying ravana.jpeg" alt="Flying Ravana">
           <div class="todo-badge badge-featured">Popular</div>
@@ -224,7 +224,7 @@
           </div>
         </div>
       </div>
-      <div class="todo-card reveal reveal-delay-2">
+      <div class="todo-card reveal reveal-delay-2" data-category="train">
         <div class="todo-card-image">
           <img src="images/ella/ella odyssey.webp" alt="Kandy–Ella Train Journey">
           <div class="todo-badge badge-featured">Must Do</div>
@@ -249,14 +249,16 @@
     <div class="section-label">PLACES TO STAY</div>
     <h2 class="section-title">Luxury & Comfortable <em>Stays</em></h2>
     <p class="section-sub">Handpicked properties offering the finest sleep and views in Ella.</p>
+
     <div class="stay-filters">
-      <button class="stay-filter active">Price Range</button>
-      <button class="stay-filter">Star Rating</button>
-      <button class="stay-filter">Property Type</button>
-      <button class="stay-filter">Availability</button>
+      <button class="stay-filter active" id="price">Price Range</button>
+      <button class="stay-filter" id="rating">Star Rating</button>
+      <button class="stay-filter" id="type">Property Type</button>
+      <button class="stay-filter" id="availability">Availability</button>
     </div>
+
     <div class="stays-grid">
-      <div class="stay-card reveal">
+      <div class="stay-card reveal" data-price="185" data-rating="4.9" data-type="luxury" data-available="true">
         <div class="stay-image">
           <img src="images/ella/98acres.jpg" alt="98 Acres Resort">
           <div class="stay-badge">Luxury</div>
@@ -278,7 +280,7 @@
           <button class="btn-stay">Book Now</button>
         </div>
       </div>
-      <div class="stay-card reveal reveal-delay-1">
+      <div class="stay-card reveal reveal-delay-1" data-price="90" data-rating="4.7" data-type="hotel" data-available="true">
         <div class="stay-image">
           <img src="images/ella/hide ella.jpg" alt="Hide Ella">
           <div class="stay-badge">Popular</div>
@@ -299,7 +301,7 @@
           <button class="btn-stay">Book Now</button>
         </div>
       </div>
-      <div class="stay-card reveal reveal-delay-2">
+      <div class="stay-card reveal reveal-delay-2" data-price="200" data-rating="4.6" data-type="resort" data-available="false">
         <div class="stay-image">
           <img src="images/ella/ekho.jpg" alt="ravana pool club">
           <div class="stay-badge" style="background:var(--green)">Best Value</div>

@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Explore Nuwara Eliya — Sri Lanka Premium Travel</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="stylesheet" href="bootstrap-icons.css" type="text/css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">    
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+    <div>
+      <div style="display: flex;"><div class="h1" style="color: white;">Ceylon</div>Tales</div>
+      <div style="font-size:9px;letter-spacing:2px;color:var(--text-muted);margin-top:1px">PREMIUM TRAVEL</div>
+    </div>
+  </div>
+  <ul class="nav-links">
+    <li><a href="sort.html">Destinations</a></li>
+    <li><a href="packages.html">Packages</a></li>
+    <li><a href="reviews.html">Experiences</a></li>
+    <li><a href="#">About Us</a></li>
+  </ul>
+  <div class="nav-actions">
+    <button class="btn-outline"><i class="bi bi-heart"></i> Saved</button>
+    <button class="btn-gold">Plan Trip</button>
+    <a href="profile.html"><img src="images/ella/prof5.jpg" alt="profile pic" style="border-radius: 50%; width: 40px; height: 40px;"></a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div style="position:relative;z-index:2;max-width:780px; padding: 10px;">
+    <div class="hero-breadcrumb">
+      <a href="home.html">Home</a><span class="sep">›</span>
+      <a href="sort.html">Destinations</a><span class="sep">›</span>
+      <span>Nuwara Eliya</span>
+    </div>
+    <div style="background:rgba(255, 183, 16, 0.226);color:#ffffff;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:5px 14px;border-radius:20px;display:inline-block;margin-bottom:16px">
+      <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 18"><path fill="currentColor" d="M13.413 11.413Q14 10.825 14 10t-.587-1.412T12 8t-1.412.588T10 10t.588 1.413T12 12t1.413-.587M12 19.35q3.05-2.8 4.525-5.087T18 10.2q0-2.725-1.737-4.462T12 4T7.738 5.738T6 10.2q0 1.775 1.475 4.063T12 19.35M12 22q-4.025-3.425-6.012-6.362T4 10.2q0-3.75 2.413-5.975T12 2t5.588 2.225T20 10.2q0 2.5-1.987 5.438T12 22m0-12"/></svg> NUWARA ELIYA, SRI LANKA
+    </div>
+    <h1 class="hero-title">
+      Explore <em>Nuwara Eliya</em>
+    </h1>
+    <p class="hero-desc" style="font-size: 20px;">Sri Lanka's "Little England" — a misty colonial hill town at 1,868 metres, surrounded by emerald tea estates, cascading waterfalls, and some of the island's most breathtaking highland scenery.</p>
+    <div class="hero-tags">
+      <div class="hero-tag">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 28"><path fill="currentColor" d="M7.625 6.4L12 .725L16.375 6.4l6.85 2.3l-4.325 6.125l.175 6.825L12 19.675L4.925 21.65L5.1 14.8L.8 8.7zM8.85 8.125L4 9.725L7.1 14.2L7 18.975l5-1.375l5 1.4l-.1-4.8L20 9.775l-4.85-1.65L12 4zM12 11.5"/></svg> 4.8 Rating
+      </div>
+      <div class="hero-tag"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M13.413 11.413Q14 10.825 14 10t-.587-1.412T12 8t-1.412.588T10 10t.588 1.413T12 12t1.413-.587M12 19.35q3.05-2.8 4.525-5.087T18 10.2q0-2.725-1.737-4.462T12 4T7.738 5.738T6 10.2q0 1.775 1.475 4.063T12 19.35M12 22q-4.025-3.425-6.012-6.362T4 10.2q0-3.75 2.413-5.975T12 2t5.588 2.225T20 10.2q0 2.5-1.987 5.438T12 22m0-12"/></svg> Central Province</div>
+      <div class="hero-tag"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 26"><path fill="currentColor" d="M11.288 4.713Q11 4.425 11 4V2q0-.425.288-.712T12 1t.713.288T13 2v2q0 .425-.288.713T12 5t-.712-.288M16.95 7.05q-.275-.275-.275-.687t.275-.713l1.4-1.425q.3-.3.712-.3t.713.3q.275.275.275.7t-.275.7L18.35 7.05q-.275.275-.7.275t-.7-.275M20 13q-.425 0-.713-.288T19 12t.288-.712T20 11h2q.425 0 .713.288T23 12t-.288.713T22 13zm-8.712 9.713Q11 22.425 11 22v-2q0-.425.288-.712T12 19t.713.288T13 20v2q0 .425-.288.713T12 23t-.712-.288M5.65 7.05l-1.425-1.4q-.3-.3-.3-.725t.3-.7q.275-.275.7-.275t.7.275L7.05 5.65q.275.275.275.7t-.275.7q-.3.275-.7.275t-.7-.275m12.7 12.725l-1.4-1.425q-.275-.3-.275-.712t.275-.688t.688-.275t.712.275l1.425 1.4q.3.275.288.7t-.288.725q-.3.3-.725.3t-.7-.3M2 13q-.425 0-.712-.288T1 12t.288-.712T2 11h2q.425 0 .713.288T5 12t-.288.713T4 13zm2.225 6.775q-.275-.275-.275-.7t.275-.7L5.65 16.95q.275-.275.687-.275t.713.275q.3.3.3.713t-.3.712l-1.4 1.4q-.3.3-.725.3t-.7-.3M7.75 16.25Q6 14.5 6 12t1.75-4.25T12 6t4.25 1.75T18 12t-1.75 4.25T12 18t-4.25-1.75m7.075-1.425Q16 13.65 16 12t-1.175-2.825T12 8T9.175 9.175T8 12t1.175 2.825T12 16t2.825-1.175M12 12"/></svg> Best: Jan–Apr</div>
+      <div class="hero-tag"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-clock" viewBox="0 0 16 16"><path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71z"/><path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0"/></svg> Avg Stay: 2–3 Days</div>
+    </div>
+    <div class="hero-btns">
+      <a href="#experience" class="btn-primary">
+        <i class="bi bi-lightning-charge"></i> View Activities
+      </a>
+      <a href="#book" class="btn-secondary">
+        <i class="bi bi-buildings"></i> Book Accommodation
+      </a>
+      <a href="#package" class="btn-secondary">
+        <i class="bi bi-box-seam"></i> View Packages
+      </a>
+    </div>
+  </div>
+  <div style="position:absolute;bottom:30px;left:50%;transform:translateX(-50%);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--text-muted);display:flex;flex-direction:column;align-items:center;gap:8px">
+    <div style="width:1px;height:40px;background:linear-gradient(to bottom,var(--gold),transparent);animation:scrollPulse 2s infinite"></div>
+    Scroll to explore
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section about-section">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div class="about-image reveal">
+        <img src="images/nuwara-eliya/nuwara-eliya.jpg" alt="Nuwara Eliya Tea Country">
+        <div class="about-stats">
+          <div class="about-stat">
+            <div class="about-stat-val">1,868m</div>
+            <div class="about-stat-label">Elevation</div>
+          </div>
+          <div class="about-stat">
+            <div class="about-stat-val">16°C</div>
+            <div class="about-stat-label">Avg Temp</div>
+          </div>
+          <div class="about-stat">
+            <div class="about-stat-val">4.8★</div>
+            <div class="about-stat-label">Rating</div>
+          </div>
+        </div>
+      </div>
+      <div class="about-content reveal reveal-delay-1">
+        <div class="section-label">ABOUT THE DESTINATION</div>
+        <h2 class="about-title">Sri Lanka's Cool, Misty <em>Little England</em></h2>
+        <p class="about-text">Perched at 1,868 metres in the heart of Sri Lanka's hill country, Nuwara Eliya is a world apart — a cool, mist-draped colonial town nicknamed "Little England" for its Tudor bungalows, manicured hedgerows, and crisp mountain air. Surrounded by endless carpets of tea, it is the beating heart of Ceylon's legendary tea industry.</p>
+        <p class="about-text">From the colourful Seetha Amman Temple to the glassy Gregory Lake, the cascading Ramboda Falls and the summit of Pidurutalagala — Sri Lanka's highest peak — Nuwara Eliya rewards those who come looking for cool-weather serenity, stunning highland scenery, and the world's finest cup of tea.</p>
+        <div class="about-features">
+          <div class="about-feature">
+            <div class="feature-icon"><i class="bi bi-cup-hot"></i></div>
+            <div class="about-feature-text">
+              <div class="about-feature-title">Tea Country</div>
+              <div class="about-feature-sub">Ceylon's finest estates</div>
+            </div>
+          </div>
+          <div class="about-feature">
+            <div class="feature-icon"><i class="fa-solid fa-mountain"></i></div>
+            <div class="about-feature-text">
+              <div class="about-feature-title">Highest Peak</div>
+              <div class="about-feature-sub">Pidurutalagala 2,524m</div>
+            </div>
+          </div>
+          <div class="about-feature">
+            <div class="feature-icon"><i class="fa-solid fa-droplet"></i></div>
+            <div class="about-feature-text">
+              <div class="about-feature-title">Waterfalls</div>
+              <div class="about-feature-sub">Ramboda & Devon Falls</div>
+            </div>
+          </div>
+          <div class="about-feature">
+            <div class="feature-icon"><i class="fa-solid fa-landmark"></i></div>
+            <div class="about-feature-text">
+              <div class="about-feature-title">Colonial Heritage</div>
+              <div class="about-feature-sub">British-era architecture</div>
+            </div>
+          </div>
+        </div>
+        <a href="#" class="read-more">Read more about Nuwara Eliya →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THINGS TO DO -->
+<section class="section todo-section" id="experience">
+  <br><br>
+  <div class="section-inner">
+    <div class="section-label">EXPERIENCES</div>
+    <h2 class="section-title">Things to Do in <em>Nuwara Eliya</em></h2>
+    <p class="section-sub">From tea factory tours and misty mountain hikes to colonial lakeside strolls, Nuwara Eliya offers a highland escape like nowhere else in Asia.</p>
+    <div class="filters">
+      <button class="filter-btn active" data-filter="all">All Activities</button>
+      <button class="filter-btn" data-filter="nature">Nature</button>
+      <button class="filter-btn" data-filter="heritage">Heritage</button>
+      <button class="filter-btn" data-filter="cultural">Cultural</button>
+      <button class="filter-btn" data-filter="adventure">Adventure</button>
+      <button class="filter-btn" data-filter="wellness">Wellness</button>
+    </div>
+    <div class="todo-grid">
+
+      <div class="todo-card reveal" data-category="nature heritage">
+        <div class="todo-card-image">
+          <img src="images/nuwara-eliya/tea-estate.jpg" alt="Tea Estate & Factory Tour">
+          <div class="todo-badge badge-featured">Featured</div>
+          <div class="todo-price">From $15</div>
+        </div>
+        <div class="todo-card-body">
+          <div class="todo-card-title">Tea Estate & Factory Tour</div>
+          <div class="todo-card-desc">Walk through rolling emerald tea fields, watch the traditional plucking process, and tour a working tea factory — then sample freshly brewed Ceylon highland tea with stunning valley views.</div>
+          <div class="todo-card-footer">
+            <div class="todo-meta">🕐 Half day · 🍵 Guided</div>
+            <button class="btn-add">+ Add to Trip</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="todo-card reveal reveal-delay-1" data-category="nature adventure">
+        <div class="todo-card-image">
+          <img src="images/nuwara-eliya/hortan-plains.jpg" alt="Horton Plains & World's End">
+          <div class="todo-badge badge-popular">Popular</div>
+          <div class="todo-price">From $25</div>
+        </div>
+        <div class="todo-card-body">
+          <div class="todo-card-title">Horton Plains & World's End</div>
+          <div class="todo-card-desc">Trek across a hauntingly beautiful cloud plateau to the sheer cliff edge of World's End — an 870-metre drop into the jungle below that is one of Sri Lanka's most dramatic natural wonders.</div>
+          <div class="todo-card-footer">
+            <div class="todo-meta">🕐 4–5 hrs · ⚡ Moderate</div>
+            <button class="btn-add">+ Add to Trip</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="todo-card reveal reveal-delay-2" data-category="cultural heritage">
+        <div class="todo-card-image">
+          <img src="images/nuwara-eliya/seetha-amman.jpg" alt="Seetha Amman Temple">
+          <div class="todo-badge badge-new">Mythic</div>
+          <div class="todo-price">Free</div>
+        </div>
+        <div class="todo-card-body">
+          <div class="todo-card-title">Seetha Amman Temple</div>
+          <div class="todo-card-desc">Visit the vibrant hillside Hindu temple believed to be the site where Seetha was held captive by King Ravana in the Ramayana epic — set beside a sparkling stream in a lush highland valley.</div>
+          <div class="todo-card-footer">
+            <div class="todo-meta">🕐 1–2 hrs · 🛕 Cultural</div>
+            <button class="btn-add">+ Add to Trip</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="todo-card reveal" data-category="nature heritage">
+        <div class="todo-card-image">
+          <img src="images/nuwara-eliya/gregory-lake.jpg" alt="Gregory Lake">
+          <div class="todo-price">From $5</div>
+        </div>
+        <div class="todo-card-body">
+          <div class="todo-card-title">Gregory Lake & Colonial Town Walk</div>
+          <div class="todo-card-desc">Stroll around the glassy colonial-era Gregory Lake, rent a pedal boat, explore Victoria Park's bird-filled gardens, and soak up the charming British-era architecture of Nuwara Eliya's town centre.</div>
+          <div class="todo-card-footer">
+            <div class="todo-meta">🕐 2–3 hrs · 🚶 Easy</div>
+            <button class="btn-add">+ Add to Trip</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="todo-card reveal reveal-delay-1" data-category="nature adventure">
+        <div class="todo-card-image">
+          <img src="images/nuwara-eliya/ramboda.jpg" alt="Ramboda & Devon Falls">
+          <div class="todo-badge badge-featured">Scenic</div>
+          <div class="todo-price">Free</div>
+        </div>
+        <div class="todo-card-body">
+          <div class="todo-card-title">Ramboda & Devon Falls</div>
+          <div class="todo-card-desc">Chase two of Sri Lanka's most spectacular waterfalls — the thundering 109-metre Ramboda Falls and the sweeping Devon Falls — both framed by tea estates and jungle-clad hillsides.</div>
+          <div class="todo-card-footer">
+            <div class="todo-meta">🕐 Half day · 🌊 Easy</div>
+            <button class="btn-add">+ Add to Trip</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="todo-card reveal reveal-delay-2" data-category="nature wellness">
+        <div class="todo-card-image">
+          <img src="images/nuwara-eliya/victoria-park.jpg" alt="Victoria Park">
+          <div class="todo-badge badge-featured">Scenic</div>
+          <div class="todo-price">From $3</div>
+        </div>
+        <div class="todo-card-body">
+          <div class="todo-card-title">Victoria Park</div>
+          <div class="todo-card-desc">Stroll through one of Sri Lanka's most beautiful urban parks — a lush colonial-era garden bursting with roses, rare highland flowers, and migratory birds, right in the heart of Nuwara Eliya town.</div>
+          <div class="todo-card-footer">
+            <div class="todo-meta">🕐 1–2 hrs · 🌸 Easy</div>
+            <button class="btn-add">+ Add to Trip</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- STAYS -->
+<section class="section stays-section" id="book">
+  <div class="section-inner">
+    <div class="section-label">PLACES TO STAY</div>
+    <h2 class="section-title">Luxury & Comfortable <em>Stays</em></h2>
+    <p class="section-sub">Handpicked properties offering the finest sleep and highland views in Nuwara Eliya.</p>
+
+    <div class="stay-filters">
+      <button class="stay-filter active" id="price">Price Range</button>
+      <button class="stay-filter" id="rating">Star Rating</button>
+      <button class="stay-filter" id="type">Property Type</button>
+      <button class="stay-filter" id="availability">Availability</button>
+    </div>
+
+    <div class="stays-grid">
+      <div class="stay-card reveal" data-price="310" data-rating="4.9" data-type="luxury" data-available="true">
+        <div class="stay-image">
+          <img src="images/nuwara-eliya/heritance.jpg" alt="Heritance Tea Factory">
+          <div class="stay-badge">Luxury</div>
+          <div class="stay-rating">★ 4.9</div>
+        </div>
+        <div class="stay-body">
+          <div class="stay-name">Heritance Tea Factory</div>
+          <div class="stay-location">📍 Kandapola, Nuwara Eliya</div>
+          <div class="stay-price-row">
+            <div class="stay-price">$310 <span>/ night</span></div>
+            <div class="stay-avail" style="color:var(--green-light);font-size:12px;font-weight:500">✓ Available</div>
+          </div>
+          <div class="stay-amenities">
+            <span class="amenity">🍃 Spa</span>
+            <span class="amenity">🌄 Tea Views</span>
+            <span class="amenity">🔥 Fireplace</span>
+            <span class="amenity">🍽 Restaurant</span>
+          </div>
+          <a class="btn-stay" href="booking.html">Book Now</a>
+        </div>
+      </div>
+
+      <div class="stay-card reveal reveal-delay-1" data-price="85" data-rating="4.7" data-type="hotel" data-available="true">
+        <div class="stay-image">
+          <img src="images/nuwara-eliya/grand-hotel.jpg" alt="Grand Hotel Nuwara Eliya">
+          <div class="stay-badge">Popular</div>
+          <div class="stay-rating">★ 4.7</div>
+        </div>
+        <div class="stay-body">
+          <div class="stay-name">Grand Hotel Nuwara Eliya</div>
+          <div class="stay-location">📍 Nuwara Eliya Town</div>
+          <div class="stay-price-row">
+            <div class="stay-price">$85 <span>/ night</span></div>
+            <div class="stay-avail" style="color:var(--green-light);font-size:12px;font-weight:500">✓ Available</div>
+          </div>
+          <div class="stay-amenities">
+            <span class="amenity">🌿 Gardens</span>
+            <span class="amenity">🍳 Breakfast</span>
+            <span class="amenity">🏛 Colonial</span>
+          </div>
+          <a class="btn-stay" href="booking.html">Book Now</a>
+        </div>
+      </div>
+
+      <div class="stay-card reveal reveal-delay-2" data-price="175" data-rating="4.8" data-type="resort" data-available="false">
+        <div class="stay-image">
+          <img src="images/nuwara-eliya/araliya-green-hills.jpg " alt="Araliya Green Hills Hotel">
+          <div class="stay-badge" style="background:var(--green)">Best Value</div>
+          <div class="stay-rating">★ 4.8</div>
+        </div>
+        <div class="stay-body">
+          <div class="stay-name">Araliya Green Hills Hotel</div>
+          <div class="stay-location">📍 Nuwara Eliya Heights</div>
+          <div class="stay-price-row">
+            <div class="stay-price">$175 <span>/ night</span></div>
+            <div class="stay-avail" style="color:#E06D44;font-size:12px;font-weight:500">⚡ 2 left</div>
+          </div>
+          <div class="stay-amenities">
+            <span class="amenity">🏊 Heated Pool</span>
+            <span class="amenity">🍸 Bar</span>
+            <span class="amenity">🌄 Hill View</span>
+          </div>
+          <a class="btn-stay" href="booking.html">Book Now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PACKAGES -->
+<section class="section packages-section" id="package">
+  <div class="section-inner">
+    <div class="section-label">CURATED JOURNEYS</div>
+    <h2 class="section-title">Curated Experiences in <em>Nuwara Eliya</em></h2>
+    <p class="section-sub">Thoughtfully crafted packages. Let us plan your perfect highland tea country escape.</p>
+    <div class="packages-grid">
+
+      <div class="pkg-card reveal">
+        <div class="pkg-top">
+          <div>
+            <div class="pkg-category">NATURE</div>
+            <div class="pkg-name">The Tea Trail Explorer</div>
+          </div>
+          <div class="pkg-tag">4 Days</div>
+        </div>
+        <p class="pkg-desc">Immerse yourself in the world of Ceylon tea — estate walks, factory tours, Horton Plains trekking, and waterfall chasing through the lush highland countryside of Nuwara Eliya.</p>
+        <div class="pkg-includes">
+          <div class="pkg-includes-title">Includes</div>
+          <div class="pkg-include">Tea estate & factory guided tour</div>
+          <div class="pkg-include">Horton Plains World's End hike</div>
+          <div class="pkg-include">Ramboda & Devon Falls visit</div>
+          <div class="pkg-include">3 nights accommodation</div>
+        </div>
+        <div class="pkg-footer">
+          <div class="pkg-price">$259 <span>/ person</span></div>
+          <button class="btn-pkg-outline">Add to Plan</button>
+        </div>
+      </div>
+
+      <div class="pkg-card featured reveal reveal-delay-1">
+        <div class="pkg-top">
+          <div>
+            <div class="pkg-category">LUXURY</div>
+            <div class="pkg-name">Colonial Highlands Luxury Retreat</div>
+          </div>
+          <div class="pkg-tag pop">Popular</div>
+        </div>
+        <p class="pkg-desc">A premium highland escape — stay in a converted tea factory hotel, enjoy private estate tours, a sunset at World's End, Hill Club dining by firelight, and a spa day among the clouds.</p>
+        <div class="pkg-includes">
+          <div class="pkg-includes-title">Includes</div>
+          <div class="pkg-include">Private tea estate experience</div>
+          <div class="pkg-include">Horton Plains sunrise trek</div>
+          <div class="pkg-include">Hill Club colonial dinner</div>
+          <div class="pkg-include">Highland spa treatment</div>
+          <div class="pkg-include">5 nights luxury stay</div>
+        </div>
+        <div class="pkg-footer">
+          <div class="pkg-price">$599 <span>/ person</span></div>
+          <button class="btn-pkg">Book This Trip</button>
+        </div>
+      </div>
+
+      <div class="pkg-card reveal reveal-delay-2">
+        <div class="pkg-top">
+          <div>
+            <div class="pkg-category">FAMILY</div>
+            <div class="pkg-name">Family Highland Adventure</div>
+          </div>
+          <div class="pkg-tag">5 Days</div>
+        </div>
+        <p class="pkg-desc">A perfect highland getaway for families — tea picking, boating on Gregory Lake, the magical Seetha Amman Temple, waterfall hikes, and cool misty mornings the kids will never forget.</p>
+        <div class="pkg-includes">
+          <div class="pkg-includes-title">Includes</div>
+          <div class="pkg-include">Tea estate family tour & picking</div>
+          <div class="pkg-include">Gregory Lake boat ride</div>
+          <div class="pkg-include">Seetha Amman Temple visit</div>
+          <div class="pkg-include">4 nights family rooms</div>
+        </div>
+        <div class="pkg-footer">
+          <div class="pkg-price">$699 <span>/ family</span></div>
+          <button class="btn-pkg-outline">Add to Plan</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="section reviews-section">
+  <div class="section-inner">
+    <div class="section-label">VOICES OF TRAVELERS</div>
+    <h2 class="section-title" style="margin-bottom:48px">Voices of <em>Travelers</em></h2>
+    <div class="reviews-header">
+      <div class="reviews-score">
+        <div class="score-num">4.8</div>
+        <div class="score-stars">★★★★★</div>
+        <div class="score-count">Based on 1,420+ reviews</div>
+      </div>
+      <div class="review-bars">
+        <div class="review-bar-row">
+          <div class="review-bar-label">Scenery</div>
+          <div class="review-bar-track"><div class="review-bar-fill" style="width:98%"></div></div>
+          <div class="review-bar-val">4.9</div>
+        </div>
+        <div class="review-bar-row">
+          <div class="review-bar-label">Tea Experience</div>
+          <div class="review-bar-track"><div class="review-bar-fill" style="width:97%"></div></div>
+          <div class="review-bar-val">4.9</div>
+        </div>
+        <div class="review-bar-row">
+          <div class="review-bar-label">Stays</div>
+          <div class="review-bar-track"><div class="review-bar-fill" style="width:94%"></div></div>
+          <div class="review-bar-val">4.7</div>
+        </div>
+        <div class="review-bar-row">
+          <div class="review-bar-label">Food</div>
+          <div class="review-bar-track"><div class="review-bar-fill" style="width:90%"></div></div>
+          <div class="review-bar-val">4.5</div>
+        </div>
+        <div class="review-bar-row">
+          <div class="review-bar-label">Value</div>
+          <div class="review-bar-track"><div class="review-bar-fill" style="width:88%"></div></div>
+          <div class="review-bar-val">4.4</div>
+        </div>
+      </div>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card reveal">
+        <div class="review-header">
+          <img class="reviewer-avatar" src="https://i.pravatar.cc/80?img=36" alt="Reviewer">
+          <div>
+            <div class="review-stars">★★★★★</div>
+            <div class="reviewer-name">Isabella Rossi</div>
+            <div class="reviewer-date">February 2025 · Solo Traveler</div>
+          </div>
+        </div>
+        <p class="review-text">"Standing at World's End as the mist rolled back to reveal an 870-metre drop into jungle — I genuinely gasped. Nuwara Eliya is utterly unlike anywhere else I've been. The tea factory stay was dreamy and the air felt like Switzerland."</p>
+        <div class="review-helpful">
+          <span>Helpful?</span>
+          <button class="helpful-btn">👍 Yes (49)</button>
+        </div>
+      </div>
+      <div class="review-card reveal reveal-delay-1">
+        <div class="review-header">
+          <img class="reviewer-avatar" src="https://i.pravatar.cc/80?img=12" alt="Reviewer">
+          <div>
+            <div class="review-stars">★★★★★</div>
+            <div class="reviewer-name">Haruto Yamamoto</div>
+            <div class="reviewer-date">January 2025 · Couple</div>
+          </div>
+        </div>
+        <p class="review-text">"We spent a morning picking tea with a local family and it was the most authentic travel experience of our entire trip. Then dinner at the Hill Club by firelight felt like stepping into 1920s colonial Ceylon. Absolutely magical."</p>
+        <div class="review-helpful">
+          <span>Helpful?</span>
+          <button class="helpful-btn">👍 Yes (41)</button>
+        </div>
+      </div>
+      <div class="review-card reveal reveal-delay-2">
+        <div class="review-header">
+          <img class="reviewer-avatar" src="https://i.pravatar.cc/80?img=56" alt="Reviewer">
+          <div>
+            <div class="review-stars">★★★★☆</div>
+            <div class="reviewer-name">Kezia Okafor</div>
+            <div class="reviewer-date">December 2024 · Family</div>
+          </div>
+        </div>
+        <p class="review-text">"The kids loved boating on Gregory Lake and picking tea leaves on the estate — they still talk about it. The cool weather was such a refreshing change after the coast. Nuwara Eliya is the hidden gem of our whole Sri Lanka trip."</p>
+        <div class="review-helpful">
+          <span>Helpful?</span>
+          <button class="helpful-btn">👍 Yes (33)</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MAP / HOW TO GET THERE -->
+<section class="section map-section">
+  <div class="section-inner">
+    <div class="section-label">HOW TO GET THERE</div>
+    <h2 class="section-title" style="margin-bottom:8px">Find Your Way to <em>Nuwara Eliya</em></h2>
+    <p class="section-sub">Popular transport options from major Sri Lankan cities to Nuwara Eliya.</p>
+    <div class="map-layout">
+      <div class="map-sidebar">
+        <div class="map-sidebar-title">Getting There</div>
+        <div class="map-sidebar-sub">Choose your preferred mode of transport from Colombo</div>
+        <div class="transport-options">
+          <div class="transport-item active" onclick="setTransport(this)">
+            <div class="transport-icon">🚂</div>
+            <div class="transport-info">
+              <div class="transport-name">Scenic Train via Kandy</div>
+              <div class="transport-detail">~6 hrs · Most scenic · $3–10</div>
+            </div>
+          </div>
+          <div class="transport-item" onclick="setTransport(this)">
+            <div class="transport-icon">🚗</div>
+            <div class="transport-info">
+              <div class="transport-name">Private Car</div>
+              <div class="transport-detail">~4 hrs · Most comfortable · $45–65</div>
+            </div>
+          </div>
+          <div class="transport-item" onclick="setTransport(this)">
+            <div class="transport-icon">🚌</div>
+            <div class="transport-info">
+              <div class="transport-name">Bus via Kandy</div>
+              <div class="transport-detail">~5 hrs · Budget option · $2–4</div>
+            </div>
+          </div>
+          <div class="transport-item" onclick="setTransport(this)">
+            <div class="transport-icon">✈️</div>
+            <div class="transport-info">
+              <div class="transport-name">Fly + Transfer</div>
+              <div class="transport-detail">Via Bandaranaike Airport · CMB</div>
+            </div>
+          </div>
+        </div>
+        <div class="map-nearby">
+          <div class="nearby-item">
+            <div class="nearby-name">🏙 Colombo</div>
+            <div class="nearby-dist">180 km away</div>
+          </div>
+          <div class="nearby-item">
+            <div class="nearby-name">🏯 Kandy</div>
+            <div class="nearby-dist">75 km away</div>
+          </div>
+          <div class="nearby-item">
+            <div class="nearby-name">🌄 Ella</div>
+            <div class="nearby-dist">60 km away</div>
+          </div>
+          <div class="nearby-item">
+            <div class="nearby-name">🐆 Yala</div>
+            <div class="nearby-dist">150 km away</div>
+          </div>
+        </div>
+      </div>
+      <div class="map-container">
+        <div class="map-placeholder">
+          <img src="images/lk.svg" alt="Sri Lanka Map" class="sri-map">
+          <svg class="map-paths" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid meet">
+
+            <!-- Paths to Nuwara Eliya -->
+            <path d="M295,418 C320,415 370,410 395,400" stroke="#D4A843" stroke-width="2" stroke-dasharray="6,6" fill="none" />
+            <path d="M360,375 C372,382 383,390 395,400" stroke="#D4A843" stroke-width="2" stroke-dasharray="6,6" fill="none" />
+            <path d="M430,393 C420,396 408,398 395,400" stroke="#D4A843" stroke-width="2" stroke-dasharray="6,6" fill="none" />
+
+            <!-- Main Pin: Nuwara Eliya -->
+            <circle cx="395" cy="400" r="10" fill="#D4A843">
+              <animate attributeName="r" values="10;13;10" dur="2s" repeatCount="indefinite"/>
+            </circle>
+            <text x="395" y="382" text-anchor="middle" fill="#fff" font-size="10px">📍 Nuwara Eliya</text>
+
+            <!-- Secondary Pins -->
+            <circle cx="295" cy="418" r="6" fill="rgba(212,168,67,0.5)" />
+            <text x="295" y="408" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-size="8px">🏙 Colombo</text>
+
+            <!-- Kandy: northwest of Nuwara Eliya -->
+            <circle cx="360" cy="375" r="6" fill="rgba(212,168,67,0.5)" />
+            <text x="360" y="365" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-size="8px">🏯 Kandy</text>
+
+            <!-- Ella: southeast of Nuwara Eliya -->
+            <circle cx="430" cy="393" r="6" fill="rgba(212,168,67,0.5)" />
+            <text x="430" y="383" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-size="8px">🌄 Ella</text>
+
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="section-label">YOUR ADVENTURE AWAITS</div>
+  <h2 class="cta-title">Ready to Experience <em>Nuwara Eliya?</em></h2>
+  <p class="cta-sub">From misty tea estates at dawn to firelit colonial dinners above the clouds — let us curate your ideal Sri Lanka highland escape, stress-free.</p>
+  <div class="cta-btns">
+    <button class="btn-primary" style="font-size:14px;padding:15px 32px"><i class="bi bi-buildings"></i> Customize Packages</button>
+    <a href="reviews.html" class="btn-secondary" style="font-size:14px;padding:15px 28px"><i class="bi bi-bookmark-plus"></i> User Experiences</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo"><div style="display: flex;"><div class="h1" style="color: white;">Ceylon</div>Tales</div></div>
+        <p>Curating extraordinary travel experiences across Sri Lanka's most breathtaking destinations since 2018.</p>
+        <div class="footer-socials">
+          <a class="social-btn" href="#">𝕏</a>
+          <a class="social-btn" href="#">f</a>
+          <a class="social-btn" href="#">in</a>
+          <a class="social-btn" href="#"><i class="bi bi-instagram"></i></a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Destinations</div>
+        <ul class="footer-links">
+          <li><a href="ella.html">Ella</a></li>
+          <li><a href="sigiriya.html">Sigiriya</a></li>
+          <li><a href="mirissa.html">Mirissa</a></li>
+          <li><a href="galle.html">Galle</a></li>
+          <li><a href="kandy.html">Kandy</a></li>
+          <li><a href="yala.html">Yala</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Explore</div>
+        <ul class="footer-links">
+          <li><a href="#">Things To Do</a></li>
+          <li><a href="#">Where to Stay</a></li>
+          <li><a href="packages.html">Travel Packages</a></li>
+          <li><a href="#">Highland Routes</a></li>
+          <li><a href="reviews.html">Travel Blog</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Stay Updated</div>
+        <p style="font-size:13px;color:var(--text-dim);margin-bottom:14px">Get curated Sri Lanka travel tips and exclusive deals.</p>
+        <div style="display:flex;gap:8px">
+          <input type="email" placeholder="Your email" style="flex:1;background:var(--card);border:1px solid var(--border2);color:var(--text);padding:9px 14px;border-radius:6px;font-size:12px;font-family:'DM Sans',sans-serif;outline:none">
+          <button class="btn-gold" style="white-space:nowrap">Subscribe</button>
+        </div>
+        <div style="margin-top:20px">
+          <div class="footer-col-title">Contact</div>
+          <div style="font-size:13px;color:var(--text-dim);line-height:2">
+            <i class="bi bi-envelope-at"></i> hello@explorejourney.lk<br>
+            <i class="bi bi-telephone"></i> +94 77 123 4567
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2025 CeylonTales. All rights reserved. · Privacy · Terms</div>
+      <div class="footer-badge">
+        <span>🇱🇰</span>
+        <span>Proudly Sri Lankan</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Scroll reveal
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) e.target.classList.add('visible');
+  });
+}, { threshold: 0.12 });
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// Filter buttons
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    btn.closest('.filters').querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+  });
+});
+
+// Stay filters
+document.querySelectorAll('.stay-filter').forEach(btn => {
+  btn.addEventListener('click', () => {
+    btn.closest('.stay-filters').querySelectorAll('.stay-filter').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+  });
+});
+
+// Transport selector
+function setTransport(el) {
+  el.closest('.transport-options').querySelectorAll('.transport-item').forEach(t => t.classList.remove('active'));
+  el.classList.add('active');
+}
+
+// Navbar scroll effect
+window.addEventListener('scroll', () => {
+  const nav = document.querySelector('nav');
+  if (window.scrollY > 60) {
+    nav.style.borderBottomColor = 'rgba(212,168,67,0.2)';
+    nav.style.background = 'rgba(13,17,23,0.97)';
+  } else {
+    nav.style.borderBottomColor = 'rgba(255,255,255,0.07)';
+    nav.style.background = 'rgba(13,17,23,0.92)';
+  }
+});
+
+// Add to trip button
+document.querySelectorAll('.btn-add').forEach(btn => {
+  btn.addEventListener('click', function() {
+    if (this.classList.contains('added')) {
+      this.textContent = '+ Add to Trip';
+      this.classList.remove('added');
+      this.style.background = 'transparent';
+      this.style.color = 'var(--gold)';
+    } else {
+      this.textContent = '✓ Added';
+      this.classList.add('added');
+      this.style.background = 'var(--gold)';
+      this.style.color = '#0D1117';
+    }
+  });
+});
+
+// Review helpful buttons
+document.querySelectorAll('.helpful-btn').forEach(btn => {
+  btn.addEventListener('click', function() {
+    const match = this.textContent.match(/\((\d+)\)/);
+    if (match) {
+      const num = parseInt(match[1]) + 1;
+      this.textContent = this.textContent.replace(/\(\d+\)/, `(${num})`);
+      this.style.borderColor = 'var(--gold)';
+      this.style.color = 'var(--gold)';
+    }
+  });
+});
+
+const grid = document.querySelector(".stays-grid");
+const cards = Array.from(document.querySelectorAll(".stay-card"));
+const buttons = document.querySelectorAll(".stay-filter");
+
+buttons.forEach(button => {
+  button.addEventListener("click", () => {
+    buttons.forEach(b => b.classList.remove("active"));
+    button.classList.add("active");
+
+    let sortedCards;
+    if(button.id === "price") sortedCards = cards.sort((a,b) => a.dataset.price - b.dataset.price);
+    if(button.id === "rating") sortedCards = cards.sort((a,b) => b.dataset.rating - a.dataset.rating);
+    if(button.id === "availability") sortedCards = cards.sort((a,b) => b.dataset.available.localeCompare(a.dataset.available));
+    if(button.id === "type") sortedCards = cards.sort((a,b) => a.dataset.type.localeCompare(b.dataset.type));
+
+    sortedCards.forEach(card => grid.appendChild(card));
+  });
+});
+
+const filterButtons = document.querySelectorAll(".filter-btn");
+const cards1 = document.querySelectorAll(".todo-card");
+
+filterButtons.forEach(button => {
+  button.addEventListener("click", () => {
+    const filter = button.dataset.filter;
+    filterButtons.forEach(btn => btn.classList.remove("active"));
+    button.classList.add("active");
+
+    cards1.forEach(card => {
+      const category = card.dataset.category;
+      if(filter === "all" || category.includes(filter)){
+        card.style.display = "block";
+      } else {
+        card.style.display = "none";
+      }
+    });
+  });
+});
+</script>
+</body>
+</html>

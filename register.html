@@ -62,11 +62,7 @@
     opacity: 0;
     animation: fadeDown 0.6s 0.1s ease forwards;
   }
-  .brand-logo {
-    height: 32px;
-    width: auto;
-    display: block;
-  }
+  .brand-logo { height: 32px; width: auto; display: block; }
   #logoText {
     font-family: 'Playfair Display', serif;
     font-size: 24px; font-weight: 700;
@@ -98,10 +94,7 @@
     color: var(--white); text-align: center;
     margin-bottom: 3px;
   }
-  .card-sub {
-    font-size: 12px; color: var(--text-muted);
-    text-align: center; margin-bottom: 18px;
-  }
+  .card-sub { font-size: 12px; color: var(--text-muted); text-align: center; margin-bottom: 18px; }
 
   /* ── FORM ── */
   .form-group { margin-bottom: 12px; }
@@ -151,6 +144,18 @@
   .error-msg { font-size: 10px; color: #D94F4F; margin-top: 3px; display: none; }
   .error-msg.show { display: block; }
 
+  /* ── SERVER MESSAGE ── */
+  .server-msg {
+    font-size: 11px;
+    text-align: center;
+    padding: 8px 12px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    display: none;
+  }
+  .server-msg.error   { display: block; background: rgba(217,79,79,0.12); color: #D94F4F; border: 1px solid rgba(217,79,79,0.25); }
+  .server-msg.success { display: block; background: rgba(39,174,96,0.12); color: #27AE60; border: 1px solid rgba(39,174,96,0.25); }
+
   /* ── CHECKBOX ── */
   .checkbox-row {
     display: flex; align-items: center; gap: 8px;
@@ -185,7 +190,7 @@
     box-shadow: 0 8px 28px rgba(201,148,26,0.4);
   }
   .btn-submit:active { transform: translateY(0); }
-  .btn-submit.success { background: linear-gradient(135deg, #27AE60, #1E8449); pointer-events: none; }
+  .btn-submit.success { background: linear-gradient(135deg, #27AE60, #1E8449); color: #fff; pointer-events: none; }
   .btn-submit:disabled { opacity: 0.7; pointer-events: none; }
 
   /* ── DIVIDER ── */
@@ -197,10 +202,7 @@
   .divider span { font-size: 10px; color: var(--text-muted); letter-spacing: 1.5px; text-transform: uppercase; white-space: nowrap; }
 
   /* ── SOCIAL ── */
-  .social-row {
-    display: grid; grid-template-columns: 1fr 1fr;
-    gap: 8px; margin-bottom: 14px;
-  }
+  .social-row { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 14px; }
   .btn-social {
     display: flex; align-items: center; justify-content: center; gap: 7px;
     background: var(--navy-input);
@@ -236,13 +238,26 @@
     from { opacity: 0; transform: translateY(16px); }
     to   { opacity: 1; transform: translateY(0); }
   }
+
+  /* ── SPINNER ── */
+  .spinner {
+    display: inline-block;
+    width: 12px; height: 12px;
+    border: 2px solid rgba(5,13,24,0.3);
+    border-top-color: #050D18;
+    border-radius: 50%;
+    animation: spin 0.7s linear infinite;
+    vertical-align: middle;
+    margin-right: 6px;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
 </style>
 </head>
 <body>
 
 <div class="wrapper">
 
-  <!-- BRAND — logo only, no icon above -->
+  <!-- BRAND -->
   <div class="brand">
     <img src="images/logo.png"
          onerror="this.style.display='none'; document.getElementById('logoText').style.display='block';"
@@ -256,6 +271,9 @@
 
     <h1 class="card-title">Create Your Account</h1>
     <p class="card-sub">Join our exclusive community of travelers.</p>
+
+    <!-- Server Message -->
+    <div class="server-msg" id="serverMsg"></div>
 
     <!-- Full Name -->
     <div class="form-group">
@@ -310,7 +328,7 @@
     <div class="form-group">
       <label class="form-label" for="password">Password</label>
       <div class="input-wrap">
-        <input type="password" id="password" placeholder="Create a password" autocomplete="new-password">
+        <input type="password" id="password" placeholder="Create a password (min. 8 characters)" autocomplete="new-password">
         <span class="input-icon toggle-pw" id="togglePw">
           <svg id="eyeIcon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
             <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
@@ -353,7 +371,7 @@
     </div>
 
     <!-- Sign in -->
-    <div class="signin-row">Already have an account? <a href="#">Sign In</a></div>
+    <div class="signin-row">Already have an account? <a href="login.html">Sign In</a></div>
 
   </div>
 </div>
@@ -361,6 +379,7 @@
 <footer>© 2024 CeylonTails. All rights reserved.</footer>
 
 <script>
+  // ── PASSWORD TOGGLE ──────────────────────────────────────────
   const togglePw = document.getElementById('togglePw');
   const pwInput  = document.getElementById('password');
   const eyeIcon  = document.getElementById('eyeIcon');
@@ -373,6 +392,7 @@
     eyeIcon.innerHTML = show ? eyeClosed : eyeOpen;
   });
 
+  // ── HELPERS ──────────────────────────────────────────────────
   function showErr(inputId, errId) {
     document.getElementById(inputId).classList.add('error');
     document.getElementById(errId).classList.add('show');
@@ -381,30 +401,77 @@
     document.getElementById(inputId).classList.remove('error');
     document.getElementById(errId).classList.remove('show');
   }
+  function showServerMsg(msg, type) {
+    const el = document.getElementById('serverMsg');
+    el.textContent = msg;
+    el.className = 'server-msg ' + type;
+  }
+  function hideServerMsg() {
+    document.getElementById('serverMsg').className = 'server-msg';
+  }
 
+  // Clear errors on input
   document.getElementById('fullName').addEventListener('input', () => clearErr('fullName', 'nameErr'));
   document.getElementById('email').addEventListener('input',    () => clearErr('email',    'emailErr'));
   document.getElementById('password').addEventListener('input', () => clearErr('password', 'passErr'));
 
-  function handleSubmit() {
-    let valid = true;
-    const name  = document.getElementById('fullName').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const pass  = document.getElementById('password').value;
-    const terms = document.getElementById('terms').checked;
+  // ── SUBMIT HANDLER ───────────────────────────────────────────
+  async function handleSubmit() {
+    hideServerMsg();
 
-    if (!name)  { showErr('fullName','nameErr');  valid = false; } else clearErr('fullName','nameErr');
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { showErr('email','emailErr'); valid = false; } else clearErr('email','emailErr');
-    if (pass.length < 8) { showErr('password','passErr'); valid = false; } else clearErr('password','passErr');
-    if (!terms) { alert('Please agree to the Terms & Privacy Policy.'); valid = false; }
+    const name        = document.getElementById('fullName').value.trim();
+    const email       = document.getElementById('email').value.trim();
+    const pass        = document.getElementById('password').value;
+    const nationality = document.getElementById('nationality').value;
+    const terms       = document.getElementById('terms').checked;
+
+    let valid = true;
+
+    if (!name)  { showErr('fullName', 'nameErr');  valid = false; } else clearErr('fullName', 'nameErr');
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { showErr('email', 'emailErr'); valid = false; } else clearErr('email', 'emailErr');
+    if (pass.length < 8) { showErr('password', 'passErr'); valid = false; } else clearErr('password', 'passErr');
+    if (!terms) { showServerMsg('Please agree to the Terms & Privacy Policy.', 'error'); valid = false; }
+
     if (!valid) return;
 
     const btn = document.getElementById('submitBtn');
-    btn.textContent = 'Creating Account…';
+    btn.innerHTML = '<span class="spinner"></span>Creating Account…';
     btn.disabled = true;
-    setTimeout(() => { btn.textContent = '✓ Account Created!'; btn.classList.add('success'); }, 1500);
+
+    try {
+      const res = await fetch('register.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          fullName:    name,
+          email:       email,
+          nationality: nationality,
+          password:    pass
+        })
+      });
+
+      const data = await res.json();
+
+      if (data.success) {
+        btn.innerHTML = '✓ Account Created!';
+        btn.classList.add('success');
+        showServerMsg('🎉 Welcome to CeylonTails! Redirecting…', 'success');
+        // Redirect after 2 seconds (change 'index.html' to your home page)
+        setTimeout(() => { window.location.href = 'index.html'; }, 2000);
+      } else {
+        btn.innerHTML = 'Start Your Journey';
+        btn.disabled = false;
+        showServerMsg(data.message || 'Registration failed. Please try again.', 'error');
+      }
+
+    } catch (err) {
+      btn.innerHTML = 'Start Your Journey';
+      btn.disabled = false;
+      showServerMsg('Network error. Please check your connection and try again.', 'error');
+    }
   }
 
+  // Submit on Enter key
   document.addEventListener('keydown', e => { if (e.key === 'Enter') handleSubmit(); });
 </script>
 </body>
